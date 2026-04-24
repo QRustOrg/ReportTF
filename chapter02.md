@@ -1242,7 +1242,379 @@ Siguiendo el modelo de arquitectura Clean Architecture, el Bounded Context IAM d
 ##### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
 
 <p align="center">
-    <img src="assets/chapter02/BCIAM/cd-iam1.png">
+    <img src="assets/chapter02/BCPromotions/promotions-database-diagram.png">
 </p>
 
-##### 2.6.1.6.2. Bounded Context Database Design Diagram
+### 2.6.7. Bounded Context: Community
+
+Siguiendo el modelo de arquitectura Clean Architecture, **el Bounded Context Community de Klippr** gestiona las **interacciones sociales, reseñas y calificaciones** que los consumidores dejan sobre los negocios afiliados y sus promociones. Fomenta la confianza en la plataforma y provee retroalimentación valiosa, interactuando estrechamente con **Profile** para agregar la reputación y con **Analytics** para detectar y gestionar reportes de abuso en las opiniones.
+
+#### 2.6.7.1. Domain Layer
+
+**Sub-capa Model - Aggregates:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>Aggregate</td>
+    <td>Review</td>
+    <td>Reseña y calificación dejada por un consumidor.</td>
+    <td>Mantener la integridad del contenido de la opinión, la calificación otorgada y su estado de moderación.</td>
+    <td>Relacionado con BusinessProfile (negocio evaluado) y ConsumerProfile (autor).</td>
+  </tr>
+</table>
+
+**Sub-capa Model - Commands:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>Command</td>
+    <td>CreateReviewCommand</td>
+    <td>Comando para publicar una nueva reseña.</td>
+    <td>Representar la intención del usuario de calificar y comentar su experiencia.</td>
+    <td>Usado en Application Layer. Genera evento ReviewCreated.</td>
+  </tr>
+  <tr>
+    <td>Command</td>
+    <td>ModerateReviewCommand</td>
+    <td>Comando para moderar u ocultar una reseña inapropiada.</td>
+    <td>Representar la decisión administrativa de cambiar la visibilidad de una opinión.</td>
+    <td>Usado por administradores a partir de reportes en Analytics.</td>
+  </tr>
+</table>
+
+**Sub-capa Model - Queries:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>Query</td>
+    <td>GetReviewsByBusinessIdQuery</td>
+    <td>Consulta de reseñas para un negocio.</td>
+    <td>Listar todas las opiniones visibles asociadas a un comercio específico.</td>
+    <td>Usado en la pantalla de perfil del negocio.</td>
+  </tr>
+  <tr>
+    <td>Query</td>
+    <td>GetReviewsByConsumerIdQuery</td>
+    <td>Consulta de reseñas de un usuario.</td>
+    <td>Listar el historial de opiniones escritas por un consumidor.</td>
+    <td>Usado en el perfil personal del usuario.</td>
+  </tr>
+</table>
+
+**Sub-capa Model - Value Objects:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>Value Object</td>
+    <td>Rating</td>
+    <td>Puntuación cuantitativa.</td>
+    <td>Asegurar que el valor esté en el rango permitido (ej. 1 a 5 estrellas).</td>
+    <td>Usado dentro de Review.</td>
+  </tr>
+  <tr>
+    <td>Value Object</td>
+    <td>ReviewContent</td>
+    <td>Texto y contenido multimedia de la opinión.</td>
+    <td>Almacenar el texto de retroalimentación con límites de longitud y reglas de formato.</td>
+    <td>Usado dentro de Review.</td>
+  </tr>
+</table>
+
+**Sub-capa Services:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>Interface</td>
+    <td>IReviewCommandService</td>
+    <td>Interfaz del servicio de comandos de reseñas.</td>
+    <td>Definir contratos para crear y moderar reseñas.</td>
+    <td>Implementado en capa Application.</td>
+  </tr>
+  <tr>
+    <td>Interface</td>
+    <td>IReviewQueryService</td>
+    <td>Interfaz del servicio de consultas de reseñas.</td>
+    <td>Definir contratos para obtener listas de reseñas.</td>
+    <td>Implementado en capa Application.</td>
+  </tr>
+</table>
+
+**Sub-capa Repositories:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>Interface</td>
+    <td>IReviewRepository</td>
+    <td>Repositorio para persistencia de Review.</td>
+    <td>Definir operaciones CRUD y búsquedas de reseñas en la base de datos.</td>
+    <td>Implementado en capa Infrastructure.</td>
+  </tr>
+</table>
+
+---
+
+#### 2.6.7.2. Interface Layer
+
+**Sub-capa REST - Resources:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>Resource</td>
+    <td>ReviewResource</td>
+    <td>Representación de la reseña para el cliente.</td>
+    <td>Exponer puntuación, texto, autor y fecha.</td>
+    <td>Usado en ReviewController.</td>
+  </tr>
+  <tr>
+    <td>Resource</td>
+    <td>CreateReviewResource</td>
+    <td>Estructura para enviar una nueva reseña.</td>
+    <td>Recibir los datos introducidos por el usuario para calificar un negocio.</td>
+    <td>Usado en ReviewController.</td>
+  </tr>
+</table>
+
+**Sub-capa REST - Transform:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>Assembler</td>
+    <td>ReviewResourceFromEntityAssembler</td>
+    <td>Transforma entidad Review a recurso.</td>
+    <td>Convertir datos de dominio a REST.</td>
+    <td>Usado en ReviewController.</td>
+  </tr>
+  <tr>
+    <td>Assembler</td>
+    <td>CreateReviewCommandFromResourceAssembler</td>
+    <td>Transforma petición a comando.</td>
+    <td>Convertir JSON de creación al comando del dominio.</td>
+    <td>Usado en ReviewController.</td>
+  </tr>
+</table>
+
+**Sub-capa REST - Controllers:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>Controller</td>
+    <td>ReviewController</td>
+    <td>Controlador de reseñas.</td>
+    <td>Manejar endpoints para publicar y visualizar opiniones.</td>
+    <td>Usa servicios de Application Layer.</td>
+  </tr>
+</table>
+
+**Sub-capa ACL:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>Service</td>
+    <td>CommunityContextFacade</td>
+    <td>Fachada del contexto Community.</td>
+    <td>Proveer acceso controlado a datos agregados de reseñas para otros módulos.</td>
+    <td>Usado por Profile para calcular promedio de calificaciones.</td>
+  </tr>
+</table>
+
+---
+
+#### 2.6.7.3. Application Layer
+
+**Sub-capa Internal - CommandServices:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>CommandHandler</td>
+    <td>ReviewCommandService</td>
+    <td>Implementación de comandos de reseñas.</td>
+    <td>Procesar la creación de opiniones y asegurar su validación inicial.</td>
+    <td>Implementa IReviewCommandService.</td>
+  </tr>
+</table>
+
+**Sub-capa Internal - QueryServices:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>QueryHandler</td>
+    <td>ReviewQueryService</td>
+    <td>Implementación de consultas de reseñas.</td>
+    <td>Recuperar listas paginadas de opiniones.</td>
+    <td>Implementa IReviewQueryService.</td>
+  </tr>
+</table>
+
+---
+
+#### 2.6.7.4. Infrastructure Layer
+
+**Sub-capa Persistence:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>Repository</td>
+    <td>ReviewRepository</td>
+    <td>Implementación de persistencia de Review.</td>
+    <td>Interactuar con la base de datos para almacenar y leer opiniones.</td>
+    <td>Usado en Application Layer.</td>
+  </tr>
+</table>
+
+**Sub-capa Event Publishing:**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr style="background-color:#2c3e50; color:white;">
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Responsabilidad Principal</th>
+    <th>Relación con otros elementos</th>
+  </tr>
+  <tr>
+    <td>Service</td>
+    <td>CommunityEventPublisher</td>
+    <td>Publicador de eventos de comunidad.</td>
+    <td>Emitir eventos de ReviewCreated para actualizar estadísticas en otros módulos.</td>
+    <td>Notifica al Profile context para recálculo de Rating.</td>
+  </tr>
+</table>
+
+#### 2.6.7.5. Bounded Context Software Architecture Component Level Diagrams
+
+<p align="center">
+    <img src="assets/chapter02/comps-diagr/comp-Community.jpeg">
+</p>
+
+#### 2.6.7.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 2.6.7.6.1 Bounded Context Domain Layer Class Diagrams
+
+<p align="center">
+    <img src="assets/chapter02/BCCommunity/community-class-diagram.png">
+</p>
+
+##### 2.6.7.6.2. Bounded Context Database Design Diagrams
+
+| Tipo     | Campo         | Key | Descripción                                              |
+| -------- | ------------- | --- | -------------------------------------------------------- |
+| int      | id            | PK  | Identificador único de la reseña.                        |
+| datetime | created_at    |     | Fecha y hora en que se creó la reseña.                   |
+| datetime | updated_at    |     | Fecha y hora de la última actualización.                 |
+| string   | user_id       | FK  | Identificador del usuario que publicó la reseña.         |
+| string   | promotion_id  | FK  | Identificador de la promoción reseñada.                  |
+| string   | redemption_id | FK  | Identificador del canje completado asociado a la reseña. |
+| int      | rating        |     | Calificación otorgada por el usuario, de 1 a 5.          |
+| text     | comment       |     | Comentario escrito por el usuario sobre la promoción.    |
+| varchar  | status        |     | Estado de la reseña: PUBLISHED, HIDDEN o REPORTED.       |
+| varchar  | review_id     | FK  | Identificador de la reseña comentada.                    |
+| text     | content       |     | Contenido del comentario.                                |
+| varchar  | business_id   | FK  | Identificador del negocio que responde.                  |
+
+| Nombre           | Descripción                                                                                |
+| ---------------- | ------------------------------------------------------------------------------------------ |
+| id               | Identificador único de la reseña registrada en el sistema.                                 |
+| reviews          | Almacena las reseñas y calificaciones realizadas por usuarios después de un canje exitoso. |
+| comments         | Almacena comentarios de usuarios sobre reseñas publicadas.                                 |
+| business_replies | Almacena respuestas de negocios afiliados a reseñas de usuarios.                           |
+| likes            | Registra los likes realizados por usuarios sobre reseñas.                                  |
+| created_at       | Fecha y hora en que la reseña fue creada.                                                  |
+| updated_at       | Fecha y hora de la última modificación de la reseña.                                       |
+| user_id          | Usuario consumidor autor de la reseña.                                                     |
+| promotion_id     | Promoción evaluada por el usuario.                                                         |
+| redemption_id    | Canje exitoso que habilitó la reseña.                                                      |
+| rating           | Calificación numérica otorgada entre 1 y 5 estrellas.                                      |
+| status           | Estado actual de la reseña (publicada, reportada, oculta).                                 |
+| content          | Texto del comentario publicado.                                                            |
+| business_id      | Negocio afiliado que responde.                                                             |

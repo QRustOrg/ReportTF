@@ -49,14 +49,13 @@
 
 <br>
 
-| Apellidos y Nombres | Código |
-|---------------------|--------|
-| Bonifacio Jaramillo, Samuel Jesus | U202317269 |
-| Castro Pariona, Jefferson Ernesto | U201822823 |
-| Guillen Galindo, Julio Adolfo  | U20241A352 |
-| Galindo Montero, Alejandro Manuel| U202321264 |
-| Ponce Perales Alberto Alejandro | U2023206804 |
-
+| Apellidos y Nombres               | Código      |
+| --------------------------------- | ----------- |
+| Bonifacio Jaramillo, Samuel Jesus | U202317269  |
+| Castro Pariona, Jefferson Ernesto | U201822823  |
+| Guillen Galindo, Julio Adolfo     | U20241A352  |
+| Galindo Montero, Alejandro Manuel | U202321264  |
+| Ponce Perales Alberto Alejandro   | U2023206804 |
 
 <br><br>
 
@@ -69,7 +68,6 @@
 # Registro de Versiones del Informe
 
 <br>
-
 
 <table>
   <thead>
@@ -479,13 +477,3 @@ Para el desarrollo del informe perteneciente a la entrega del TF, se dividió la
 </table>
 
 <br>
-
-# Conclusiones
-
-### Conclusiones y recomendaciones.
-### Video App Validation
-### Video About the product
-### Video About the team
-### Glosario
-### Bibliografía
-### Anexos

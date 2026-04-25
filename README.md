@@ -167,13 +167,13 @@ Para evidenciar nuestros avances y demostrar que todos los miembros del equipo p
 
 *En el analítico de Contributors se evidencian las contribuciones que hizo cada integrante del equipo para la redacción del informe durante el periodo de esta primera entrega. Se puede observar la cantidad de commits que realizó cada integrante, así como la cantidad de adiciones y eliminaciones que se realizaron en el repositorio.
 
-*(captura contributors)*
+![ContributionsGraph](assets/project-insights/contributions-graph.png)
 
 **Pulse**
 
 En el analítico de Pulse se evidencian los commits que realizó cada integrante del equipo durante el periodo definido para esta primera entrega.
 
-*(captura pulse)*
+![PulseGraph](assets/project-insights/pulse-graph.png)
 
 ---
 

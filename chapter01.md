@@ -89,14 +89,14 @@ Buscamos cerrar la brecha entre la experiencia física de compra y la convenienc
       <td align="center">
         <img src="assets/Integrantes/julio.jpg" width="150">
       </td>
-      <td></td>
+      <td>Soy estudiante de la carrera de Ingeniería de Software en la UPC. Me considero una persona reservada, pero comprometida para completar los proyectos a tiempo. Tengo conocimientos en C++ y me agrada trabajar en equipo si todos somos colaborativos y nos ayudamos mutuamente, así como aplicar mis conocimientos para enfrentarme a los retos que se me presentaran en futuros ciclos.</td>
     </tr>
     <tr>
       <td>Galindo Montero, Alejandro Manuel<br>(U202321264)</td>
       <td align="center">
         <img src="assets/Integrantes/alejandro.png" width="150">
       </td>
-      <td>Mi nombre es Galindo Montero, Alejandro Manuel, tengo 21 años y curso la carrera de Ingeniería de Software. Me considero una persona creativa y responsable. En mis tiempos libres me gusta aprender cosas nuevas. En este proyecto apoyaré con todos los conocimientos que he adquirido en los últimos años.</td>
+      <td>Mi nombre es Alejandro, tengo 21 años y curso la carrera de Ingeniería de Software. Me considero una persona creativa y responsable. En mis tiempos libres me gusta aprender cosas nuevas. En este proyecto apoyaré con todos los conocimientos que he adquirido en los últimos años.</td>
     </tr>
   </tbody>
 </table>

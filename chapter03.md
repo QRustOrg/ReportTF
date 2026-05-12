@@ -174,6 +174,46 @@ Sistema de búsqueda implementado en:
 
 #### 3.1.3.2. Landing Page Mock-up
 
+<h2> Hero Section </h2>
+
+![Klippr-Hero](/assets/chapter03/landing-mockups/klippr-hero.png)
+
+<h2> Problem Section </h2>
+
+![Klippr-Problem-1](/assets/chapter03/landing-mockups/klippr-problem-1.png)
+
+![Klippr-Problem-2](/assets/chapter03/landing-mockups/klippr-problem-2.png)
+
+![Klippr-Problem-3](/assets/chapter03/landing-mockups/klippr-problem-3.png)
+
+<h2> Features Section </h2>
+
+![Klippr-Features-1](/assets/chapter03/landing-mockups/klippr-features-1.png)
+
+![Klippr-Features-2](/assets/chapter03/landing-mockups/klippr-features-2.png)
+
+![Klippr-Features-3](/assets/chapter03/landing-mockups/klippr-features-3.png)
+
+![Klippr-Features-4](/assets/chapter03/landing-mockups/klippr-features-4.png)
+
+<h2> Benefits Section </h2>
+
+![Klippr-Benefits-ForYou](/assets/chapter03/landing-mockups/klippr-benefits-foryou.png)
+
+![Klippr-Benefits-ForBusiness](/assets/chapter03/landing-mockups/klippr-benefits-forbusiness.png)
+
+<h2> Testimonies Section </h2>
+
+![Klippr-Testimonies](/assets/chapter03/landing-mockups/klippr--testimonies.png)
+
+<h2> Comparison Section </h2>
+
+![Klippr-Comparison](/assets/chapter03/landing-mockups/klippr-comparison.png)
+
+<h2> Footer Section </h2>
+
+![Klippr-Footer](/assets/chapter03/landing-mockups/klippr-footer.png)
+
 ### 3.1.4. Mobile Applications UX/UI Design
 
 #### 3.1.4.1. Mobile Applications Wireframes

@@ -29,7 +29,7 @@
 
 <br>
 
-**INFORME DE TRABAJO TB1**
+**INFORME DE TRABAJO TP1**
 
 <br>
 
@@ -86,10 +86,10 @@
       <td>Desarrollo de los capitulos I,II & Anexos</td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>2.0</td>
+      <td>11 de mayo</td>
+      <td>QRust</td>
+      <td>Despliegue ed Landing Page, avance de Backend y desarrollo de capítulos III & IV</td>
     </tr>
     <tr>
       <td></td>
@@ -152,10 +152,10 @@
 
 Analiza cómo la colaboración y la gestión de tareas influyeron en los resultados del proyecto, destacando fortalezas y áreas de mejora para optimizar futuras estrategias.
 
-URL del Repositorio del Informe: https://github.com/QRustOrg/ReportTB1.git <br>
-URL del Repositorio de Landing Page: https://github.com/QRustOrg/LandingPage.git <br>
+URL del Repositorio del Informe: https://github.com/QRustOrg/ReportTB1 <br>
+URL del Repositorio de Landing Page: https://github.com/QRustOrg/LandingPage <br>
 URL del Repositorio del Frontend:  <br>
-URL del Repositorio del Backend:  <br>
+URL del Repositorio del Backend: https://github.com/QRustOrg/Klippr-Backend  <br>
 
 ### Reporte de Colaboración Entrega TB1
 

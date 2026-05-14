@@ -392,6 +392,145 @@ También se añadió el **logo oficial** de la aplicación en todas las vistas p
 </table>
 
 ##### 4.2.1.3. Development Evidence for Sprint Review
+
+* **Mobile Application**
+
+<br>
+
+* **Landing Page**
+
+En el desarrollo de la **Landing Page**, la implementación se llevó a cabo por todos los integrantes del grupo. Tanto en entorno local como en nube **(Github)**.
+
+Posteriormente el proyecto fue desplegado en **Vercel** para su publicación, permitiendo que el resto de su equipo y los evaluadores puedan acceder a la página para la revisión del sprint.
+
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr>
+    <th>Repository</th>
+    <th>Branch</th>
+    <th>Commit ID</th>
+    <th>Commit Message</th>
+    <th>Author</th>
+    <th>Commited on (Date)</th>
+  </tr>
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>db0df97</td>
+    <td>feat:add components Benefits&amp;HowItWorksSections</td>
+    <td>JeffersonCastroPariona</td>
+    <td>May 10, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>49d3c2c</td>
+    <td>feat: add social-proof and comparison section</td>
+    <td>AlejandroG12970</td>
+    <td>May 10, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>3ee4839</td>
+    <td>fix: update LanguageToogle and PainPointsSection</td>
+    <td>aponceperales</td>
+    <td>May 9, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>57c2d19</td>
+    <td>Feature: added PainPointsSection, LanguageToogle and Footer</td>
+    <td>aponceperales</td>
+    <td>May 9, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>c45396f</td>
+    <td>initial commit</td>
+    <td>samuelbonifacio015</td>
+    <td>May 9, 2026</td>
+  </tr>
+</table>
+
+<br>
+
+* **Backend**:
+
+En el desarrollo del **Backend**, la implementación se llevó a cabo por todos los integrantes del grupo. Tanto en entorno local como en nube **(Github)**.
+
+Posteriormente el proyecto fue desplegado en **Railway** para su publicación, permitiendo que el resto de su equipo y los evaluadores puedan acceder al servicio y prueben los endpoints.
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr>
+    <th>Repository</th>
+    <th>Branch</th>
+    <th>Commit ID</th>
+    <th>Commit Message</th>
+    <th>Author</th>
+    <th>Commited on (Date)</th>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>ca76253</td>
+    <td>feat(profile): merge profile branch updates into main</td>
+    <td>samuelbonifacio015</td>
+    <td>May 14, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>0d5d8a7</td>
+    <td>feat: profile module updates</td>
+    <td>JeffersonCastroPariona</td>
+    <td>May 14, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>dea71a2</td>
+    <td>fix:add parameterless constructor to SavingsStatistics for EF Core materialization</td>
+    <td>samuelbonifacio015</td>
+    <td>May 13, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>88c5fad</td>
+    <td>feat: add redepmtion infrastructure</td>
+    <td>samuelbonifacio015</td>
+    <td>May 12, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>eba7f36</td>
+    <td>feat: update favorites infrastructure, domain and shared</td>
+    <td>aponceperales</td>
+    <td>May 12, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>341d71d</td>
+    <td>feat: add Redemption aggregate</td>
+    <td>samuelbonifacio015</td>
+    <td>May 6, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>add analytics bounded context</td>
+    <td>feat: add analytics bounded context</td>
+    <td>AlejandroG12970</td>
+    <td>May 5, 2026</td>
+  </tr>
+</table>
+
+
 ##### 4.2.1.4. Testing Suite Evidence for Sprint Review
 ##### 4.2.1.5. Execution Evidence for Sprint Review
 ##### 4.2.1.6. Services Documentation Evidence for Sprint Review

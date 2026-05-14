@@ -193,7 +193,7 @@ Para el desarrollo del informe perteneciente a la entrega del TB1, se dividió l
   <tbody>
     <tr>
       <th> Bonifacio Jaramillo, Samuel Jesus</th>
-      <th> Diseño de arquitectura y Bounded Contexts, diagramas de base de datos, Event Storming y estructuración general (Capítulos 1 y 2).</th>
+      <th> Diseño de arquitectura y Bounded Contexts, diagramas de base de datos, Event Storming y estructuración general (Capítulos I y II).</th>
     </tr>
     <tr>
       <th> Castro Pariona, Jefferson Ernesto</th>
@@ -234,7 +234,7 @@ Para el desarrollo del informe perteneciente a la entrega del TP1, se dividió l
   <tbody>
     <tr>
       <th> Bonifacio Jaramillo, Samuel Jesus</th>
-      <th> </th>
+      <th> Despliegue de Landing Page & Backend, diseño de US (Mockups y Wireframes) y estructuración general (Capítulos III & IV)</th>
     </tr>
     <tr>
       <th> Castro Pariona, Jefferson Ernesto</th>

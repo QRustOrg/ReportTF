@@ -366,7 +366,28 @@ También se añadió el **logo oficial** de la aplicación en todas las vistas p
     <th>Estado</th>
   </tr>
   <tr>
-    <td colspan="6">HU-01</td>
+    <td>US-01</td>
+    <td>Explorar descuentos</td>
+    <td>Como usuario, quiere visualizar descuentos disponibles para encontrar promociones.<br><br><b>Criterios de Aceptación:</b><br><b>Dado que</b> el usuario accede a la aplicación,<br><b>Cuando</b> visualiza la lista de descuentos,<br><b>Entonces</b> observa promociones disponibles.</td>
+    <td>Alta</td>
+    <td>Samuel</td>
+    <td>Completado</td>
+  </tr>
+  <tr>
+    <td>US-02</td>
+    <td>Filtrar descuentos</td>
+    <td>Como usuario, quiere filtrar descuentos por categoría o ubicación.<br><br><b>Criterios de Aceptación:</b><br><b>Dado que</b> existen filtros disponibles,<br><b>Cuando</b> el usuario selecciona un criterio,<br><b>Entonces</b> se muestran descuentos filtrados.</td>
+    <td>Alta</td>
+    <td>Samuel</td>
+    <td>Completado</td>
+  </tr>
+  <tr>
+    <td>US-03</td>
+    <td>Ver detalle de promoción</td>
+    <td>Como usuario, quiere ver condiciones de una promoción.<br><br><b>Criterios de Aceptación:</b><br><b>Dado que</b> selecciona una promoción,<br><b>Cuando</b> accede al detalle,<br><b>Entonces</b> visualiza condiciones y vigencia.</td>
+    <td>Alta</td>
+    <td>Samuel</td>
+    <td>Completado</td>
   </tr>
 </table>
 

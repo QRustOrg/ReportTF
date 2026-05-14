@@ -300,12 +300,50 @@ Todas las cadenas visibles al usuario deben almacenarse en `res/values/strings.x
 <string name="app_name">Klippr</string>
 <string name="login_button">Iniciar sesión</string>
 ```
-
 #### 4.1.4. Software Deployment Configuration
+
+Para el despliegue de la **Landing Page**, se utilizó **Vercel**. Una plataforma basada en la nube que permite el despliegue de aplicaciones web de manera gratuita y simple.
+
+**URL**: https://klippr-landing-page.vercel.app/
+
+##### Proceso de Implementación
+
+* **Creación del repositorio**: <br>
+Desde la organización de Github, se seleccionó la opción de **"New Repository"**. Donde alojamos el proyecto.
+
+* **Configuración del repositorio**: <br>
+Se asignó una visibilidad pública y un nombre al proyecto, requisitos mínimos que **Vercel** requiere para el despliegue. 
+
+##### Configuración de despliegue desde Vercel
+
+Previo al despliegue, se realizó el **"merge"** de las ramas de desarrollo a la rama **"main"**. Posteriormente, accedemos a la plataforma de **Vercel** para realizar el despligue del servicio. 
+
+Luego, seleccionamos el botón **"Add New"** -> **"Project"** para iniciar el proceso de despliegue. 
+
+![Vercel-Dashboard](/assets/chapter04/vercel-deploy/vercel-dashboard.png)
+
+En esta pantalla seleccionamos el repositorio de **Landing Page** ***(Klippr-Landing-Page)*** y posteriormente, seleccionamos el botón **"Import"**.
+
+![Selecting-Repository](/assets/chapter04/vercel-deploy/selecting-repo.png)
+
+A continuación, la plataforma nos muestra un resumen de la configuración de despliegue, donde confirmamos que el proyecto está configurado correctamente y seleccionamos el botón **"Deploy"**.
+
+![Pre-Deploy](/assets/chapter04/vercel-deploy/pre-deploy.png)
+
+Luego de pulsar en **"Deploy"**, **Vercel** iniciará el proceso de despliegue. Una vez finalizado el proceso, se mostrará un dashboard con algunos datos del proyecto.
+
+![Success-Deploy](/assets/chapter04/vercel-deploy/deploy-dashboard.png)
+
+Finalmente, si todo ha ido bien, podremos acceder a la **Landing Page** desplegada en la URL asignada por **Vercel**.
+
+![Deploy-Final](/assets/chapter04/vercel-deploy/deploy.png)
+
 ### 4.2. Landing Page & Mobile Application Implementation
-#### 4.2.1. Sprint n
-##### 4.2.1.1. Sprint Planning n
-##### 4.2.1.2. Sprint Backlog n
+#### 4.2.1. Sprint 1
+##### 4.2.1.1. Sprint Planning 1
+
+En este primer sprint
+##### 4.2.1.2. Sprint Backlog 1
 ##### 4.2.1.3. Development Evidence for Sprint Review
 ##### 4.2.1.4. Testing Suite Evidence for Sprint Review
 ##### 4.2.1.5. Execution Evidence for Sprint Review

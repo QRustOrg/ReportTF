@@ -347,7 +347,7 @@ En este primer sprint, el enfoque principal fue la implementación de historias 
 Las tareas se distribuyeron de esta forma:
 
 * **Samuel Bonifacio**: Despliegue de **Landing Page & Backend**(Creación de BCS: Promotion & Redemption), además de la documentación de estos procesos.<br>
-* **Julio Guillen**: <br>
+* **Julio Guillen**: <br> Creación los Bounded Contexts de Community y Setting, además de la documentación de estos procesos.<br>
 * **Alberto Ponce**: <br>
 * **Alejandro Galindo**: <br>
 * **Jefferson Castro**: <br>
@@ -706,7 +706,6 @@ El controlador de **Redemption** expone las funcionalidades esenciales para la v
 - **Confirmación de Éxito**
 
 ![redemption-evidence-6](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-6.png)
-
 
 ## IAM Bounded Context
 

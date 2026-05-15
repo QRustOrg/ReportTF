@@ -214,7 +214,7 @@ En esta sección, se presentaran los wireframes de los mobile applications de am
 En esta seccion presentaremos nuestro wireflow diagram que representa el flujo que siguen de nuestros wireframes:
 
 <p align="center">
-    <img src="assets/chapter03/wireflow-diagram.png">
+  <img src="./assets/chapter03/wireflow-diagram.png" width="900"/>
 </p>
 
 #### 3.1.4.3. Mobile Applications Mock-ups

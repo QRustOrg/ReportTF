@@ -606,8 +606,13 @@ A continuación se muestran evidencias del backend desplegado y todos los endpoi
 
 ![Mobile App](/assets/chapter04/execution-evidence/mobile/klippr-mobile-1.png)
 
+![Mobile App-2](/assets/chapter04/execution-evidence/mobile/klippr-mobile-2.png)
+
+![Mobile App-3](/assets/chapter04/execution-evidence/mobile/klippr-mobile-3.png)
+
 ##### 4.2.1.6. Services Documentation Evidence for Sprint Review
 
+Tras finalizar el Sprint 1, hemos logrado implementar los endpoints de nuestro Backend, estableciendo un modelo de negocio y lógica sólida para **Klippr**. Durante este Sprint nos centramos en la implementación de los bounded contexts de **AdminProfile**, **Analytics**, **Authentication**, **Favorites**, **Promotion**, **Redemption**, **Users**, **Profile**, **Verification** los cuales se encuentran desplegados en **Railway** y se puede acceder a ellos a traves de la API. A continuación se presentan evidencias de la documentación de los endpoints:
 
 
 ## IAM Bounded Context
@@ -623,9 +628,11 @@ Se ha utilizado **ASP.NET Core Identity** junto con **JWT (JSON Web Tokens)** pa
 
 ---
 
-## Evidencias de Ejecucion: Modulo Authentication
+## Evidencias de Ejecucion: Módulo Authentication
 
 A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
+
+![iam-profile](/assets/chapter04/vercel-deploy/evidences-sprint/iam/iambc.png)
 
 ### 1. Gestion de Identidad y Acceso (IAM)
 
@@ -635,7 +642,6 @@ El controlador de **Authentication** expone las funcionalidades criticas para el
 * **POST `/api/Authentication/sign-up/consumer`**: Proceso de registro optimizado para el usuario final (Consumer), vinculando la identidad con su perfil correspondiente.
 * **POST `/api/Authentication/sign-up/business`**: Registro especializado para entidades de negocio, activando las reglas de validacion propias de este sector.
 
-![iam-profile](/assets/chapter04/vercel-deploy/evidences-sprint/iam/iambc.png)
 
 - **Validacion parametro Post** 
 
@@ -683,7 +689,47 @@ Se han expuesto los endpoints necesarios para la creación (**POST**), actualiza
 ![sw-bcprofile](/assets/chapter04/vercel-deploy/evidences-sprint/profile/userlog.png)
 
 ##### 4.2.1.7. Software Deployment Evidence for Sprint Review
+
+**Evidencias del despliegue de Landing Page**
+
+En esta sección se muestran las evidencias del **despliegue de Landing Page** desarrollada con **Next.js, React y TypeScript**
+
+**Url: https://klippr-landing-page.vercel.app/**
+
+![Vercel Deploy](/assets/chapter04/vercel-deploy/deploy-dashboard.png)
+
+![Landing-Page](/assets/chapter04/vercel-deploy/deploy.png)
+
+**Evidencias del despliegue de Backend**
+
+El Backend ha sido desarrollado con **C#** y **ASP.NET Core**, utilizando **JWT (JSON Web Tokens)** para la autenticación y autorización. Se encuentra desplegado en **Railway**.
+
+**Url: https://klippr-backend-production.up.railway.app/swagger/index.html**
+
+![Railway](/assets/chapter04/deployment-evidence/railway-1.png)
+
+Para el despliegue del Web Service se seleccionó **Railway**, una plataforma en la nube que se integró de forma directa con nuestro repositorio de **GitHub**. Esta conexión garantiza la automatización completa del flujo de despliegue, de modo que cada nueva actualización en el código fuente se refleje de inmediato en el entorno de producción.
+
+**Railway** destaca por ofrecer una configuración intuitiva y escalable, resultando idónea para servicios backend y arquitecturas basadas en APIs. Mediante su panel de control, se logró vincular el repositorio del proyecto, establecer las variables de entorno requeridas y ejecutar el despliegue de forma ágil, eliminando la dependencia de herramientas de terceros o configuraciones complejas desde el IDE.
+
+![Railway](/assets/chapter04/deployment-evidence/railway-2.png)
+
+La imagen muestra el entorno de producción en Railway, donde el backend fue desplegado correctamente. Estado: El mensaje “Deployment successful” confirma que el despliegue se realizó sin errores.
+
+![Backend-1](/assets/chapter04/execution-evidence/backend/backend-1.png)
+
 ##### 4.2.1.8. Team Collaboration Insights during Sprint
+
+Durante el desarrollo del Sprint 1, el equipo de desarrollo mantuvo una comunicación fluida y colaborativa. Se realizaron reuniones por medio de **Discord y Meet** para sincronizar el trabajo, identificar bloqueos y asegurar el avance hacia los objetivos del sprint. Además, se utilizaron herramientas de colaboración como **Trello** y **Obisidan** para gestionar las tareas, compartir información y resolver dudas de manera eficiente. 
+
+**Resumen del Sprint 1:**
+
+* **Landing Page:** Se desarrolló y desplegó exitosamente en Vercel, incluyendo todas las secciones de información y llamadas a la acción.
+* **Backend y APIs:** Se implementaron los principales Bounded Contexts (IAM, Profile) en C# y se desplegaron en Railway.
+* **Mobile App:** Se construyeron las interfaces estáticas iniciales en Android Studio empleando Jetpack Compose y Kotlin.
+* **Despliegue:** Se automatizó el pase a producción vinculando GitHub directamente con Vercel y Railway.
+* **Estructura base:** Se consolidó el uso de Clean Architecture y se definieron las convenciones de código y trabajo del equipo.
+
 ### 4.3. Validation Interviews
 #### 4.3.1. Diseño de Entrevistas
 #### 4.3.2. Registro de Entrevistas

@@ -614,6 +614,99 @@ A continuación se muestran evidencias del backend desplegado y todos los endpoi
 
 Tras finalizar el Sprint 1, hemos logrado implementar los endpoints de nuestro Backend, estableciendo un modelo de negocio y lógica sólida para **Klippr**. Durante este Sprint nos centramos en la implementación de los bounded contexts de **AdminProfile**, **Analytics**, **Authentication**, **Favorites**, **Promotion**, **Redemption**, **Users**, **Profile**, **Verification** los cuales se encuentran desplegados en **Railway** y se puede acceder a ellos a traves de la API. A continuación se presentan evidencias de la documentación de los endpoints:
 
+## Promotion Bounded Context
+
+Como parte del desarrollo del backend en **C#**, se ha consolidado el Bounded Context de **Promotion**. Este módulo es fundamental para la estrategia de marketing y ventas de la aplicación, encargado de gestionar la creación, configuración y publicación de promociones, ofertas y descuentos por parte de los negocios (Business).
+
+### Implementacion Tecnica de Promotion
+Se ha estructurado la lógica para permitir que los negocios definan promociones con diferentes reglas de negocio y restricciones. Los logros principales incluyen:
+
+* **Gestión de Promociones:** Implementación de flujos para la creación, lectura, actualización y eliminación (CRUD) de campañas promocionales.
+* **Segmentación y Reglas:** Capacidad para definir fechas de inicio y fin, cantidades limitadas y condiciones específicas para cada oferta.
+* **Integración Visual:** Endpoints diseñados para servir la información de manera estructurada a la aplicación móvil, facilitando su visualización para los consumidores.
+
+---
+
+## Evidencias de Ejecucion: Módulo Promotion
+
+A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
+
+![promotion-evidence-1](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-1.png)
+
+### 1. Gestion de Promociones (Promotion)
+
+El controlador de **Promotion** expone las funcionalidades críticas para el ciclo de vida de las ofertas:
+
+* **Endpoints de Promociones**: Permite a las empresas gestionar sus campañas y a los usuarios visualizarlas.
+
+- **Creación y Gestión de Ofertas** 
+
+![promotion-evidence-2](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-2.png)
+
+- **Detalles de la Promoción**
+
+![promotion-evidence-3](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-3.png)
+
+- **Visualización y Búsqueda**
+
+![promotion-evidence-4](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-4.png)
+
+- **Actualización de Estados**
+
+![promotion-evidence-5](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-5.png)
+
+- **Eliminación y Limpieza**
+
+![promotion-evidence-6](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-6.png)
+
+![promotion-evidence-7](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-7.png)
+
+
+## Redemption Bounded Context
+
+Como parte del desarrollo del backend en **C#**, se ha consolidado el Bounded Context de **Redemption**. Este módulo actúa como el motor transaccional para la adquisición y canje de promociones, vinculando directamente a los consumidores con las ofertas de los negocios.
+
+### Implementacion Tecnica de Redemption
+Se ha diseñado un flujo robusto y transaccional para garantizar la integridad de cada canje. Los logros principales incluyen:
+
+* **Generación de Códigos Unicos:** Creación de identificadores (como códigos QR o alfanuméricos) seguros y únicos para cada redención.
+* **Validación en Tiempo Real:** Verificación inmediata de la validez de una promoción (fechas, stock, estado) antes de permitir el canje.
+* **Historial de Transacciones:** Registro inmutable de todos los canjes realizados, permitiendo tanto al usuario como al negocio mantener un seguimiento claro de la actividad.
+
+---
+
+## Evidencias de Ejecucion: Módulo Redemption
+
+A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
+
+![redemption-evidence-1](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-1.png)
+
+### 1. Gestion de Canjes (Redemption)
+
+El controlador de **Redemption** expone las funcionalidades esenciales para la validación y ejecución del canje:
+
+* **Endpoints de Canjes**: Facilitan la interacción segura entre la solicitud del consumidor y la aprobación del sistema.
+
+- **Proceso de Canje (Redemption Process)** 
+
+![redemption-evidence-2](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-2.png)
+
+- **Validación de Parámetros**
+
+![redemption-evidence-3](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-3.png)
+
+- **Historial de Redenciones**
+
+![redemption-evidence-4](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-4.png)
+
+- **Verificación de Códigos**
+
+![redemption-evidence-5](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-5.png)
+
+- **Confirmación de Éxito**
+
+![redemption-evidence-6](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-6.png)
+
 
 ## IAM Bounded Context
 

@@ -95,6 +95,45 @@ Se utiliza la estrategia **GitHub Flow** con las siguientes ramas principales:
 ##### 4.2.1.3. Development Evidence for Sprint Review
 ##### 4.2.1.4. Testing Suite Evidence for Sprint Review
 ##### 4.2.1.5. Execution Evidence for Sprint Review
+
+**POST - METRICS**
+
+<p align="center">
+    <img src="assets/chapter04/sprint1-analytics/post-metrics.png">
+</p>
+
+<p align="center">
+    <img src="assets/chapter04/sprint1-analytics/post-metrics2.png">
+</p>
+
+**GET - BusinessDashboardId**
+
+<p align="center">
+    <img src="assets/chapter04/sprint1-analytics/get-dashboard.png">
+</p>
+
+**GET - CampaignId**
+
+<p align="center">
+    <img src="assets/chapter04/sprint1-analytics/get-campaign.png">
+</p>
+
+**POST - AbuseReports**
+
+<p align="center">
+    <img src="assets/chapter04/sprint1-analytics/post-abuse.png">
+</p>
+
+<p align="center">
+    <img src="assets/chapter04/sprint1-analytics/post-abuse2.png">
+</p>
+
+**GET - AbuseReports**
+
+<p align="center">
+    <img src="assets/chapter04/sprint1-analytics/get-abuse.png">
+</p>
+
 ##### 4.2.1.6. Services Documentation Evidence for Sprint Review
 ##### 4.2.1.7. Software Deployment Evidence for Sprint Review
 ##### 4.2.1.8. Team Collaboration Insights during Sprint

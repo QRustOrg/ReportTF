@@ -2,7 +2,7 @@
 
 <br>
 
-<img src="htAV1s://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" alt="Logo UPC" width="200"/>
+![upc-logo](/assets/Integrantes/logo-UPC.png)
 
 <br>
 

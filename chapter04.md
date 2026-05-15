@@ -592,6 +592,24 @@ En esta sección se ubican los enlaces finales de navegación, información de c
 
 **Backend**
 
+A continuación se muestran evidencias del backend desplegado y todos los endpoints desarrollados:
+
+![Backend-1](/assets/chapter04/execution-evidence/backend/backend-1.png)
+
+![Backend-2](/assets/chapter04/execution-evidence/backend/backend-2.png)
+
+![Backend-3](/assets/chapter04/execution-evidence/backend/backend-3.png)
+
+![Backend-4](/assets/chapter04/execution-evidence/backend/backend-4.png)
+
+**Mobile App**
+
+![Mobile App](/assets/chapter04/execution-evidence/mobile/klippr-mobile-1.png)
+
+##### 4.2.1.6. Services Documentation Evidence for Sprint Review
+
+
+
 ## IAM Bounded Context
 
 Como parte del desarrollo del backend en **C#**, se ha consolidado el Bounded Context de **IAM (Identity and Access Management)**. Este modulo es el pilar de seguridad de la aplicacion, encargado de gestionar la identidad de los usuarios, la autenticacion y la autorizacion basada en roles para los perfiles de Consumer y Business.
@@ -664,7 +682,6 @@ Se han expuesto los endpoints necesarios para la creación (**POST**), actualiza
 
 ![sw-bcprofile](/assets/chapter04/vercel-deploy/evidences-sprint/profile/userlog.png)
 
-##### 4.2.1.6. Services Documentation Evidence for Sprint Review
 ##### 4.2.1.7. Software Deployment Evidence for Sprint Review
 ##### 4.2.1.8. Team Collaboration Insights during Sprint
 ### 4.3. Validation Interviews

@@ -531,10 +531,68 @@ Posteriormente el proyecto fue desplegado en **Railway** para su publicación, p
 </table>
 
 ##### 4.2.1.4. Testing Suite Evidence for Sprint Review
+
+Por el momento no sea han realizado pruebas manuales de navegación entre pantallas. El producto en **Android Studio** aún está en versión estática. **(Solo pantallas visibles en Kotlin).**
+
 ##### 4.2.1.5. Execution Evidence for Sprint Review
 
+Durante este primer Sprint logramos realizar la implementación del Landing page, Backend y Mobile App, sin embargo este último por el momento se realizó de forma local.
 
-**IAM**
+A continuación se presentan evidencias de ejecución de los 3 productos:
+
+**Landing Page**
+
+**Hero Section**: 
+
+En esta sección se colocó un mensaje que atraiga la atención del visitante, junto con un botón call to action para posteriormente enviarlo a la aplicación móvil desplegada.
+
+![Hero Section](/assets/chapter04/execution-evidence/landing-page/klippr-hero.png)
+
+**Problem Section**:
+
+En esta sección se expone la problemática principal que nuestros usuarios enfrentan, generando empatía y resaltando la necesidad de nuestra solución.
+
+![Problem Section](/assets/chapter04/execution-evidence/landing-page/klippr-problem.png)
+
+**How It Works Section**:
+
+En esta sección se detalla el funcionamiento paso a paso de la aplicación, guiando al visitante de forma sencilla sobre cómo empezar a utilizarla.
+
+![How It Works Section](/assets/chapter04/execution-evidence/landing-page/klippr-howitworks.png)
+
+**Benefits Bussiness Section**:
+
+En esta sección se destacan los beneficios que Klippr ofrece a los negocios asociados, incentivándolos a afiliarse y aumentar sus ventas.
+
+![Benefits Bussiness Section](/assets/chapter04/execution-evidence/landing-page/klippr-benefits-bussiness.png)
+
+**Benefits Client Section**:
+
+En esta sección se muestran las ventajas principales para los usuarios finales, enfatizando el ahorro y la conveniencia que brinda la plataforma.
+
+![Benefits Client Section](/assets/chapter04/execution-evidence/landing-page/klippr-benefits-client.png)
+
+**Testimonials Section**:
+
+En esta sección se presentan opiniones y experiencias reales de usuarios, generando confianza en el producto mediante validación social.
+
+![Testimonials Section](/assets/chapter04/execution-evidence/landing-page/klippr-testimonials.png)
+
+**Comparison Section**:
+
+En esta sección se realiza una comparativa frente a otras alternativas, subrayando nuestra propuesta de valor y ventajas competitivas.
+
+![Comparison Section](/assets/chapter04/execution-evidence/landing-page/klippr-comparison.png)
+
+**Footer Section**:
+
+En esta sección se ubican los enlaces finales de navegación, información de contacto y políticas de privacidad para facilitar el soporte al usuario.
+
+![Footer Section](/assets/chapter04/execution-evidence/landing-page/klippr-footer.png)
+
+**Backend**
+
+## IAM Bounded Context
 
 Como parte del desarrollo del backend en **C#**, se ha consolidado el Bounded Context de **IAM (Identity and Access Management)**. Este modulo es el pilar de seguridad de la aplicacion, encargado de gestionar la identidad de los usuarios, la autenticacion y la autorizacion basada en roles para los perfiles de Consumer y Business.
 

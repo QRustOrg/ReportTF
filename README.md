@@ -452,7 +452,6 @@ Para el desarrollo del informe perteneciente a la entrega del TF, se dividió la
   </thead>
   <tbody>
     <tr>
-      <td><b>7.c1. Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de ingeniería de software</b></td>
       <td>
         <b>AV1: Bonifacio Jaramillo, Samuel Jesus:</b><br> Al desarrollar el Tactical-Level Domain-Driven Design del Bounded Context IAM, el desarrollo del Bounded Context Profile, el Keynote y las Ideas de User Stories, aprendí más acerca de los conceptos de arquitectura de software y metodologías ágiles, actualizando mis conocimientos en patrones de diseño y gestión de identidades para aplicarlos en soluciones reales.<br> 
         <b>Castro Pariona, Jefferson Ernesto</b><br>Al realizar la redacción de los Capítulos I y II del informe, participar en la evaluación del Product Backlog y elaborar los diagramas de Bounded Context utilizando el C4 model, actualicé significativamente mis conocimientos en arquitectura de software, modelado de contextos de negocio y herramientas de visualización arquitectónica. Esta experiencia me permitió comprender la importancia de una sólida estructura arquitectónica en la definición de soluciones de ingeniería de software.<br>
@@ -481,7 +480,11 @@ Para el desarrollo del informe perteneciente a la entrega del TF, se dividió la
       <td><b>AV1:</b> Los estudiantes lograron actualizar exitosamente sus conocimientos profesionales mediante la aplicación de metodologías de Domain-Driven Design, análisis competitivo y arquitectura de software. El manejo de responsabilidades asignadas permitió que cada miembro brinde su aporte en cada área específica mientras contribuía al desarrollo del proyecto, demostrando la capacidad de adquirir y aplicar nuevos conocimientos de manera efectiva en un contexto real de desarrollo de software.<br><br><b>TB1:</b> El equipo logró actualizar exitosamente sus conocimientos técnicos a través del desarrollo del Backend y la Landing Page en el Sprint 1. Mediante la implementación práctica de Bounded Contexts, el diseño de la interfaz de usuario interactiva y la configuración de entornos de despliegue en la nube, cada miembro consolidó habilidades clave para la ingeniería de software moderna en un entorno real de trabajo ágil.</td>
     </tr>
     <tr>
-      <td><b>7.c2. Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de tecnologías de ingeniería de software</b></td>
+      <td>
+        <b>
+          7.c2. Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de tecnologías de ingeniería de software
+        </b>
+      </td>
       <td>
         <b>AV1</b><br>
         <b>Bonifacio Jaramillo, Samuel Jesus</b><br>Al asumir el desarrollo de los Capítulos I y II del informe, incluyendo el diseño de User Stories, el análisis competitivo, el Lean UX Process y la arquitectura de software orientada a Domain-Driven Design, reconocí que las tecnologías y metodologías aplicadas en ingeniería de software evolucionan constantemente. Esta experiencia me motivó a profundizar en nuevos conceptos como EventStorming y Bounded Contexts, reforzando mi compromiso con el aprendizaje continuo como pilar fundamental para el desarrollo profesional y la entrega de soluciones de calidad.<br>

@@ -228,10 +228,93 @@ Vista del Mockup de **Landing Page** completo:
 
 #### 3.1.4.1. Mobile Applications Wireframes
 
+En esta sección, se presentaran los wireframes de los mobile applications de ambos segmentos objetivo:
+
+**Segmento Objetivo 1: Consumidores**
+
+<p align="center">
+    <img src="assets/chapter03/wireframes-login.png">
+</p>
+
+<p align="center">
+    <img src="assets/chapter03/wireframes-consumer1.png">
+</p>
+
+<p align="center">
+    <img src="assets/chapter03/wireframes-consumer2.png">
+</p>
+
+<p align="center">
+    <img src="assets/chapter03/wireframes-consumer3.png">
+</p>
+
+**Segmento Objetivo 2: Empresas**
+
+<p align="center">
+    <img src="assets/chapter03/wireframes-business1.png">
+</p>
+
+<p align="center">
+    <img src="assets/chapter03/wireframes-business2.png">
+</p>
+
+
 #### 3.1.4.2. Mobile Applications Wireflow Diagrams
+
+En esta seccion presentaremos nuestro wireflow diagram que representa el flujo que siguen de nuestros wireframes:
+
+<p align="center">
+  <img src="./assets/chapter03/wireflow-diagram.png" width="900"/>
+</p>
 
 #### 3.1.4.3. Mobile Applications Mock-ups
 
+En esta sección, se presentaran los mockups de los mobile applications de ambos segmentos objetivo:
+
+**Segmento Objetivo 1: Consumidores**
+
+<p align="center">
+    <img src="assets/chapter03/mockups-consumer1.png">
+</p>
+
+<p align="center">
+    <img src="assets/chapter03/mockups-consumer2.png">
+</p>
+
+<p align="center">
+    <img src="assets/chapter03/mockups-consumer3.png">
+</p>
+
+**Segmento Objetivo 2: Empresas**
+
+<p align="center">
+    <img src="assets/chapter03/mockups-business1.png">
+</p>
+
+<p align="center">
+    <img src="assets/chapter03/mockups-consumer2.png">
+</p>
+
+<p align="center">
+    <img src="assets/chapter03/mockups-consumer3.png">
+</p>
+
+
 #### 3.1.4.4. Mobile Applications User Flow Diagrams
 
+En esta seccion presentaremos nuestro User Flow Diagram que representa el flujo que siguen de nuestros mockups junto con User Goals:
+
+<p align="center">
+    <img src="assets/chapter03/userflow-diagram.png">
+</p>
+
 #### 3.1.4.5. Mobile Applications Prototyping
+
+Para nuestro prototipo, lo dividimos en dos flows como se muestra a continuación:
+
+<p align="center">
+    <img src="assets/chapter03/prototype-klippr.png">
+</p>
+
+Link del prototipo: https://www.figma.com/proto/qrrjkC1ZwEIkvVBVWlxXn1/Aplicaciones-Moviles-2026-1?node-id=298-4778&p=f&viewport=423%2C98%2C0.11&t=4VHF9n7J6Ik5nvdC-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=298%3A4778&show-proto-sidebar=1&page-id=25%3A2
+

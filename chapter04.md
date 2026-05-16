@@ -169,7 +169,7 @@ val sum = x + y
 No se deben utilizar imports comodín, ejemplo: `import com.example.*`. Solo se deben importar las clases necesarias.
 
 ```kotlin
-import com.frock.chapaturuta.core.ui.theme.PrimaryColor
+import com.frock.klippr.core.ui.theme.PrimaryColor
 import androidx.compose.material3.Text
 ```
 
@@ -204,7 +204,7 @@ fun HomeScreen() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Welcome to ChapaTuRuta!",
+            text = "Welcome to Klippr!",
             style = MaterialTheme.typography.titleLarge
         )
         Spacer(modifier = Modifier.height(20.dp))

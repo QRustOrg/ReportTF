@@ -2,7 +2,7 @@
 
 <br>
 
-<img src="/assets/Integrantes/logo-UPC.png" alt="upc-logo" width="200"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" alt="Logo UPC" width="200"/>
 
 <br>
 
@@ -174,6 +174,18 @@ Para evidenciar nuestros avances y demostrar que todos los miembros del equipo p
 En el analítico de Pulse se evidencian los commits que realizó cada integrante del equipo durante el periodo definido para esta primera entrega.
 
 ![PulseGraph](assets/project-insights/pulse-graph.png)
+
+### Reporte de Colaboración Entrega TB1
+
+En esta entrega se evidencian las contribuciones realizadas por cada integrante del equipo para el desarrollo de la **Landing Page** y el **Backend**. A continuación se presentan las capturas obtenidas de los analíticos de colaboración en GitHub (Insights) correspondientes a cada repositorio durante este periodo.
+
+**Landing Page Contributors**
+
+![Landing Page Insights](assets/project-insights/tb1/landing-insights.png)
+
+**Backend Contributors**
+
+![Backend Insights](assets/project-insights/tb1/backend-insights.png)
 
 ---
 
@@ -452,6 +464,11 @@ Para el desarrollo del informe perteneciente a la entrega del TF, se dividió la
   </thead>
   <tbody>
     <tr>
+      <td>
+        <b>
+          7.c1. Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de ingeniería de software
+        </b>
+      </td>
       <td>
         <b>AV1: Bonifacio Jaramillo, Samuel Jesus:</b><br> Al desarrollar el Tactical-Level Domain-Driven Design del Bounded Context IAM, el desarrollo del Bounded Context Profile, el Keynote y las Ideas de User Stories, aprendí más acerca de los conceptos de arquitectura de software y metodologías ágiles, actualizando mis conocimientos en patrones de diseño y gestión de identidades para aplicarlos en soluciones reales.<br> 
         <b>Castro Pariona, Jefferson Ernesto</b><br>Al realizar la redacción de los Capítulos I y II del informe, participar en la evaluación del Product Backlog y elaborar los diagramas de Bounded Context utilizando el C4 model, actualicé significativamente mis conocimientos en arquitectura de software, modelado de contextos de negocio y herramientas de visualización arquitectónica. Esta experiencia me permitió comprender la importancia de una sólida estructura arquitectónica en la definición de soluciones de ingeniería de software.<br>

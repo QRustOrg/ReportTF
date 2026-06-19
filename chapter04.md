@@ -1150,7 +1150,6 @@ El backend fue desplegado en **Railway**, permitiendo su acceso público para pr
 
 ##### 4.2.2.4. Testing Suite Evidence for Sprint Review
 
-
 ##### 4.2.2.5. Execution Evidence for Sprint Review
 
 Durante este segundo Sprint logramos realizar la implementación del Mobile App y el Backend. El Backend fue desplegado para su validación, mientras que la Mobile App se ejecutó de forma local.
@@ -1225,19 +1224,19 @@ Desde la sección **Favoritos**, el usuario puede visualizar las promociones que
 
 A continuación se muestran evidencias del Backend desplegado actualizado, su documentación y los endpoints desarrollados:
 
-![Backend-1](\assets\chapter04\sprint2-backend\backend-1.png)
+![Backend-1](/assets/chapter04/sprint2-backend/backend-1.png)
 
-![Backend-2](\assets\chapter04\sprint2-backend\backend-2.png)
+![Backend-2](/assets/chapter04/sprint2-backend/backend-2.png)
 
-![Backend-3](\assets\chapter04\sprint2-backend\backend-3.png)
+![Backend-3](/assets/chapter04/sprint2-backend/backend-3.png)
 
-![Backend-4](\assets\chapter04\sprint2-backend\backend-4.png)
+![Backend-4](/assets/chapter04/sprint2-backend/backend-4.png)
 
-![Backend-5](\assets\chapter04\sprint2-backend\backend-5.png)
+![Backend-5](/assets/chapter04/sprint2-backend/backend-5.png)
 
-![Backend-6](\assets\chapter04\sprint2-backend\backend-6.png)
+![Backend-6](/assets/chapter04/sprint2-backend/backend-6.png)
 
-![Backend-7](\assets\chapter04\sprint2-backend\backend-7.png)
+![Backend-7](/assets/chapter04/sprint2-backend/backend-7.png)
 
 ##### 4.2.2.6. Services Documentation Evidence for Sprint Review
 
@@ -1261,7 +1260,7 @@ Se ha estructurado la lógica para permitir que los negocios definan promociones
 
 A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
 
-![promotion-evidence-0](\assets\chapter04\sprint2-promotion\promos-0.png)
+![promotion-evidence-0](/assets/chapter04/sprint2-promotion/promos-0.png)
 
 ### Gestion de Promociones (Promotion)
 
@@ -1271,55 +1270,55 @@ El controlador de **Promotion** expone las funcionalidades críticas para el cic
 
 Permite registrar nuevas promociones dentro de la plataforma, definiendo información como nombre, descripción, porcentaje de descuento, fechas de vigencia y cantidad disponible.
 
-![promotion-evidence-1](\assets\chapter04\sprint2-promotion\promos-1.png)
+![promotion-evidence-1](/assets/chapter04/sprint2-promotion/promos-1.png)
 
 * **Listado General de Promociones**
 
 Permite consultar todas las promociones registradas en el sistema para su administración y visualización.
 
-![promotion-evidence-2](\assets\chapter04\sprint2-promotion\promos-2.png)
+![promotion-evidence-2](/assets/chapter04/sprint2-promotion/promos-2.png)
 
 * **Consulta de Promoción por Identificador**
 
 Permite obtener la información detallada de una promoción específica mediante su identificador único.
 
-![promotion-evidence-3](\assets\chapter04\sprint2-promotion\promos-3.png)
+![promotion-evidence-3](/assets/chapter04/sprint2-promotion/promos-3.png)
 
 * **Actualización de Promociones**
 
 Permite modificar la información de una promoción existente, incluyendo datos descriptivos, fechas de vigencia y condiciones asociadas.
 
-![promotion-evidence-4](\assets\chapter04\sprint2-promotion\promos-4.png)
+![promotion-evidence-4](/assets/chapter04/sprint2-promotion/promos-4.png)
 
 * **Eliminación de Promociones**
 
 Permite eliminar promociones registradas en el sistema cuando ya no sean necesarias o deban ser retiradas de forma permanente.
 
-![promotion-evidence-5](\assets\chapter04\sprint2-promotion\promos-5.png)
+![promotion-evidence-5](/assets/chapter04/sprint2-promotion/promos-5.png)
 
 * **Listado de Promociones Activas**
 
 Permite consultar únicamente las promociones que se encuentran vigentes y disponibles para ser utilizadas por los consumidores.
 
-![promotion-evidence-6](\assets\chapter04\sprint2-promotion\promos-6.png)
+![promotion-evidence-6](/assets/chapter04/sprint2-promotion/promos-6.png)
 
 * **Listado de Promociones por Negocio**
 
 Permite obtener todas las promociones asociadas a un negocio específico, facilitando la gestión individual de sus campañas.
 
-![promotion-evidence-7](\assets\chapter04\sprint2-promotion\promos-7.png)
+![promotion-evidence-7](/assets/chapter04/sprint2-promotion/promos-7.png)
 
 * **Publicación de Promociones**
 
 Permite cambiar el estado de una promoción para que sea visible y accesible para los consumidores dentro de la aplicación.
 
-![promotion-evidence-8](\assets\chapter04\sprint2-promotion\promos-8.png)
+![promotion-evidence-8](/assets/chapter04/sprint2-promotion/promos-8.png)
 
 * **Cancelación de Promociones**
 
 Permite desactivar una promoción previamente publicada, evitando que continúe disponible para nuevos canjes.
 
-![promotion-evidence-9](\assets\chapter04\sprint2-promotion\promos-9.png)
+![promotion-evidence-9](/assets/chapter04/sprint2-promotion/promos-9.png)
 
 ## Redemption Bounded Context
 
@@ -1390,7 +1389,7 @@ La solución fue desarrollada utilizando **ASP.NET Core**, **Entity Framework Co
 
 A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
 
-![favorite-evidence-0](\assets\chapter04\sprint2-favorite\favorites-0.png)
+![favorite-evidence-0](/assets/chapter04/sprint2-favorite/favorites-0.png)
 
 ## Evidencias de Ejecución: Módulo Favorites
 
@@ -1400,25 +1399,25 @@ El controlador de **Favorites** expone las funcionalidades críticas para el cic
 
 Permite consultar todas las promociones marcadas como favoritas por un usuario específico, facilitando el acceso rápido a ofertas previamente guardadas.
 
-![favorite-evidence-1](\assets\chapter04\sprint2-favorite\favorites-1.png)
+![favorite-evidence-1](/assets/chapter04/sprint2-favorite/favorites-1.png)
 
 * **Consulta de Favorito por Identificador**
 
 Permite obtener la información detallada de un registro de favorito mediante su identificador único.
 
-![favorite-evidence-2](\assets\chapter04\sprint2-favorite\favorites-2.png)
+![favorite-evidence-2](/assets/chapter04/sprint2-favorite/favorites-2.png)
 
 * **Registro de Favoritos**
 
 Permite asociar una promoción a la lista de favoritos de un usuario, aplicando validaciones para evitar registros duplicados y garantizar la integridad de los datos.
 
-![favorite-evidence-3](\assets\chapter04\sprint2-favorite\favorites-3.png)
+![favorite-evidence-3](/assets/chapter04/sprint2-favorite/favorites-3.png)
 
 * **Eliminación de Favoritos**
 
 Permite remover una promoción previamente guardada en la lista de favoritos de un usuario, manteniendo actualizadas sus preferencias dentro de la plataforma.
 
-![favorite-evidence-4](\assets\chapter04\sprint2-favorite\favorites-4.png)
+![favorite-evidence-4](/assets/chapter04/sprint2-favorite/favorites-4.png)
 
 # Community Bounded Context
 

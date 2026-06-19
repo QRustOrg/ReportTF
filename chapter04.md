@@ -393,10 +393,6 @@ También se añadió el **logo oficial** de la aplicación en todas las vistas p
 
 ##### 4.2.1.3. Development Evidence for Sprint Review
 
-* **Mobile Application**
-
-<br>
-
 * **Landing Page**
 
 En el desarrollo de la **Landing Page**, la implementación se llevó a cabo por todos los integrantes del grupo. Tanto en entorno local como en nube **(Github)**.
@@ -706,8 +702,6 @@ El controlador de **Redemption** expone las funcionalidades esenciales para la v
 
 ![redemption-evidence-6](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-6.png)
 
-
-
 ## IAM Bounded Context
 
 Como parte del desarrollo del backend en **C#**, se ha consolidado el Bounded Context de **IAM (Identity and Access Management)**. Este modulo es el pilar de seguridad de la aplicacion, encargado de gestionar la identidad de los usuarios, la autenticacion y la autorizacion basada en roles para los perfiles de Consumer y Business.
@@ -957,7 +951,511 @@ Durante el desarrollo del Sprint 1, el equipo de desarrollo mantuvo una comunica
 * **Despliegue:** Se automatizó el pase a producción vinculando GitHub directamente con Vercel y Railway.
 * **Estructura base:** Se consolidó el uso de Clean Architecture y se definieron las convenciones de código y trabajo del equipo.
 
+#### 4.2.2. Sprint 2
+##### 4.2.2.1. Sprint Planning 2
+
+En este segundo sprint, el enfoque principal fue la implementación de historias de usuario en la **Landing Page** y el primer prototipo de **Klippr**, en resumen: implementar las principales vistas funcionales y establecer la navegación entre ellas.
+
+Las tareas se distribuyeron de esta forma:
+
+* **Samuel Bonifacio**: Despliegue de **Landing Page & Backend**(Creación de BCS: Promotion & Redemption), además de la documentación de estos procesos.<br>
+* **Julio Guillen**: <br> Creación los Bounded Contexts de Community y Setting, además de la documentación de estos procesos.<br>
+* **Alberto Ponce**: Creacion de BC: Favorites, ademas de encargarme de todo el apartado de las Validation Interviews <br> 
+* **Alejandro Galindo**: <br>
+* **Jefferson Castro**: <br>
+
+También se añadió el **logo oficial** de la aplicación en todas las vistas principales para **unificar la identidad visual**.
+----------
+En este segundo sprint se consolidó la implementación de las funcionalidades principales del producto, logrando el despliegue de la Landing Page y del backend,así como el desarrollo de los principales Bounded Contexts que soportan la lógica de negocio de la aplicación.
+
+Las responsabilidades del equipo se distribuyeron de la siguiente manera:
+
+- **Samuel Bonifacio:** Responsable del despliegue de la Landing Page y del Backend en entornos públicos. Además, desarrolló los Bounded Contexts de **Settings**, **Dashboard** y **Redemption**, así como la documentación técnica correspondiente.
+
+- **Julio Guillén:** Encargado del desarrollo del Bounded Context **Promotion**, además de la elaboración de la documentación asociada a dichos componentes.
+
+- **Alberto Ponce:** Responsable del desarrollo del Bounded Context de **Favorites**.
+
+- **Alejandro Galindo:** Responsable de las funcionalidades asignadas dentro del Bounded Context de **Community**, colaborando en la integración de componentes y validación de los flujos de usuario.
+
+- **Jefferson Castro:** Responsable de las funcionalidades asignadas dentro del Sprint 2, participando en la implementación.
+
+Adicionalmente, se realizaron pruebas funcionales de las características implementadas para verificar su correcto funcionamiento y preparar el producto para las actividades de validación correspondientes.
+
+##### 4.2.2.2. Sprint Backlog 2
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr>
+    <th>ID</th>
+    <th>Historia de Usuario</th>
+    <th>Descripción</th>
+    <th>Prioridad</th>
+    <th>Responsable</th>
+    <th>Estado</th>
+  </tr>
+
+  <tr>
+    <td>US-04</td>
+    <td>Generar código QR</td>
+    <td>Como usuario, quiere generar un código QR único para canjear promociones disponibles.</td>
+    <td>Alta</td>
+    <td>Samuel</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-20</td>
+    <td>Guardar promociones</td>
+    <td>Como usuario, quiere guardar promociones favoritas para acceder a ellas posteriormente.</td>
+    <td>Alta</td>
+    <td>Alberto</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-21</td>
+    <td>Buscar promociones</td>
+    <td>Como usuario, quiere buscar promociones por nombre para encontrarlas fácilmente.</td>
+    <td>Alta</td>
+    <td>Samuel</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-17</td>
+    <td>Registro</td>
+    <td>Como usuario, quiere registrarse en la plataforma para acceder a sus funcionalidades.</td>
+    <td>Alta</td>
+    <td>Jefferson</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-18</td>
+    <td>Login</td>
+    <td>Como usuario, quiere iniciar sesión de forma segura en la aplicación.</td>
+    <td>Alta</td>
+    <td>Jefferson</td>
+    <td>Completado</td>
+  </tr>
+</table>
+
+##### 4.2.2.3. Development Evidence for Sprint Review
+
+* **Mobile Application**
+
+En el desarrollo del **Frontend**, la implementación fue realizada de manera colaborativa por todos los integrantes del equipo, trabajando tanto en entorno local como mediante el uso de **GitHub** como repositorio principal de control de versiones.
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr>
+    <th>Repository</th>
+    <th>Branch</th>
+    <th>Commit ID</th>
+    <th>Commit Message</th>
+    <th>Author</th>
+    <th>Committed on (Date)</th>
+  </tr>
+  
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>db0df97</td>
+    <td>feat: add conextion with db</td>
+    <td>JeffersonCastroPariona</td>
+    <td>Jun 18, 2026</td>
+  </tr>
+  
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>49d3c2c</td>
+    <td>feat: add review section</td>
+    <td>AlejandroG12970</td>
+    <td>Jun 17, 2026</td>
+  </tr>
+  
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>3ee4839</td>
+    <td>fix: update Dashboard</td>
+    <td>aponceperales</td>
+    <td>Jun 17, 2026</td>
+  </tr>
+
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>57c2d19</td>
+    <td>feat: added Promos, Community and Favorites</td>
+    <td>aponceperales</td>
+    <td>Jun 15, 2026</td>
+  </tr>
+</table>
+
+<br>
+
+* **Backend**
+
+En el desarrollo del **Backend**, la implementación también fue realizada de manera colaborativa por todos los integrantes del equipo, utilizando **GitHub** como sistema de control de versiones y trabajo distribuido.
+
+El backend fue desplegado en **Railway**, permitiendo su acceso público para pruebas, validación de endpoints y verificación del funcionamiento de los Bounded Contexts implementados durante el Sprint 2.
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr>
+    <th>Repository</th>
+    <th>Branch</th>
+    <th>Commit ID</th>
+    <th>Commit Message</th>
+    <th>Author</th>
+    <th>Committed on (Date)</th>
+  </tr>
+
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>ca76253</td>
+    <td>feat: merge profile branch updates into main</td>
+    <td>samuelbonifacio015</td>
+    <td>Jun 19, 2026</td>
+  </tr>
+
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>dea71a2</td>
+    <td>fix: add parameterless constructor to SavingsStatistics for EF Core materialization</td>
+    <td>samuelbonifacio015</td>
+    <td>MJunay 18, 2026</td>
+  </tr>
+
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>eba7f36</td>
+    <td>feat: update favorites infrastructure, domain and shared</td>
+    <td>aponceperales</td>
+    <td>Jun 14, 2026</td>
+  </tr>
+
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>341d71d</td>
+    <td>feat: update redemption infrastructure, aggregate</td>
+    <td>samuelbonifacio015</td>
+    <td>Jun 11, 2026</td>
+  </tr>
+</table>
+
+##### 4.2.2.4. Testing Suite Evidence for Sprint Review
+
+
+##### 4.2.2.5. Execution Evidence for Sprint Review
+
+Durante este segundo Sprint logramos realizar la implementación del Mobile App y el Backend. El Backend fue desplegado para su validación, mientras que la Mobile App se ejecutó de forma local.
+
+A continuación, se presentan evidencias de ejecución de los dos productos:
+
+**Mobile App**
+
+A continuación se muestran evidencias de la Mobile App ejecutada localmente y de las funcionalidades desarrolladas durante el Sprint 2:
+
+### Profile
+
+### Dashboard
+
+#### Pantalla del Dashboard — Opción para Dejar Reseña
+
+Desde la sección **Dashboard**, el usuario puede visualizar de manera centralizada la información más relevante de su cuenta. Esta vista presenta indicadores de promociones disponibles y otros promociones de interés. De esta manera, el Dashboard facilita una navegación más eficiente y una mejor experiencia de usuario al concentrar la información esencial en una sola pantalla.
+
+<p align="center">
+    <img src="assets\chapter04\sprint2-dashboard\dashboard.png">
+</p>
+
+### Promotion
+
+#### Pantalla de Promotion — Pantalla con promociones
+
+Desde la sección **Promotion**, el usuario puede visualizar el catálogo de promociones disponibles dentro de la aplicación. Cada promoción muestra información como su imagen, nombre y descripción breve, permitiendo al usuario explorar las diferentes opciones disponibles de manera rápida y organizada.
+
+<p align="center">
+    <img src="assets\chapter04\sprint2-promotion\promos-view.png">
+</p>
+
+#### Pantalla de Promotion — Pantalla con promocion elegida
+
+Al seleccionar una promoción, el usuario accede a una vista detallada donde puede consultar información completa sobre la oferta. Esta pantalla presenta datos como la descripción de la promoción, el porcentaje de descuento, condiciones de uso, fecha de vigencia y demás detalles relevantes. Asimismo, con la opcion de aceptar las condiciones del uso antes de utilizarla.
+
+<p align="center">
+    <img src="assets\chapter04\sprint2-promotion\promos-chosen.png">
+</p>
+
+### Redemption
+
+#### Pantalla de Redemption — Pantalla del QR
+
+Una vez aceptados los términos y condiciones, el usuario accede a la pantalla de la promoción, **Redemption**, donde se genera y muestra un código QR único asociado al beneficio seleccionado, para garantizar una experiencia de canje rápida y segura.
+
+<p align="center">
+    <img src="assets\chapter04\sprint2-redemption\redemption.png">
+</p>
+
+### Favorites
+
+#### Pantalla de Favorites — Pantalla vacia
+
+Desde la sección **Favoritos**, cuando no existen promociones registradas, la pantalla muestra un mensaje informativo indicando que la lista se encuentra vacía.
+
+<p align="center">
+    <img src="assets\chapter04\sprint2-favorite\favorite-empty.png">
+</p>
+
+#### Pantalla de Favorites — Pantalla con promociones
+
+Desde la sección **Favoritos**, el usuario puede visualizar las promociones que ha marcado previamente como favoritas. En este caso, la pantalla presenta dos promociones registradas, mostrando información relevante como la imagen, el nombre de la promoción y sus principales características. Esta funcionalidad permite al usuario acceder rápidamente a la promo de su interés y gestionarlas de manera sencilla.
+
+<p align="center">
+    <img src="assets\chapter04\sprint2-favorite\favorite-promos.png">
+</p>
+
+## Community
+
+**Backend (Actualizado)**
+
+A continuación se muestran evidencias del Backend desplegado actualizado, su documentación y los endpoints desarrollados:
+
+![Backend-1](/assets\chapter04\sprint2-backend\backend-1.png)
+
+![Backend-2](/assets\chapter04\sprint2-backend\backend-2.png)
+
+![Backend-3](/assets\chapter04\sprint2-backend\backend-3.png)
+
+![Backend-4](/assets\chapter04\sprint2-backend\backend-4.png)
+
+![Backend-5](/assets\chapter04\sprint2-backend\backend-5.png)
+
+![Backend-6](/assets\chapter04\sprint2-backend\backend-6.png)
+
+![Backend-7](/assets\chapter04\sprint2-backend\backend-7.png)
+
+##### 4.2.2.6. Services Documentation Evidence for Sprint Review
+
+Tras culminar el Sprint 2, se completó el desarrollo de los endpoints del backend, consolidando la lógica de negocio y la arquitectura funcional de **Klippr**. En esta iteración se trabajó principalmente en la implementación de los bounded contexts de **Authentication**, **Favorites**, **Promotion**, **Redemption**, **Users** y **Profile**, los cuales se encuentran desplegados en **Railway** y disponibles para su consumo mediante la API. A continuación, se presentan las evidencias correspondientes a la documentación de los endpoints implementados:
+
+# Profile Bounded Context
+
+## Promotion Bounded Context
+
+Como parte del desarrollo del backend en **C#**, se ha consolidado el Bounded Context de **Promotion**, módulo encargado de la administración de promociones dentro de **Klippr**. Este componente permite a los negocios crear y gestionar ofertas que posteriormente serán visualizadas y utilizadas por los usuarios de la plataforma.
+
+### Implementacion Tecnica de Promotion
+
+Se ha estructurado la lógica para permitir que los negocios definan promociones con diferentes reglas de negocio y restricciones. Los logros principales incluyen:
+
+* **Gestión de Promociones:** Implementación de funcionalidades CRUD para la creación, consulta, actualización y eliminación de promociones.
+* **Configuración de Ofertas:** Desarrollo de mecanismos para definir atributos como título, descripción, porcentaje de descuento, fecha de inicio, fecha de expiración y cantidad disponible.
+* **Validaciones de Negocio:** Incorporación de reglas que garantizan la validez y disponibilidad de las promociones según las condiciones establecidas por cada negocio.
+
+## Evidencias de Ejecucion: Módulo Promotion
+
+A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
+
+![promotion-evidence-0](/assets\chapter04\sprint2-promotion\promos-0.png)
+
+### Gestion de Promociones (Promotion)
+
+El controlador de **Promotion** expone las funcionalidades críticas para el ciclo de vida de las ofertas:
+
+* **Creación de Promociones**
+
+Permite registrar nuevas promociones dentro de la plataforma, definiendo información como nombre, descripción, porcentaje de descuento, fechas de vigencia y cantidad disponible.
+
+![promotion-evidence-1](/assets\chapter04\sprint2-promotion\promos-1.png)
+
+* **Listado General de Promociones**
+
+Permite consultar todas las promociones registradas en el sistema para su administración y visualización.
+
+![promotion-evidence-2](/assets\chapter04\sprint2-promotion\promos-2.png)
+
+* **Consulta de Promoción por Identificador**
+
+Permite obtener la información detallada de una promoción específica mediante su identificador único.
+
+![promotion-evidence-3](/assets\chapter04\sprint2-promotion\promos-3.png)
+
+* **Actualización de Promociones**
+
+Permite modificar la información de una promoción existente, incluyendo datos descriptivos, fechas de vigencia y condiciones asociadas.
+
+![promotion-evidence-4](/assets\chapter04\sprint2-promotion\promos-4.png)
+
+* **Eliminación de Promociones**
+
+Permite eliminar promociones registradas en el sistema cuando ya no sean necesarias o deban ser retiradas de forma permanente.
+
+![promotion-evidence-5](/assets\chapter04\sprint2-promotion\promos-5.png)
+
+* **Listado de Promociones Activas**
+
+Permite consultar únicamente las promociones que se encuentran vigentes y disponibles para ser utilizadas por los consumidores.
+
+![promotion-evidence-6](/assets\chapter04\sprint2-promotion\promos-6.png)
+
+* **Listado de Promociones por Negocio**
+
+Permite obtener todas las promociones asociadas a un negocio específico, facilitando la gestión individual de sus campañas.
+
+![promotion-evidence-7](/assets\chapter04\sprint2-promotion\promos-7.png)
+
+* **Publicación de Promociones**
+
+Permite cambiar el estado de una promoción para que sea visible y accesible para los consumidores dentro de la aplicación.
+
+![promotion-evidence-8](/assets\chapter04\sprint2-promotion\promos-8.png)
+
+* **Cancelación de Promociones**
+
+Permite desactivar una promoción previamente publicada, evitando que continúe disponible para nuevos canjes.
+
+![promotion-evidence-9](/assets\chapter04\sprint2-promotion\promos-9.png)
+
+## Redemption Bounded Context
+
+Como parte del desarrollo del backend en **C#**, se ha implementado y consolidado el Bounded Context de **Redemption**. Este módulo permite conectar las promociones publicadas por los negocios con los consumidores que desean utilizarlas, garantizando un flujo seguro y controlado durante todo el proceso.
+
+### Implementacion Tecnica de Redemption
+
+Se ha desarrollado una arquitectura orientada a la gestión y validación de canjes, asegurando la correcta ejecución de cada transacción. Los principales avances alcanzados incluyen:
+
+* **Generación de Canjes:** Implementación de mecanismos para registrar solicitudes de canje asociadas a promociones vigentes.
+* **Validación de Promociones:** Verificación automática de condiciones como disponibilidad, vigencia, estado de la promoción y restricciones aplicables antes de autorizar el canje.
+* **Confirmación de Canjes:** Desarrollo de funcionalidades que permiten validar y confirmar el uso efectivo de una promoción por parte del negocio.
+* **Consulta de Historial:** Implementación de servicios para obtener el historial de canjes realizados por consumidores y negocios.
+
+## Evidencias de Ejecucion: Módulo Redemption
+
+A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
+
+![redemption-evidence-1](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-1.png)
+
+### Gestion de Canjes (Redemption)
+
+El controlador de **Redemption** expone las funcionalidades esenciales para la validación y ejecución del canje:
+
+* **Generación de Canjes**
+
+Permite registrar una solicitud de canje para una promoción determinada, verificando que la oferta se encuentre disponible y cumpla con las condiciones establecidas.
+
+![redemption-evidence-1](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-2.png)
+
+* **Confirmación de Canjes**
+
+Permite validar y confirmar un canje previamente generado, garantizando que la promoción sea utilizada de manera correcta y evitando usos duplicados.
+
+![redemption-evidence-2](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-3.png)
+
+* **Consulta de Canje por Identificador**
+
+Permite obtener la información detallada de un canje específico mediante su identificador único, incluyendo datos asociados a la promoción y al consumidor.
+
+![redemption-evidence-3](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-4.png)
+
+* **Historial de Canjes por Consumidor**
+
+Permite consultar todos los canjes realizados por un consumidor específico, facilitando el seguimiento de promociones utilizadas dentro de la plataforma.
+
+![redemption-evidence-4](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-5.png)
+
+* **Historial de Canjes por Negocio**
+
+Permite obtener el listado de canjes asociados a un negocio determinado, proporcionando visibilidad sobre el uso y desempeño de sus promociones.
+
+![redemption-evidence-5](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-6.png)
+
+# Favorites Bounded Context
+
+Como parte del desarrollo del backend en **C#**, se ha implementado y consolidado el Bounded Context de **Favorites**. Este componente permite a los consumidores guardar ofertas de su interés para acceder a ellas posteriormente, mejorando la experiencia de navegación y facilitando el acceso rápido a promociones relevantes.
+
+### Implementación Técnica de Favorites
+
+La solución fue desarrollada utilizando **ASP.NET Core**, **Entity Framework Core** y **SQLite**, garantizando una gestión eficiente de la información y una adecuada persistencia de los datos. Los principales avances alcanzados incluyen:
+
+* **Registro de Favoritos:** Implementación de funcionalidades que permiten a los usuarios agregar promociones a su lista de favoritos de manera rápida y sencilla.
+* **Consulta Personalizada:** Desarrollo de servicios que permiten recuperar todas las promociones favoritas asociadas a un usuario específico.
+* **Eliminación de Favoritos:** Implementación de mecanismos para remover promociones guardadas cuando el usuario ya no desea mantenerlas en su lista.
+
+## Evidencias de Ejecucion: Módulo Favorites
+
+A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
+
+![favorite-evidence-0](/assets\chapter04\sprint2-favorite\favorites-0.png)
+
+## Evidencias de Ejecución: Módulo Favorites
+
+El controlador de **Favorites** expone las funcionalidades críticas para el ciclo de vida de un favorito:
+
+* **Listado de Favoritos por Usuario**
+
+Permite consultar todas las promociones marcadas como favoritas por un usuario específico, facilitando el acceso rápido a ofertas previamente guardadas.
+
+![favorite-evidence-1](/assets\chapter04\sprint2-favorite\favorites-1.png)
+
+* **Consulta de Favorito por Identificador**
+
+Permite obtener la información detallada de un registro de favorito mediante su identificador único.
+
+![favorite-evidence-2](/assets\chapter04\sprint2-favorite\favorites-2.png)
+
+* **Registro de Favoritos**
+
+Permite asociar una promoción a la lista de favoritos de un usuario, aplicando validaciones para evitar registros duplicados y garantizar la integridad de los datos.
+
+![favorite-evidence-3](/assets\chapter04\sprint2-favorite\favorites-3.png)
+
+* **Eliminación de Favoritos**
+
+Permite remover una promoción previamente guardada en la lista de favoritos de un usuario, manteniendo actualizadas sus preferencias dentro de la plataforma.
+
+![favorite-evidence-4](/assets\chapter04\sprint2-favorite\favorites-4.png)
+
+# Community Bounded Context
+
+##### 4.2.2.7. Software Deployment Evidence for Sprint Review
+
+### Evidencias del Despliegue de Backend
+
+Como parte de los objetivos del Sprint 2, el backend fue desplegado exitosamente en un entorno público utilizando **Railway**, permitiendo el acceso a los servicios REST implementados y a su documentación técnica mediante **Swagger/OpenAPI**.
+
+![Railway](/assets/chapter04/deployment-evidence/railway-1.png)
+
+Para el despliegue se utilizó **Railway**, plataforma cloud que ofrece integración directa con repositorios de **GitHub**, facilitando la automatización del proceso de integración y despliegue continuo. Gracias a esta integración, cada actualización realizada en el repositorio puede ser desplegada de manera rápida y consistente en el entorno de producción.
+
+La plataforma permitió configurar las variables de entorno necesarias para la ejecución de la aplicación, así como gestionar el monitoreo básico del servicio desde una interfaz centralizada.
+
+![Railway](/assets/chapter04/deployment-evidence/railway-2.png)
+
+### Evidencias de la Documentación de la API
+
+Como resultado de la implementación de los diferentes Bounded Contexts desarrollados durante el Sprint 2, se habilitó la documentación interactiva de la API mediante Swagger, permitiendo visualizar y probar los endpoints disponibles para los módulos de **Authentication**, **Favorites**, **Promotion**, **Redemption**, **Analytics** y demás componentes del sistema.
+
+![Backend-1](/assets/chapter04/execution-evidence/backend/backend-v2.png)
+
+##### 4.2.2.8. Team Collaboration Insights during Sprint
+
+Durante el desarrollo del **Sprint 2**, el equipo mantuvo una comunicación constante y colaborativa para asegurar el cumplimiento de los objetivos planteados. Se realizaron reuniones periódicas mediante **Discord**, permitiendo coordinar actividades, resolver impedimentos y dar seguimiento al avance de cada integrante. Asimismo, se utilizaron herramientas como **Trello** para la gestión de tareas y organización del conocimiento del proyecto.
+
+**Resumen del Sprint 2:**
+
+* **Backend y APIs:** Se completó la implementación de los principales Bounded Contexts de la solución, incluyendo **Profile, Favorites, Promotion y Redemption**, exponiendo sus funcionalidades mediante endpoints REST documentados.
+* **Despliegue del Backend:** Los servicios fueron desplegados exitosamente en **Railway**, permitiendo el acceso público a la API y a su documentación técnica mediante Swagger/OpenAPI.
+* **Validación de Funcionalidades:** Se implementaron y probaron los flujos principales de autenticación, gestión de promociones, favoritos, canjes y métricas de negocio, garantizando la correcta interacción entre los diferentes módulos del sistema.
+* **Mejora de Artefactos:** Se revisaron y actualizaron los entregables desarrollados en iteraciones anteriores, incorporando correcciones y mejoras identificadas durante el proceso de validación.
+* **Preparación de Evidencias:** Se recopilaron evidencias de las funcionalidades principales de la aplicación, así como material de apoyo para la elaboración de los videos de validación, About-the-Product y About-the-Team.
+
 ### 4.3. Validation Interviews
+
 #### 4.3.1. Diseño de Entrevistas
 
 #### Segmento 1
@@ -1028,7 +1526,6 @@ Durante el desarrollo del Sprint 1, el equipo de desarrollo mantuvo una comunica
 
 #### Segmento 1
 
-
 <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
   <tr>
     <th colspan="2">Entrevista 1</th>
@@ -1068,7 +1565,6 @@ Durante el desarrollo del Sprint 1, el equipo de desarrollo mantuvo una comunica
 </table>
 
 <br>
-
 
 <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
   <tr>
@@ -1112,7 +1608,6 @@ Durante el desarrollo del Sprint 1, el equipo de desarrollo mantuvo una comunica
 
 #### Segmento 2
 
-
 <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
   <tr>
     <th colspan="2">Entrevista 3</th>
@@ -1152,7 +1647,6 @@ Durante el desarrollo del Sprint 1, el equipo de desarrollo mantuvo una comunica
 </table>
 
 <br>
-
 
 <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
   <tr>
@@ -1481,22 +1975,22 @@ Durante el desarrollo del Sprint 1, el equipo de desarrollo mantuvo una comunica
 
 #### Recomendaciones
 
-| # | Recomendación |
-|---|---|
-| 1 | Agregar una sección de precios o al menos un rango referencial para el segmento de negocios |
-| 2 | Incluir un formulario de contacto o botón de "Quiero afiliar mi negocio" como CTA específico para S2 |
+| # | Recomendación                                                                                                        |
+| - | -------------------------------------------------------------------------------------------------------------------- |
+| 1 | Agregar una sección de precios o al menos un rango referencial para el segmento de negocios                          |
+| 2 | Incluir un formulario de contacto o botón de "Quiero afiliar mi negocio" como CTA específico para S2                 |
 | 3 | Crear una sección de preguntas frecuentes orientada a negocios con dudas sobre el proceso de aprobación y comisiones |
 
 ---
 
 ## 5. CONSOLIDADO FINAL POR SEVERIDAD
 
-| Severidad | Cantidad de problemas | Heurísticas afectadas |
-|---|---|---|
-| **3 — Mayor** | 3 | H4, H10 |
-| **2 — Menor** | 8 | H1, H2, H3, H6, H7, H8, H9 |
-| **1 — Cosmético** | 3 | H3, H4, H5 |
-| **0 — Sin problema** | — | H5 (QR único como medida preventiva) |
+| Severidad            | Cantidad de problemas | Heurísticas afectadas                |
+| -------------------- | --------------------- | ------------------------------------ |
+| **3 — Mayor**        | 3                     | H4, H10                              |
+| **2 — Menor**        | 8                     | H1, H2, H3, H6, H7, H8, H9           |
+| **1 — Cosmético**    | 3                     | H3, H4, H5                           |
+| **0 — Sin problema** | —                     | H5 (QR único como medida preventiva) |
 
 ---
 
@@ -1508,4 +2002,3 @@ Durante el desarrollo del Sprint 1, el equipo de desarrollo mantuvo una comunica
 | **Problemas críticos** | El CTA final (H4) y la ausencia de información de precios y proceso de afiliación para negocios (H10) son los bloqueadores de mayor impacto y deben corregirse con prioridad antes del siguiente ciclo de validación. |
 | **Problemas moderados** | La terminología técnica (H2), la visibilidad del estado del sistema (H1), la eficiencia de navegación para negocios (H7) y la insuficiencia de prueba social (H8) afectan la experiencia pero no bloquean completamente al usuario. |
 | **Próximos pasos recomendados** | Corregir H4 y H10, incorporar testimonio de negocio afiliado, reescribir términos técnicos en lenguaje cotidiano y añadir estados de error visuales antes del siguiente ciclo de pruebas con usuarios. |
-

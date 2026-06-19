@@ -256,23 +256,23 @@ Para el desarrollo del informe perteneciente a la entrega del TB2, se dividió l
   <tbody>
     <tr>
       <th> Bonifacio Jaramillo, Samuel Jesus</th>
-      <th> </th>
+      <th> Actualizar la documentación de los Bounded Contexts de Promotion y Redemption, así como elaborar las evidencias funcionales correspondientes a los endpoints implementados.</th>
     </tr>
     <tr>
       <th> Castro Pariona, Jefferson Ernesto</th>
-      <th> </th>
+      <th> Corregir observaciones evidencias del Sprint 2.</th>
     </tr>
     <tr>
       <th> Guillen Galindo, Julio Adolfo</th>
-      <th> </th>
+      <th> Actualizar la documentación técnica de los procesos implementados.</th>
     </tr>
     <tr>
       <th> Ponce Perales, Alberto Alejandro</th>
-      <th> </th>
+      <th> Actualizar el Bounded Context de Favorites.</th>
     </tr>
     <tr>
       <th> Galindo Montero, Alejandro Manuel</th>
-      <th> </th>
+      <th> Desarrollo de las secciones Community y guardar en Promotions.</th>
     </tr>
   </tbody>
 </table>

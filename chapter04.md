@@ -957,6 +957,134 @@ Durante el desarrollo del Sprint 1, el equipo de desarrollo mantuvo una comunica
 * **Despliegue:** Se automatizó el pase a producción vinculando GitHub directamente con Vercel y Railway.
 * **Estructura base:** Se consolidó el uso de Clean Architecture y se definieron las convenciones de código y trabajo del equipo.
 
+### 4.2.2. Sprint 2
+
+#### 4.2.2.1. Sprint Planning n
+
+#### 4.2.2.2. Sprint Backlog n
+
+#### 4.2.2.3. Development Evidence for Sprint Review
+
+#### 4.2.2.4. Testing Suite Evidence for Sprint Review
+
+#### 4.2.2.5. Execution Evidence for Sprint Review
+
+Segmento Objetivo 1: Usuario consumidor (B2C)
+
+Evidencias de Ejecución: Módulo IAM (Customer Views)
+
+A continuación se presentan las capturas de pantalla de la aplicación móvil que demuestran el funcionamiento del módulo de IAM integrado con el backend:
+
+Pantalla de Login and Sign-up— Opción para sign up and start session 
+
+Desde la pantalla de Login, el usuario puede acceder al módulo de IAM de la aplicación móvil. En esta vista se presentan las opciones principales de autenticación: **Sign up**, que permite registrar una nueva cuenta de usuario, y **Start session**, que habilita el inicio de sesión mediante credenciales previamente registradas. Esta pantalla constituye el punto de entrada al flujo de autenticación integrado con el backend, permitiendo validar la identidad del usuario y acceder a las funcionalidades protegidas de la aplicación.
+
+![sign-up](/assets/chapter04/execution-evidence/backend/IAM/sign-up.png)
+
+![login](/assets/chapter04/execution-evidence/backend/IAM/login.png)
+
+Pantalla de Reset password
+
+![forgotten](/assets/chapter04/execution-evidence/backend/IAM/forgotten.png)
+
+Evidencias de Ejecución: Módulo Profile (Customer Views)
+
+Pantalla Profile-data
+
+Desde la pantalla **Profile-data**, el usuario puede visualizar y completar la información asociada a su perfil dentro de la aplicación móvil. Esta vista permite registrar o actualizar datos personales necesarios para la identificación del usuario, manteniendo la información vinculada a su cuenta autenticada mediante el módulo de IAM. Asimismo, la pantalla se integra con el backend para almacenar y recuperar los datos del perfil, garantizando que la información del usuario se mantenga disponible durante el uso de las funcionalidades de la aplicación.
+
+![profile-info](/assets/chapter04/execution-evidence/backend/IAM/profile-info.png)
+
+Pantalla Configuracion-Options para updating user parameters
+
+Desde la pantalla **Configuración - Options**, el usuario puede acceder a las opciones disponibles para actualizar los parámetros asociados a su cuenta dentro de la aplicación móvil. Esta vista permite gestionar preferencias y datos configurables del usuario, facilitando la modificación de información personal o ajustes relacionados con su perfil. Los cambios realizados son procesados mediante la integración con el backend, asegurando que los parámetros actualizados se almacenen correctamente y se mantengan vinculados al módulo de IAM.
+
+![dashb](/assets/chapter04/execution-evidence/backend/IAM/dashb.png)
+
+![options](/assets/chapter04/execution-evidence/backend/IAM/options.png)
+
+Pantalla Edit profile
+
+Desde la pantalla **Edit profile**, el usuario puede modificar la información registrada previamente en su perfil dentro de la aplicación móvil. Esta vista permite actualizar datos personales asociados a la cuenta, como nombres, apellidos, información de contacto u otros campos requeridos por el sistema. Los cambios realizados son enviados al backend para su validación y almacenamiento, asegurando que la información del usuario se mantenga actualizada y vinculada correctamente al módulo de IAM.
+
+![edit-profile](/assets/chapter04/execution-evidence/backend/IAM/edit-profile.png)
+
+#### 4.2.2.6. Services Documentation Evidence for Sprint Review
+
+## IAM Bounded Context
+
+Como parte del desarrollo del backend, se ha consolidado el Bounded Context de **IAM**. Este módulo es fundamental para la gestión de identidad y acceso dentro de la plataforma, encargado de administrar el registro de usuarios, el inicio de sesión, la autenticación mediante credenciales, la generación de tokens y la protección de los recursos disponibles en la aplicación.
+
+**Implementación Técnica de IAM**
+
+Se ha estructurado la lógica para permitir que los usuarios puedan registrarse, autenticarse y acceder de forma segura a las funcionalidades protegidas del sistema. Asimismo, se garantiza la integración entre la aplicación móvil y el backend mediante mecanismos de validación de identidad y control de acceso. Los logros principales incluyen:
+
+**Registro de Usuarios:** Implementación del flujo de creación de cuentas, permitiendo almacenar la información necesaria del usuario y asociarla a una identidad válida dentro del sistema.
+
+**Inicio de Sesión:** Desarrollo del proceso de autenticación mediante credenciales, validando el correo electrónico y la contraseña del usuario antes de permitir el acceso a la aplicación.
+
+**Generación de Token JWT:** Implementación de la emisión de tokens de autenticación para mantener sesiones seguras y permitir el consumo de endpoints protegidos desde la aplicación móvil.
+
+**Validación de Credenciales:** Control de acceso mediante la verificación de los datos ingresados por el usuario, asegurando que solo usuarios registrados y autenticados puedan ingresar al sistema.
+
+**Gestión de Perfil de Usuario:** Integración de funcionalidades para consultar, registrar y actualizar información asociada al perfil del usuario autenticado.
+
+**Protección de Endpoints:** Configuración de mecanismos de autorización para restringir el acceso a recursos sensibles del backend, garantizando que las operaciones protegidas solo puedan ser ejecutadas por usuarios autenticados.
+
+**Integración con la Aplicación Móvil:** Conexión del módulo IAM con las pantallas de Login, Sign up, Profile-data, Edit profile y Configuración, permitiendo que los flujos de autenticación y actualización de datos funcionen correctamente desde el cliente móvil.
+
+---
+
+## Evidencias de Ejecución: Módulo IAM (Reviews)
+
+A continuación se presentan los endpoints desarrollados y testeados a través de la interfaz de Swagger:
+
+![admin-profile](/assets/chapter04/execution-evidence/backend/IAM/adminprof.png)
+
+![auth](/assets/chapter04/execution-evidence/backend/IAM/auth.png)
+
+Dentro del Bounded Context de IAM también se implementaron endpoints orientados a la gestión y consulta de usuarios. Estos permiten obtener información de un usuario mediante su identificador, realizar búsquedas por correo electrónico, listar usuarios registrados y filtrar usuarios según su rol. Dichos endpoints forman parte del control de identidad y acceso de la plataforma, ya que permiten administrar la información asociada a las cuentas registradas y verificar los roles vinculados a cada usuario autenticado.
+
+![bcusers](/assets/chapter04/execution-evidence/backend/IAM/bcus.png)
+
+![getlistusers](/assets/chapter04/execution-evidence/backend/IAM/getlistus.png)
+
+Implementation of Reset Password
+
+![reset](/assets/chapter04/execution-evidence/backend/IAM/reset.png)
+
+## Evidencias de Ejecución: Módulo Profile (Reviews)
+
+A continuación se presentan las capturas de pantalla de la aplicación móvil que demuestran el funcionamiento del módulo Profile, específicamente en la integración con las reseñas publicadas por el usuario. Este flujo permite visualizar la relación entre el perfil autenticado y las interacciones realizadas dentro de la plataforma, como la consulta de reseñas asociadas, la publicación de opiniones y la gestión de información vinculada a la experiencia del usuario.
+
+Las evidencias muestran cómo el usuario, desde su perfil, puede acceder a información relacionada con sus actividades dentro de la aplicación, incluyendo las reseñas generadas a partir de promociones canjeadas. De esta manera, se valida la correcta integración entre el módulo de perfil, el módulo de comunidad y el backend, garantizando que la información mostrada corresponda al usuario autenticado.
+
+![bcprofile](/assets/chapter04/execution-evidence/backend/IAM/bcprof.png)
+
+Validaciones endopints
+
+POST /api/profiles/consumer: Crea el perfil de un cliente consumidor usando el usuario autenticado.
+
+![post-cons](/assets/chapter04/execution-evidence/backend/profile/post-cons.png)
+
+
+GET /api/profiles/consumer/{profileId}: Obtiene el perfil de consumidor asociado a un usuario.
+
+![get-cons](/assets/chapter04/execution-evidence/backend/profile/get-consu.png)
+
+PUT /api/profiles/consumer: Actualiza los datos del perfil de consumidor.
+
+![put-cons](/assets/chapter04/execution-evidence/backend/profile/put-con.png)
+
+
+GET /api/admin/profiles/by-user/{userId}: Obtiene el perfil de un usuario, sea consumidor o negocio.
+
+![get-role](/assets/chapter04/execution-evidence/backend/profile/get-role.png)
+
+#### 4.2.2.7. Software Deployment Evidence for Sprint Review
+
+#### 4.2.2.8. Team Collaboration Insights during Sprint
+
 ### 4.3. Validation Interviews
 #### 4.3.1. Diseño de Entrevistas
 

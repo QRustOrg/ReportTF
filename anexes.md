@@ -15,9 +15,18 @@
 
 # Video App Validation
 
-# Video About the product
+# Video About The Product
 
-# Video About the team
+![About The Product](assets/anexes/about-the-product.png)
+
+Link: https://youtu.be/W2HLC4PCJRQ
+
+# Video About The Team
+
+![About The Team](assets/anexes/about-the-team.png)
+
+Link: https://youtu.be/MyfhH-qDnhU
+
 
 # Bibliografía
 
@@ -69,8 +78,8 @@ Instituto Nacional de Estadística e Informática. (2024). *Estadísticas de tec
   </thead>
   <tbody>
     <tr>
-      <td>ReportTB1</td>
-      <td>https://github.com/QRustOrg/ReportTB1</td>
+      <td>Report</td>
+      <td>https://github.com/QRustOrg/ReportAV2</td>
     </tr>
     <tr>
       <td>Landing Page</td>
@@ -79,6 +88,14 @@ Instituto Nacional de Estadística e Informática. (2024). *Estadísticas de tec
     <tr>
       <td>Backend</td>
       <td>https://github.com/QRustOrg/Klippr-Backend</td>
+    </tr>
+    <tr>
+      <td>Mobile App (Customer)</td>
+      <td>https://github.com/QRustOrg/Klippr-Customer</td>
+    </tr>
+    <tr>
+      <td>Mobile App (Business)</td>
+      <td>https://github.com/QRustOrg/Klippr-Business</td>
     </tr>
   </tbody>
 

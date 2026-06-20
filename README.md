@@ -98,10 +98,10 @@
       <td>Validaciones y tests sobre la Landing Page, avance de Backend y desarrollo de capítulos III & IV</td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>4.0</td>
+      <td>19 de junio</td>
+      <td>QRust</td>
+      <td>Creación/Finalización de la aplicación Kotlin (Klippr Customer)</td>
     </tr>
     <tr>
       <td></td>

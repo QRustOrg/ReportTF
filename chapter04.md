@@ -22,6 +22,8 @@ Para el desarrollo de la Landing Page y la aplicación móvil de **Klippr**, se 
 * **VS Code**: Editor de código fuente con múltiples extensiones y soporte para desarrollo de múltiples lenguajes de programación. https://code.visualstudio.com/
 * **Rider (Instalación local)**: IDE para el desarrollo de aplicaciones con C# y ASP .NET. https://www.jetbrains.com/rider/
 * **GitHub**: Plataforma de desarrollo colaborativo para alojar y gestionar repositorios de código fuente. https://github.com/
+* **Flutter SDK**: Framework de código abierto de Google para crear aplicaciones multiplataforma (Android, iOS, Web) desde una sola base de código en Dart. https://flutter.dev/
+* **Dart**: Lenguaje de programación optimizado para la creación de aplicaciones en Flutter, con tipado fuerte y soporte para programación asíncrona. https://dart.dev/
 
 **Project Managment and Collaboration**
 
@@ -50,6 +52,7 @@ La gestión del código fuente es una parte fundamental del proceso de desarroll
 * Landing Page: https://github.com/QRustOrg/LandingPage
 * Aplicación Movil: https://github.com/QRustOrg/Klippr-MobileApp
 * Backend: https://github.com/QRustOrg/Klippr-Backend
+* Klippr Business: https://github.com/QRustOrg/Klippr-Business
 
 **Estructura de Ramas**: 
 
@@ -300,6 +303,101 @@ Todas las cadenas visibles al usuario deben almacenarse en `res/values/strings.x
 <string name="app_name">Klippr</string>
 <string name="login_button">Iniciar sesión</string>
 ```
+
+**Flutter y Dart**:
+
+Para el desarrollo de **Klippr Business** (aplicación para negocios), se utilizó **Flutter** con **Dart**. Las siguientes pautas aseguran consistencia y legibilidad en el código:
+
+**Nomenclatura General**:
+
+Para los nombres de variables y funciones se empleará **camelCase**. **PascalCase** se utilizará para los nombres de clases y widgets.
+
+```dart
+// Variables y funciones (camelCase)
+final String userName;
+void getUserName() {}
+
+// Clases y widgets (PascalCase)
+class User {}
+class HomeScreen extends StatelessWidget {}
+```
+
+**Widgets**:
+
+Los widgets deben ser funciones puras siempre que sea posible. Se prefiere `StatelessWidget` sobre `StatefulWidget` a menos que se requiera estado local.
+
+```dart
+class PromotionCard extends StatelessWidget {
+  final Promotion promotion;
+  
+  const PromotionCard({super.key, required this.promotion});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Text(promotion.title),
+    );
+  }
+}
+```
+
+**Clean Architecture en Flutter**:
+
+El proyecto sigue una arquitectura en capas **Domain**, **Data** y **Presentation**:
+
+* **Domain Layer**: Contiene las entidades del negocio y casos de uso.
+* **Data Layer**: Gestiona repositorios y fuentes de datos (API, base de datos local).
+* **Presentation Layer**: Maneja la lógica de interfaz mediante **BLoC** o **Provider** y widgets.
+
+```dart
+// Domain Layer - Entity
+class BusinessUser {
+  final String id;
+  final String businessName;
+  final String email;
+  
+  BusinessUser({
+    required this.id,
+    required this.businessName,
+    required this.email,
+  });
+}
+
+// Data Layer - Repository
+class BusinessRepository {
+  Future<List<Promotion>> getPromotions(String businessId) async {
+    // Implementación con llamada a API
+  }
+}
+
+// Presentation Layer - Widget
+class BusinessHomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Klippr Business')),
+      body: Center(child: Text('Bienvenido')),
+    );
+  }
+}
+```
+
+**Resultado visual de las convenciones aplicadas**:
+
+A continuación se muestran las pantallas de **Klippr Business** desarrolladas siguiendo estas convenciones:
+
+![Klippr Business - Home](assets/chapter04/klippr-bussiness/klippr-business-home.png)
+
+![Klippr Business - Crear Promoción](assets/chapter04/klippr-bussiness/klippr-business-promotion-create-view.png)
+
+![Klippr Business - Crear Promoción - Paso 1](assets/chapter04/klippr-bussiness/klippr-business-promotion-create-view-1.png)
+
+![Klippr Business - Crear Promoción - Paso 2](assets/chapter04/klippr-bussiness/klippr-business-promotion-create-view-2.png)
+
+![Klippr Business - Editor](assets/chapter04/klippr-bussiness/klippr-business-editor-view.png)
+
+![Klippr Business - Promociones Activas](assets/chapter04/klippr-bussiness/klippr-active-promotions.png)
+
 #### 4.1.4. Software Deployment Configuration
 
 Para el despliegue de la **Landing Page**, se utilizó **Vercel**. Una plataforma basada en la nube que permite el despliegue de aplicaciones web de manera gratuita y simple.
@@ -320,23 +418,23 @@ Previo al despliegue, se realizó el **"merge"** de las ramas de desarrollo a la
 
 Luego, seleccionamos el botón **"Add New"** -> **"Project"** para iniciar el proceso de despliegue. 
 
-![Vercel-Dashboard](/assets/chapter04/vercel-deploy/vercel-dashboard.png)
+![Vercel-Dashboard](assets/chapter04/vercel-deploy/vercel-dashboard.png)
 
 En esta pantalla seleccionamos el repositorio de **Landing Page** ***(Klippr-Landing-Page)*** y posteriormente, seleccionamos el botón **"Import"**.
 
-![Selecting-Repository](/assets/chapter04/vercel-deploy/selecting-repo.png)
+![Selecting-Repository](assets/chapter04/vercel-deploy/selecting-repo.png)
 
 A continuación, la plataforma nos muestra un resumen de la configuración de despliegue, donde confirmamos que el proyecto está configurado correctamente y seleccionamos el botón **"Deploy"**.
 
-![Pre-Deploy](/assets/chapter04/vercel-deploy/pre-deploy.png)
+![Pre-Deploy](assets/chapter04/vercel-deploy/pre-deploy.png)
 
 Luego de pulsar en **"Deploy"**, **Vercel** iniciará el proceso de despliegue. Una vez finalizado el proceso, se mostrará un dashboard con algunos datos del proyecto.
 
-![Success-Deploy](/assets/chapter04/vercel-deploy/deploy-dashboard.png)
+![Success-Deploy](assets/chapter04/vercel-deploy/deploy-dashboard.png)
 
 Finalmente, si todo ha ido bien, podremos acceder a la **Landing Page** desplegada en la URL asignada por **Vercel**.
 
-![Deploy-Final](/assets/chapter04/vercel-deploy/deploy.png)
+![Deploy-Final](assets/chapter04/vercel-deploy/deploy.png)
 
 ### 4.2. Landing Page & Mobile Application Implementation
 #### 4.2.1. Sprint 1
@@ -542,69 +640,69 @@ A continuación se presentan evidencias de ejecución de los 3 productos:
 
 En esta sección se colocó un mensaje que atraiga la atención del visitante, junto con un botón call to action para posteriormente enviarlo a la aplicación móvil desplegada.
 
-![Hero Section](/assets/chapter04/execution-evidence/landing-page/klippr-hero.png)
+![Hero Section](assets/chapter04/execution-evidence/landing-page/klippr-hero.png)
 
 **Problem Section**:
 
 En esta sección se expone la problemática principal que nuestros usuarios enfrentan, generando empatía y resaltando la necesidad de nuestra solución.
 
-![Problem Section](/assets/chapter04/execution-evidence/landing-page/klippr-problem.png)
+![Problem Section](assets/chapter04/execution-evidence/landing-page/klippr-problem.png)
 
 **How It Works Section**:
 
 En esta sección se detalla el funcionamiento paso a paso de la aplicación, guiando al visitante de forma sencilla sobre cómo empezar a utilizarla.
 
-![How It Works Section](/assets/chapter04/execution-evidence/landing-page/klippr-howitworks.png)
+![How It Works Section](assets/chapter04/execution-evidence/landing-page/klippr-howitworks.png)
 
 **Benefits Bussiness Section**:
 
 En esta sección se destacan los beneficios que Klippr ofrece a los negocios asociados, incentivándolos a afiliarse y aumentar sus ventas.
 
-![Benefits Bussiness Section](/assets/chapter04/execution-evidence/landing-page/klippr-benefits-bussiness.png)
+![Benefits Bussiness Section](assets/chapter04/execution-evidence/landing-page/klippr-benefits-bussiness.png)
 
 **Benefits Client Section**:
 
 En esta sección se muestran las ventajas principales para los usuarios finales, enfatizando el ahorro y la conveniencia que brinda la plataforma.
 
-![Benefits Client Section](/assets/chapter04/execution-evidence/landing-page/klippr-benefits-client.png)
+![Benefits Client Section](assets/chapter04/execution-evidence/landing-page/klippr-benefits-client.png)
 
 **Testimonials Section**:
 
 En esta sección se presentan opiniones y experiencias reales de usuarios, generando confianza en el producto mediante validación social.
 
-![Testimonials Section](/assets/chapter04/execution-evidence/landing-page/klippr-testimonials.png)
+![Testimonials Section](assets/chapter04/execution-evidence/landing-page/klippr-testimonials.png)
 
 **Comparison Section**:
 
 En esta sección se realiza una comparativa frente a otras alternativas, subrayando nuestra propuesta de valor y ventajas competitivas.
 
-![Comparison Section](/assets/chapter04/execution-evidence/landing-page/klippr-comparison.png)
+![Comparison Section](assets/chapter04/execution-evidence/landing-page/klippr-comparison.png)
 
 **Footer Section**:
 
 En esta sección se ubican los enlaces finales de navegación, información de contacto y políticas de privacidad para facilitar el soporte al usuario.
 
-![Footer Section](/assets/chapter04/execution-evidence/landing-page/klippr-footer.png)
+![Footer Section](assets/chapter04/execution-evidence/landing-page/klippr-footer.png)
 
 **Backend**
 
 A continuación se muestran evidencias del backend desplegado y todos los endpoints desarrollados:
 
-![Backend-1](/assets/chapter04/execution-evidence/backend/backend-1.png)
+![Backend-1](assets/chapter04/execution-evidence/backend/backend-1.png)
 
-![Backend-2](/assets/chapter04/execution-evidence/backend/backend-2.png)
+![Backend-2](assets/chapter04/execution-evidence/backend/backend-2.png)
 
-![Backend-3](/assets/chapter04/execution-evidence/backend/backend-3.png)
+![Backend-3](assets/chapter04/execution-evidence/backend/backend-3.png)
 
-![Backend-4](/assets/chapter04/execution-evidence/backend/backend-4.png)
+![Backend-4](assets/chapter04/execution-evidence/backend/backend-4.png)
 
 **Mobile App**
 
-![Mobile App](/assets/chapter04/execution-evidence/mobile/klippr-mobile-1.png)
+![Mobile App](assets/chapter04/execution-evidence/mobile/klippr-mobile-1.png)
 
-![Mobile App-2](/assets/chapter04/execution-evidence/mobile/klippr-mobile-2.png)
+![Mobile App-2](assets/chapter04/execution-evidence/mobile/klippr-mobile-2.png)
 
-![Mobile App-3](/assets/chapter04/execution-evidence/mobile/klippr-mobile-3.png)
+![Mobile App-3](assets/chapter04/execution-evidence/mobile/klippr-mobile-3.png)
 
 ##### 4.2.1.6. Services Documentation Evidence for Sprint Review
 
@@ -627,7 +725,7 @@ Se ha estructurado la lógica para permitir que los negocios definan promociones
 
 A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
 
-![promotion-evidence-1](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-1.png)
+![promotion-evidence-1](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-1.png)
 
 ### 1. Gestion de Promociones (Promotion)
 
@@ -637,25 +735,25 @@ El controlador de **Promotion** expone las funcionalidades críticas para el cic
 
 - **Creación y Gestión de Ofertas** 
 
-![promotion-evidence-2](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-2.png)
+![promotion-evidence-2](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-2.png)
 
 - **Detalles de la Promoción**
 
-![promotion-evidence-3](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-3.png)
+![promotion-evidence-3](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-3.png)
 
 - **Visualización y Búsqueda**
 
-![promotion-evidence-4](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-4.png)
+![promotion-evidence-4](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-4.png)
 
 - **Actualización de Estados**
 
-![promotion-evidence-5](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-5.png)
+![promotion-evidence-5](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-5.png)
 
 - **Eliminación y Limpieza**
 
-![promotion-evidence-6](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-6.png)
+![promotion-evidence-6](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-6.png)
 
-![promotion-evidence-7](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-7.png)
+![promotion-evidence-7](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-promotion-7.png)
 
 ## Redemption Bounded Context
 
@@ -674,7 +772,7 @@ Se ha diseñado un flujo robusto y transaccional para garantizar la integridad d
 
 A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
 
-![redemption-evidence-1](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-1.png)
+![redemption-evidence-1](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-1.png)
 
 ### 1. Gestion de Canjes (Redemption)
 
@@ -684,23 +782,23 @@ El controlador de **Redemption** expone las funcionalidades esenciales para la v
 
 - **Proceso de Canje (Redemption Process)** 
 
-![redemption-evidence-2](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-2.png)
+![redemption-evidence-2](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-2.png)
 
 - **Validación de Parámetros**
 
-![redemption-evidence-3](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-3.png)
+![redemption-evidence-3](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-3.png)
 
 - **Historial de Redenciones**
 
-![redemption-evidence-4](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-4.png)
+![redemption-evidence-4](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-4.png)
 
 - **Verificación de Códigos**
 
-![redemption-evidence-5](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-5.png)
+![redemption-evidence-5](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-5.png)
 
 - **Confirmación de Éxito**
 
-![redemption-evidence-6](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-6.png)
+![redemption-evidence-6](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-6.png)
 
 ## IAM Bounded Context
 
@@ -719,7 +817,7 @@ Se ha utilizado **ASP.NET Core Identity** junto con **JWT (JSON Web Tokens)** pa
 
 A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
 
-![iam-profile](/assets/chapter04/vercel-deploy/evidences-sprint/iam/iambc.png)
+![iam-profile](assets/chapter04/vercel-deploy/evidences-sprint/iam/iambc.png)
 
 ### 1. Gestion de Identidad y Acceso (IAM)
 
@@ -731,11 +829,11 @@ El controlador de **Authentication** expone las funcionalidades criticas para el
 
 - **Validacion parametro Post** 
 
-![iam-profile](/assets/chapter04/vercel-deploy/evidences-sprint/iam/pro2.png)
+![iam-profile](assets/chapter04/vercel-deploy/evidences-sprint/iam/pro2.png)
 
 - **Registration Process**
 
-![iam-profile](/assets/chapter04/vercel-deploy/evidences-sprint/iam/iaproc.png)
+![iam-profile](assets/chapter04/vercel-deploy/evidences-sprint/iam/iaproc.png)
 
 ### Notas de Integracion
 Los tokens generados por este modulo son requeridos como cabecera `Authorization: Bearer {token}` para interactuar con los Bounded Contexts de **Profile** y **Verification**, asegurando que solo usuarios autenticados puedan gestionar su informacion personal o empresarial.
@@ -760,19 +858,19 @@ Se han expuesto los endpoints necesarios para la creación (**POST**), actualiza
   - **Verification**  
   Flujo de trabajo para el envío (**submit**) y aprobación (**approve**) de documentos o datos de identidad.
 
-![sw-bcprofile](/assets/chapter04/vercel-deploy/evidences-sprint/profile/bcpro.png)
+![sw-bcprofile](assets/chapter04/vercel-deploy/evidences-sprint/profile/bcpro.png)
 
 - **Validacion parametro Post** 
 
-![sw-bcprofile](/assets/chapter04/vercel-deploy/evidences-sprint/profile/post-parameter.png)
+![sw-bcprofile](assets/chapter04/vercel-deploy/evidences-sprint/profile/post-parameter.png)
 
 - **Company Profile** 
 
-![sw-bcprofile](/assets/chapter04/vercel-deploy/evidences-sprint/profile/emplog.png)
+![sw-bcprofile](assets/chapter04/vercel-deploy/evidences-sprint/profile/emplog.png)
 
 - **User Profile** 
 
-![sw-bcprofile](/assets/chapter04/vercel-deploy/evidences-sprint/profile/userlog.png)
+![sw-bcprofile](assets/chapter04/vercel-deploy/evidences-sprint/profile/userlog.png)
 
 ## Community Bounded Context
 
@@ -791,7 +889,7 @@ Se ha diseñado un flujo robusto y escalable para garantizar una interacción di
 
 A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
 
-![communityn-evidence-1](/assets/chapter04/execution-evidence/backend/community/klippr-community-1.png)
+![communityn-evidence-1](assets/chapter04/execution-evidence/backend/community/klippr-community-1.png)
 
 ### 1. Gestion de Comunidad (Community)
 
@@ -801,25 +899,25 @@ El controlador de **Community** expone las funcionalidades esenciales para la in
 
 - **Publicación de Comentarios (Community Process)** 
 
-![communityn-evidence-2](/assets/chapter04/execution-evidence/backend/community/klippr-community-2.png)
+![communityn-evidence-2](assets/chapter04/execution-evidence/backend/community/klippr-community-2.png)
 
 - **Validación de Contenido**
 
-![community-evidence-3](/assets/chapter04/execution-evidence/backend/community/klippr-community-3.png)
+![community-evidence-3](assets/chapter04/execution-evidence/backend/community/klippr-community-3.png)
 
 - **Gestión de Calificaciones y Reseñas**
 
-![community-evidence-4](/assets/chapter04/execution-evidence/backend/community/klippr-community-4.png)
+![community-evidence-4](assets/chapter04/execution-evidence/backend/community/klippr-community-4.png)
 
 - **Editar Contenido**
 
-![community-evidence-5](/assets/chapter04/execution-evidence/backend/community/klippr-community-5.png)
+![community-evidence-5](assets/chapter04/execution-evidence/backend/community/klippr-community-5.png)
 
-![community-evidence-6](/assets/chapter04/execution-evidence/backend/community/klippr-community-6.png)
+![community-evidence-6](assets/chapter04/execution-evidence/backend/community/klippr-community-6.png)
 
 - **Eliminar Calificaciones y Reseñas**
 
-![community-evidence-6](/assets/chapter04/execution-evidence/backend/community/klippr-community-7.png)
+![community-evidence-6](assets/chapter04/execution-evidence/backend/community/klippr-community-7.png)
 
 ## Setting Bounded Context
 
@@ -838,7 +936,7 @@ Se ha diseñado un flujo robusto y flexible para garantizar una gestión segura 
 
 A continuación se presentan los endpoints desarrollados y testeados a través de la interfaz de Swagger:
 
-![setting-evidence-1](/assets/chapter04/execution-evidence/backend/setting/klippr-setting-1.png)
+![setting-evidence-1](assets/chapter04/execution-evidence/backend/setting/klippr-setting-1.png)
 
 ### 1. Gestion de Comunidad (Settings)
 
@@ -848,25 +946,25 @@ El controlador de **Settings** expone las funcionalidades esenciales para la adm
 
 - **Creacion de comentarios (Settings Process)** 
 
-![setting-evidence-2](/assets/chapter04/execution-evidence/backend/setting/klippr-setting-2.png)
+![setting-evidence-2](assets/chapter04/execution-evidence/backend/setting/klippr-setting-2.png)
 
 - **Validación de Configuraciones**
 
-![setting-evidence-3](/assets/chapter04/execution-evidence/backend/community/klippr-community-3.png)
+![setting-evidence-3](assets/chapter04/execution-evidence/backend/community/klippr-community-3.png)
 
 - **Gestión de Parámetros de Negocio**
 
-![setting-evidence-4](/assets/chapter04/execution-evidence/backend/community/klippr-community-4.png)
+![setting-evidence-4](assets/chapter04/execution-evidence/backend/community/klippr-community-4.png)
 
 - **Actualización de Preferencias**
 
-![setting-evidence-5](/assets/chapter04/execution-evidence/backend/community/klippr-community-5.png)
+![setting-evidence-5](assets/chapter04/execution-evidence/backend/community/klippr-community-5.png)
 
-![setting-evidence-6](/assets/chapter04/execution-evidence/backend/community/klippr-community-6.png)
+![setting-evidence-6](assets/chapter04/execution-evidence/backend/community/klippr-community-6.png)
 
 - **Eliminar Configuracion**
 
-![setting-evidence-6](/assets/chapter04/execution-evidence/backend/community/klippr-community-7.png)
+![setting-evidence-6](assets/chapter04/execution-evidence/backend/community/klippr-community-7.png)
 
 # Favorites Bounded Context
 
@@ -884,7 +982,7 @@ Se ha utilizado **ASP.NET Core** junto con **Entity Framework Core** y **SQLite*
 
 A continuación se presentan los endpoints desarrollados y testeados a través de la interfaz de Swagger:
 
-![favorites-swagger](/assets/chapter04/execution-evidence/backend/favorites/POST1favorites.png)
+![favorites-swagger](assets/chapter04/execution-evidence/backend/favorites/POST1favorites.png)
 
 ### 1. Gestión de Favoritos
 
@@ -897,14 +995,14 @@ El controlador de **Favorites** expone las funcionalidades críticas para el cic
 
 - **Validación parámetro Post**
 
-![favorites-post](/assets/chapter04/execution-evidence/backend/favorites/POST1favorites.png)
+![favorites-post](assets/chapter04/execution-evidence/backend/favorites/POST1favorites.png)
 
 - **Registration Process**
 
-![favorites-process](/assets/chapter04/execution-evidence/backend/favorites/GETID1favorites.png)
-![favorites-process](/assets/chapter04/execution-evidence/backend/favorites/GETID2favorites.png)
-![favorites-process](/assets/chapter04/execution-evidence/backend/favorites/GETUSERID1favorites.png)
-![favorites-process](/assets/chapter04/execution-evidence/backend/favorites/GETUSERID2favorites.png)
+![favorites-process](assets/chapter04/execution-evidence/backend/favorites/GETID1favorites.png)
+![favorites-process](assets/chapter04/execution-evidence/backend/favorites/GETID2favorites.png)
+![favorites-process](assets/chapter04/execution-evidence/backend/favorites/GETUSERID1favorites.png)
+![favorites-process](assets/chapter04/execution-evidence/backend/favorites/GETUSERID2favorites.png)
 
 ### Notas de Integración
 El Bounded Context de Favorites es completamente independiente: no depende de los Bounded Contexts de **Profile** ni de **Promotions** directamente. La comunicación con otros contextos se realiza únicamente a través de la **FavoritesContextFacade**, que expone operaciones de solo lectura mediante primitivos, garantizando el aislamiento del dominio.
@@ -917,9 +1015,9 @@ En esta sección se muestran las evidencias del **despliegue de Landing Page** d
 
 **Url: https://klippr-landing-page.vercel.app/**
 
-![Vercel Deploy](/assets/chapter04/vercel-deploy/deploy-dashboard.png)
+![Vercel Deploy](assets/chapter04/vercel-deploy/deploy-dashboard.png)
 
-![Landing-Page](/assets/chapter04/vercel-deploy/deploy.png)
+![Landing-Page](assets/chapter04/vercel-deploy/deploy.png)
 
 **Evidencias del despliegue de Backend**
 
@@ -927,17 +1025,17 @@ El Backend ha sido desarrollado con **C#** y **ASP.NET Core**, utilizando **JWT 
 
 **Url: https://klippr-backend-production.up.railway.app/swagger/index.html**
 
-![Railway](/assets/chapter04/deployment-evidence/railway-1.png)
+![Railway](assets/chapter04/deployment-evidence/railway-1.png)
 
 Para el despliegue del Web Service se seleccionó **Railway**, una plataforma en la nube que se integró de forma directa con nuestro repositorio de **GitHub**. Esta conexión garantiza la automatización completa del flujo de despliegue, de modo que cada nueva actualización en el código fuente se refleje de inmediato en el entorno de producción.
 
 **Railway** destaca por ofrecer una configuración intuitiva y escalable, resultando idónea para servicios backend y arquitecturas basadas en APIs. Mediante su panel de control, se logró vincular el repositorio del proyecto, establecer las variables de entorno requeridas y ejecutar el despliegue de forma ágil, eliminando la dependencia de herramientas de terceros o configuraciones complejas desde el IDE.
 
-![Railway](/assets/chapter04/deployment-evidence/railway-2.png)
+![Railway](assets/chapter04/deployment-evidence/railway-2.png)
 
 La imagen muestra el entorno de producción en Railway, donde el backend fue desplegado correctamente. Estado: El mensaje “Deployment successful” confirma que el despliegue se realizó sin errores.
 
-![Backend-1](/assets/chapter04/execution-evidence/backend/backend-1.png)
+![Backend-1](assets/chapter04/execution-evidence/backend/backend-1.png)
 
 ##### 4.2.1.8. Team Collaboration Insights during Sprint
 
@@ -1172,13 +1270,13 @@ Pantalla de Login and Sign-up— Opción para sign up and start session
 
 Desde la pantalla de Login, el usuario puede acceder al módulo de IAM de la aplicación móvil. En esta vista se presentan las opciones principales de autenticación: **Sign up**, que permite registrar una nueva cuenta de usuario, y **Start session**, que habilita el inicio de sesión mediante credenciales previamente registradas. Esta pantalla constituye el punto de entrada al flujo de autenticación integrado con el backend, permitiendo validar la identidad del usuario y acceder a las funcionalidades protegidas de la aplicación.
 
-![sign-up](/assets/chapter04/execution-evidence/backend/IAM/sign-up.png)
+![sign-up](assets/chapter04/execution-evidence/backend/IAM/sign-up.png)
 
-![login](/assets/chapter04/execution-evidence/backend/IAM/login.png)
+![login](assets/chapter04/execution-evidence/backend/IAM/login.png)
 
 Pantalla de Reset password
 
-![forgotten](/assets/chapter04/execution-evidence/backend/IAM/forgotten.png)
+![forgotten](assets/chapter04/execution-evidence/backend/IAM/forgotten.png)
 
 Evidencias de Ejecución: Módulo Profile (Customer Views)
 
@@ -1186,21 +1284,21 @@ Pantalla Profile-data
 
 Desde la pantalla **Profile-data**, el usuario puede visualizar y completar la información asociada a su perfil dentro de la aplicación móvil. Esta vista permite registrar o actualizar datos personales necesarios para la identificación del usuario, manteniendo la información vinculada a su cuenta autenticada mediante el módulo de IAM. Asimismo, la pantalla se integra con el backend para almacenar y recuperar los datos del perfil, garantizando que la información del usuario se mantenga disponible durante el uso de las funcionalidades de la aplicación.
 
-![profile-info](/assets/chapter04/execution-evidence/backend/IAM/profile-info.png)
+![profile-info](assets/chapter04/execution-evidence/backend/IAM/profile-info.png)
 
 Pantalla Configuracion-Options para updating user parameters
 
 Desde la pantalla **Configuración - Options**, el usuario puede acceder a las opciones disponibles para actualizar los parámetros asociados a su cuenta dentro de la aplicación móvil. Esta vista permite gestionar preferencias y datos configurables del usuario, facilitando la modificación de información personal o ajustes relacionados con su perfil. Los cambios realizados son procesados mediante la integración con el backend, asegurando que los parámetros actualizados se almacenen correctamente y se mantengan vinculados al módulo de IAM.
 
-![dashb](/assets/chapter04/execution-evidence/backend/IAM/dashb.png)
+![dashb](assets/chapter04/execution-evidence/backend/IAM/dashb.png)
 
-![options](/assets/chapter04/execution-evidence/backend/IAM/options.png)
+![options](assets/chapter04/execution-evidence/backend/IAM/options.png)
 
 Pantalla Edit profile
 
 Desde la pantalla **Edit profile**, el usuario puede modificar la información registrada previamente en su perfil dentro de la aplicación móvil. Esta vista permite actualizar datos personales asociados a la cuenta, como nombres, apellidos, información de contacto u otros campos requeridos por el sistema. Los cambios realizados son enviados al backend para su validación y almacenamiento, asegurando que la información del usuario se mantenga actualizada y vinculada correctamente al módulo de IAM.
 
-![edit-profile](/assets/chapter04/execution-evidence/backend/IAM/edit-profile.png)
+![edit-profile](assets/chapter04/execution-evidence/backend/IAM/edit-profile.png)
 
 ### Dashboard
 
@@ -1264,19 +1362,55 @@ Desde la sección **Favoritos**, el usuario puede visualizar las promociones que
 
 A continuación se muestran evidencias del Backend desplegado actualizado, su documentación y los endpoints desarrollados:
 
-![Backend-1](/assets/chapter04/sprint2-backend/backend-1.png)
+![Backend-1](assets/chapter04/sprint2-backend/backend-1.png)
 
-![Backend-2](/assets/chapter04/sprint2-backend/backend-2.png)
+![Backend-2](assets/chapter04/sprint2-backend/backend-2.png)
 
-![Backend-3](/assets/chapter04/sprint2-backend/backend-3.png)
+![Backend-3](assets/chapter04/sprint2-backend/backend-3.png)
 
-![Backend-4](/assets/chapter04/sprint2-backend/backend-4.png)
+![Backend-4](assets/chapter04/sprint2-backend/backend-4.png)
 
-![Backend-5](/assets/chapter04/sprint2-backend/backend-5.png)
+![Backend-5](assets/chapter04/sprint2-backend/backend-5.png)
 
-![Backend-6](/assets/chapter04/sprint2-backend/backend-6.png)
+![Backend-6](assets/chapter04/sprint2-backend/backend-6.png)
 
-![Backend-7](/assets/chapter04/sprint2-backend/backend-7.png)
+![Backend-7](assets/chapter04/sprint2-backend/backend-7.png)
+
+### Klippr Business App
+
+A continuación se presentan las evidencias de la aplicación **Klippr Business** desarrollada en **Flutter** para el segmento de negocios, permitiendo a los dueños de negocio gestionar sus promociones y campañas desde su dispositivo móvil.
+
+#### Home
+
+Desde la pantalla principal **Home**, el negocio puede visualizar un resumen de sus promociones activas, métricas clave de rendimiento y acceso rápido a las funcionalidades principales de la plataforma. Esta vista constituye el punto de entrada a la aplicación, concentrando la información más relevante para la gestión del negocio.
+
+![Klippr Business - Home](assets/chapter04/klippr-bussiness/klippr-business-home.png)
+
+#### Creación de Promociones
+
+La vista **Crear Promoción** permite al negocio registrar nuevas ofertas dentro de la plataforma. A través de un formulario estructurado, el usuario puede definir el título, descripción, porcentaje de descuento, fechas de vigencia y cantidad disponible de la promoción.
+
+![Klippr Business - Crear Promoción](assets/chapter04/klippr-bussiness/klippr-business-promotion-create-view.png)
+
+**Paso 1 — Información Básica**: En esta primera etapa, el negocio ingresa los datos generales de la promoción, incluyendo nombre, descripción y categoría.
+
+![Klippr Business - Crear Promoción - Paso 1](assets/chapter04/klippr-bussiness/klippr-business-promotion-create-view-1.png)
+
+**Paso 2 — Condiciones y Restricciones**: En esta segunda etapa, el negocio configura las condiciones de uso, fechas de vigencia y límites de la promoción.
+
+![Klippr Business - Crear Promoción - Paso 2](assets/chapter04/klippr-bussiness/klippr-business-promotion-create-view-2.png)
+
+#### Editor de Promociones
+
+Desde la vista **Editor**, el negocio puede modificar los datos de una promoción existente, permitiendo actualizar información como descripción, fechas de vigencia, descuento y estado de la oferta. Los cambios realizados son enviados al backend para su validación y almacenamiento.
+
+![Klippr Business - Editor](assets/chapter04/klippr-bussiness/klippr-business-editor-view.png)
+
+#### Promociones Activas
+
+La pantalla **Promociones Activas** lista todas las ofertas vigentes del negocio, mostrando información relevante como el nombre, estado, fechas y cantidad de canjes realizados. Esta vista permite al negocio monitorear el desempeño de sus campañas y gestionar su portafolio de promociones de manera eficiente.
+
+![Klippr Business - Promociones Activas](assets/chapter04/klippr-bussiness/klippr-active-promotions.png)
 
 ##### 4.2.2.6. Services Documentation Evidence for Sprint Review
 
@@ -1310,19 +1444,19 @@ Se ha estructurado la lógica para permitir que los usuarios puedan registrarse,
 
 A continuación se presentan los endpoints desarrollados y testeados a través de la interfaz de Swagger:
 
-![admin-profile](/assets/chapter04/execution-evidence/backend/IAM/adminprof.png)
+![admin-profile](assets/chapter04/execution-evidence/backend/IAM/adminprof.png)
 
-![auth](/assets/chapter04/execution-evidence/backend/IAM/auth.png)
+![auth](assets/chapter04/execution-evidence/backend/IAM/auth.png)
 
 Dentro del Bounded Context de IAM también se implementaron endpoints orientados a la gestión y consulta de usuarios. Estos permiten obtener información de un usuario mediante su identificador, realizar búsquedas por correo electrónico, listar usuarios registrados y filtrar usuarios según su rol. Dichos endpoints forman parte del control de identidad y acceso de la plataforma, ya que permiten administrar la información asociada a las cuentas registradas y verificar los roles vinculados a cada usuario autenticado.
 
-![bcusers](/assets/chapter04/execution-evidence/backend/IAM/bcus.png)
+![bcusers](assets/chapter04/execution-evidence/backend/IAM/bcus.png)
 
-![getlistusers](/assets/chapter04/execution-evidence/backend/IAM/getlistus.png)
+![getlistusers](assets/chapter04/execution-evidence/backend/IAM/getlistus.png)
 
 Implementation of Reset Password
 
-![reset](/assets/chapter04/execution-evidence/backend/IAM/reset.png)
+![reset](assets/chapter04/execution-evidence/backend/IAM/reset.png)
 
 ## Evidencias de Ejecución: Módulo Profile (Reviews)
 
@@ -1330,27 +1464,27 @@ A continuación se presentan las capturas de pantalla de la aplicación móvil q
 
 Las evidencias muestran cómo el usuario, desde su perfil, puede acceder a información relacionada con sus actividades dentro de la aplicación, incluyendo las reseñas generadas a partir de promociones canjeadas. De esta manera, se valida la correcta integración entre el módulo de perfil, el módulo de comunidad y el backend, garantizando que la información mostrada corresponda al usuario autenticado.
 
-![bcprofile](/assets/chapter04/execution-evidence/backend/IAM/bcprof.png)
+![bcprofile](assets/chapter04/execution-evidence/backend/IAM/bcprof.png)
 
 Validaciones endopints
 
 POST /api/profiles/consumer: Crea el perfil de un cliente consumidor usando el usuario autenticado.
 
-![post-cons](/assets/chapter04/execution-evidence/backend/profile/post-cons.png)
+![post-cons](assets/chapter04/execution-evidence/backend/profile/post-cons.png)
 
 
 GET /api/profiles/consumer/{profileId}: Obtiene el perfil de consumidor asociado a un usuario.
 
-![get-cons](/assets/chapter04/execution-evidence/backend/profile/get-consu.png)
+![get-cons](assets/chapter04/execution-evidence/backend/profile/get-consu.png)
 
 PUT /api/profiles/consumer: Actualiza los datos del perfil de consumidor.
 
-![put-cons](/assets/chapter04/execution-evidence/backend/profile/put-con.png)
+![put-cons](assets/chapter04/execution-evidence/backend/profile/put-con.png)
 
 
 GET /api/admin/profiles/by-user/{userId}: Obtiene el perfil de un usuario, sea consumidor o negocio.
 
-![get-role](/assets/chapter04/execution-evidence/backend/profile/get-role.png)
+![get-role](assets/chapter04/execution-evidence/backend/profile/get-role.png)
 
 ## Promotion Bounded Context
 
@@ -1368,7 +1502,7 @@ Se ha estructurado la lógica para permitir que los negocios definan promociones
 
 A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
 
-![promotion-evidence-0](/assets/chapter04/sprint2-promotion/promos-0.png)
+![promotion-evidence-0](assets/chapter04/sprint2-promotion/promos-0.png)
 
 ### Gestion de Promociones (Promotion)
 
@@ -1378,55 +1512,55 @@ El controlador de **Promotion** expone las funcionalidades críticas para el cic
 
 Permite registrar nuevas promociones dentro de la plataforma, definiendo información como nombre, descripción, porcentaje de descuento, fechas de vigencia y cantidad disponible.
 
-![promotion-evidence-1](/assets/chapter04/sprint2-promotion/promos-1.png)
+![promotion-evidence-1](assets/chapter04/sprint2-promotion/promos-1.png)
 
 * **Listado General de Promociones**
 
 Permite consultar todas las promociones registradas en el sistema para su administración y visualización.
 
-![promotion-evidence-2](/assets/chapter04/sprint2-promotion/promos-2.png)
+![promotion-evidence-2](assets/chapter04/sprint2-promotion/promos-2.png)
 
 * **Consulta de Promoción por Identificador**
 
 Permite obtener la información detallada de una promoción específica mediante su identificador único.
 
-![promotion-evidence-3](/assets/chapter04/sprint2-promotion/promos-3.png)
+![promotion-evidence-3](assets/chapter04/sprint2-promotion/promos-3.png)
 
 * **Actualización de Promociones**
 
 Permite modificar la información de una promoción existente, incluyendo datos descriptivos, fechas de vigencia y condiciones asociadas.
 
-![promotion-evidence-4](/assets/chapter04/sprint2-promotion/promos-4.png)
+![promotion-evidence-4](assets/chapter04/sprint2-promotion/promos-4.png)
 
 * **Eliminación de Promociones**
 
 Permite eliminar promociones registradas en el sistema cuando ya no sean necesarias o deban ser retiradas de forma permanente.
 
-![promotion-evidence-5](/assets/chapter04/sprint2-promotion/promos-5.png)
+![promotion-evidence-5](assets/chapter04/sprint2-promotion/promos-5.png)
 
 * **Listado de Promociones Activas**
 
 Permite consultar únicamente las promociones que se encuentran vigentes y disponibles para ser utilizadas por los consumidores.
 
-![promotion-evidence-6](/assets/chapter04/sprint2-promotion/promos-6.png)
+![promotion-evidence-6](assets/chapter04/sprint2-promotion/promos-6.png)
 
 * **Listado de Promociones por Negocio**
 
 Permite obtener todas las promociones asociadas a un negocio específico, facilitando la gestión individual de sus campañas.
 
-![promotion-evidence-7](/assets/chapter04/sprint2-promotion/promos-7.png)
+![promotion-evidence-7](assets/chapter04/sprint2-promotion/promos-7.png)
 
 * **Publicación de Promociones**
 
 Permite cambiar el estado de una promoción para que sea visible y accesible para los consumidores dentro de la aplicación.
 
-![promotion-evidence-8](/assets/chapter04/sprint2-promotion/promos-8.png)
+![promotion-evidence-8](assets/chapter04/sprint2-promotion/promos-8.png)
 
 * **Cancelación de Promociones**
 
 Permite desactivar una promoción previamente publicada, evitando que continúe disponible para nuevos canjes.
 
-![promotion-evidence-9](/assets/chapter04/sprint2-promotion/promos-9.png)
+![promotion-evidence-9](assets/chapter04/sprint2-promotion/promos-9.png)
 
 ## Redemption Bounded Context
 
@@ -1445,7 +1579,7 @@ Se ha desarrollado una arquitectura orientada a la gestión y validación de can
 
 A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
 
-![redemption-evidence-1](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-1.png)
+![redemption-evidence-1](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-1.png)
 
 ### Gestion de Canjes (Redemption)
 
@@ -1455,31 +1589,31 @@ El controlador de **Redemption** expone las funcionalidades esenciales para la v
 
 Permite registrar una solicitud de canje para una promoción determinada, verificando que la oferta se encuentre disponible y cumpla con las condiciones establecidas.
 
-![redemption-evidence-1](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-2.png)
+![redemption-evidence-1](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-2.png)
 
 * **Confirmación de Canjes**
 
 Permite validar y confirmar un canje previamente generado, garantizando que la promoción sea utilizada de manera correcta y evitando usos duplicados.
 
-![redemption-evidence-2](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-3.png)
+![redemption-evidence-2](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-3.png)
 
 * **Consulta de Canje por Identificador**
 
 Permite obtener la información detallada de un canje específico mediante su identificador único, incluyendo datos asociados a la promoción y al consumidor.
 
-![redemption-evidence-3](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-4.png)
+![redemption-evidence-3](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-4.png)
 
 * **Historial de Canjes por Consumidor**
 
 Permite consultar todos los canjes realizados por un consumidor específico, facilitando el seguimiento de promociones utilizadas dentro de la plataforma.
 
-![redemption-evidence-4](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-5.png)
+![redemption-evidence-4](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-5.png)
 
 * **Historial de Canjes por Negocio**
 
 Permite obtener el listado de canjes asociados a un negocio determinado, proporcionando visibilidad sobre el uso y desempeño de sus promociones.
 
-![redemption-evidence-5](/assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-6.png)
+![redemption-evidence-5](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-6.png)
 
 # Favorites Bounded Context
 
@@ -1497,7 +1631,7 @@ La solución fue desarrollada utilizando **ASP.NET Core**, **Entity Framework Co
 
 A continuacion se presentan los endpoints desarrollados y testeados a traves de la interfaz de Swagger:
 
-![favorite-evidence-0](/assets/chapter04/sprint2-favorite/favorites-0.png)
+![favorite-evidence-0](assets/chapter04/sprint2-favorite/favorites-0.png)
 
 ## Evidencias de Ejecución: Módulo Favorites
 
@@ -1507,25 +1641,25 @@ El controlador de **Favorites** expone las funcionalidades críticas para el cic
 
 Permite consultar todas las promociones marcadas como favoritas por un usuario específico, facilitando el acceso rápido a ofertas previamente guardadas.
 
-![favorite-evidence-1](/assets/chapter04/sprint2-favorite/favorites-1.png)
+![favorite-evidence-1](assets/chapter04/sprint2-favorite/favorites-1.png)
 
 * **Consulta de Favorito por Identificador**
 
 Permite obtener la información detallada de un registro de favorito mediante su identificador único.
 
-![favorite-evidence-2](/assets/chapter04/sprint2-favorite/favorites-2.png)
+![favorite-evidence-2](assets/chapter04/sprint2-favorite/favorites-2.png)
 
 * **Registro de Favoritos**
 
 Permite asociar una promoción a la lista de favoritos de un usuario, aplicando validaciones para evitar registros duplicados y garantizar la integridad de los datos.
 
-![favorite-evidence-3](/assets/chapter04/sprint2-favorite/favorites-3.png)
+![favorite-evidence-3](assets/chapter04/sprint2-favorite/favorites-3.png)
 
 * **Eliminación de Favoritos**
 
 Permite remover una promoción previamente guardada en la lista de favoritos de un usuario, manteniendo actualizadas sus preferencias dentro de la plataforma.
 
-![favorite-evidence-4](/assets/chapter04/sprint2-favorite/favorites-4.png)
+![favorite-evidence-4](assets/chapter04/sprint2-favorite/favorites-4.png)
 
 # Community Bounded Context
 
@@ -1535,19 +1669,19 @@ Permite remover una promoción previamente guardada en la lista de favoritos de 
 
 Como parte de los objetivos del Sprint 2, el backend fue desplegado exitosamente en un entorno público utilizando **Railway**, permitiendo el acceso a los servicios REST implementados y a su documentación técnica mediante **Swagger/OpenAPI**.
 
-![Railway](/assets/chapter04/deployment-evidence/railway-1.png)
+![Railway](assets/chapter04/deployment-evidence/railway-1.png)
 
 Para el despliegue se utilizó **Railway**, plataforma cloud que ofrece integración directa con repositorios de **GitHub**, facilitando la automatización del proceso de integración y despliegue continuo. Gracias a esta integración, cada actualización realizada en el repositorio puede ser desplegada de manera rápida y consistente en el entorno de producción.
 
 La plataforma permitió configurar las variables de entorno necesarias para la ejecución de la aplicación, así como gestionar el monitoreo básico del servicio desde una interfaz centralizada.
 
-![Railway](/assets/chapter04/deployment-evidence/railway-2.png)
+![Railway](assets/chapter04/deployment-evidence/railway-2.png)
 
 ### Evidencias de la Documentación de la API
 
 Como resultado de la implementación de los diferentes Bounded Contexts desarrollados durante el Sprint 2, se habilitó la documentación interactiva de la API mediante Swagger, permitiendo visualizar y probar los endpoints disponibles para los módulos de **Authentication**, **Favorites**, **Promotion**, **Redemption**, **Analytics** y demás componentes del sistema.
 
-![Backend-1](/assets/chapter04/execution-evidence/backend/backend-v2.png)
+![Backend-1](assets/chapter04/execution-evidence/backend/backend-v2.png)
 
 ##### 4.2.2.8. Team Collaboration Insights during Sprint
 

@@ -1695,6 +1695,36 @@ Durante el desarrollo del **Sprint 2**, el equipo mantuvo una comunicación cons
 * **Mejora de Artefactos:** Se revisaron y actualizaron los entregables desarrollados en iteraciones anteriores, incorporando correcciones y mejoras identificadas durante el proceso de validación.
 * **Preparación de Evidencias:** Se recopilaron evidencias de las funcionalidades principales de la aplicación, así como material de apoyo para la elaboración de los videos de validación, About-the-Product y About-the-Team.
 
+## 4.2.3. Sprint 3
+
+##### 4.2.3.7. Software Deployment Evidence for Sprint Review
+
+Para realizar el despliegue de la app movil (Kotlin), usamos Firebase Console, la opción de App Distribution. A continuación se detalla el proceso que se siguió para realizar el despliegue.
+
+## Mobile Application - Kotlin & Jetpack Compose
+
+![Initial Firebase Console](assets/chapter04/sprint3-app-deploy/initial-firebase.png)
+
+Se muestra el panel de consola de Firebase.
+
+![Firebase Console Panel](assets/chapter04/sprint3-app-deploy/firebase-panel.png)
+
+Nos dirigimos al centro de distribución de aplicaciones (App Distribution) y seleccionamos la opción de Android.
+
+![App Distribution](assets/chapter04/sprint3-app-deploy/app-distribution.png)
+
+Cuando seleccionamos que nuestra aplicación es android nos piden colocar el nombre del paquete de nuestro proyecto (com.example.klippr)
+
+![App Upload](assets/chapter04/sprint3-app-deploy/app-upload.png)
+
+![App Uploaded](assets/chapter04/sprint3-app-deploy/app-uploaded.png)
+
+##### 4.2.3.8. Team Collaboration Insights during Sprint
+
+A continuación se presentan los insights de colaboración del equipo durante el Sprint 3, destacando la comunicación, coordinación y gestión de tareas que permitieron alcanzar los objetivos planteados:
+
+![Consumer Insights](assets/chapter04/sprint3-insights/consumer-insights.png)
+
 ### 4.3. Validation Interviews
 
 #### 4.3.1. Diseño de Entrevistas

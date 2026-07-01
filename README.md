@@ -29,7 +29,7 @@
 
 <br>
 
-**INFORME DE TRABAJO AV2**
+**INFORME DE TRABAJO TF**
 
 <br>
 
@@ -59,7 +59,7 @@
 
 <br><br>
 
-**Abril - 2026**
+**Julio - 2026**
 
 </div>
 
@@ -104,10 +104,10 @@
       <td>Creación/Finalización de la aplicación Kotlin (Klippr Customer)</td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>5.0</td>
+      <td>1 de julio</td>
+      <td>QRust</td>
+      <td>Despliegue de aplicación para consumidores, validación de funcionalidades para negocios</td>
     </tr>
     <tr>
       <td></td>
@@ -124,7 +124,8 @@ Analiza cómo la colaboración y la gestión de tareas influyeron en los resulta
 
 URL del Repositorio del Informe: https://github.com/QRustOrg/ReportTB1 <br>
 URL del Repositorio de Landing Page: https://github.com/QRustOrg/LandingPage <br>
-URL del Repositorio del Frontend: https://github.com/QRustOrg/Klippr-Customer <br>
+URL del Repositorio del Frontend (Consumidores): https://github.com/QRustOrg/Klippr-Customer <br>
+URL del Repositorio del Frontend (Negocios): https://github.com/QRustOrg/Klippr-Business <br>
 URL del Repositorio del Backend: https://github.com/QRustOrg/Klippr-Backend  <br>
 
 ### Reporte de Colaboración Entrega AV1
@@ -145,7 +146,7 @@ En el analítico de Pulse se evidencian los commits que realizó cada integrante
 
 ![PulseGraph](assets/project-insights/pulse-graph.png)
 
-### Reporte de Colaboración Entrega TB1
+### Reporte de Colaboración Entrega TP
 
 En esta entrega se evidencian las contribuciones realizadas por cada integrante del equipo para el desarrollo de la **Landing Page** y el **Backend**. A continuación se presentan las capturas obtenidas de los analíticos de colaboración en GitHub (Insights) correspondientes a cada repositorio durante este periodo.
 
@@ -159,9 +160,8 @@ En esta entrega se evidencian las contribuciones realizadas por cada integrante 
 
 ---
 
-**AV1**
+### Reporte de Colaboración Entrega AV2:
 
-Para el desarrollo del informe perteneciente a la entrega del AV1, se dividió la implementación de secciones de la siguiente forma para cada integrante del equipo:
 
 <br>
 
@@ -198,7 +198,7 @@ Para el desarrollo del informe perteneciente a la entrega del AV1, se dividió l
 
 <br>
 
-**TB1**
+**TP**
 
 Para el desarrollo del informe perteneciente a la entrega del TB1, se dividió la implementación de secciones de la siguiente forma para cada integrante del equipo:
 
@@ -279,44 +279,20 @@ Para el desarrollo del informe perteneciente a la entrega del TB2, se dividió l
 
 <br>
 
-**TB2**
+**TF**
 
 Para el desarrollo del informe perteneciente a la entrega del TF, se dividió la implementación de secciones de la siguiente forma para cada integrante del equipo:
 
-<br>
-
-<table>
-  <thead>
-    <tr>
-      <th> Integrantes</th>
-      <th> Tarea Asignada</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th> Bonifacio Jaramillo, Samuel Jesus</th>
-      <th> </th>
-    </tr>
-    <tr>
-      <th> Castro Pariona, Jefferson Ernesto</th>
-      <th> </th>
-    </tr>
-    <tr>
-      <th> Guillen Galindo, Julio Adolfo</th>
-      <th> </th>
-    </tr>
-    <tr>
-      <th> Ponce Perales, Alberto Alejandro</th>
-      <th> </th>
-    </tr>
-    <tr>
-      <th> Galindo Montero, Alejandro Manuel</th>
-      <th> </th>
-    </tr>
+<br> 
+ <table>
+  <thead> 
+  <tr>
+   <th> Integrantes</th> <th> Tarea Asignada</th> </tr> </thead> <tbody> <tr> <th> Bonifacio Jaramillo, Samuel Jesus</th> <th> Integración final de los Bounded Contexts IAM, Profile, Promotion y Redemption; validación de endpoints desplegados y consolidación de evidencias técnicas del Backend para la entrega TF.</th> </tr> <tr> <th> Castro Pariona, Jefferson Ernesto</th> <th> Corrección y cierre de observaciones del informe; actualización de evidencias funcionales de IAM y Profile; y apoyo en el control de calidad documental para la versión final.</th> </tr> <tr> <th> Guillen Galindo, Julio Adolfo</th> <th> Ajuste final de los Bounded Contexts Community y Setting; documentación de flujos implementados; y verificación del despliegue y funcionamiento en entorno productivo.</th> </tr> <tr> <th> Ponce Perales, Alberto Alejandro</th> <th> Consolidación del Bounded Context Favorites; ejecución y registro de pruebas funcionales; y cierre de evidencias de validación de funcionalidades para consumidores.</th> </tr> <tr> <th> Galindo Montero, Alejandro Manuel</th> <th> Implementación y documentación final de funcionalidades de Community y Promotions en aplicaciones cliente; además de apoyo en evidencias de ejecución y presentación del producto.
+   </th>
+  </tr> 
   </tbody>
-</table>
-
-<br>
+  </table> 
+ <br>
 
 # Contenido
 

@@ -1697,6 +1697,156 @@ Durante el desarrollo del **Sprint 2**, el equipo mantuvo una comunicación cons
 
 ## 4.2.3. Sprint 3
 
+##### 4.2.3.1. Sprint Planning 3
+
+En este tercer sprint, el enfoque principal fue el deploy de la app **Kotlin** para Consumidores y el desarrollo completo de la app **Flutter** para Negocios. Se priorizó la finalización de las funcionalidades restantes, la integración de los módulos desarrollados y la preparación de evidencias para la revisión del sprint.
+
+Las tareas se distribuyeron de la siguiente manera:
+
+* **Samuel Bonifacio**: Despliegue de **App Kotlin** Añadir Sprint 3,Añadir icono a la app, verificar librerías y endpoints del backend.<br>
+* **Julio Guillen**: <br> Documentación de Sprint 3.<br>
+* **Alberto Ponce**: Migración de arquitectura de aplicaciones **Business** y **Consumer** a DDD <br> 
+* **Alejandro Galindo**: Debug de App Kotlin + Integración de Analytics en Business <br>
+* **Jefferson Castro**: <br>
+
+##### 4.2.3.2. Sprint Backlog 3
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr>
+    <th>ID</th>
+    <th>Historia de Usuario</th>
+    <th>Descripción</th>
+    <th>Prioridad</th>
+    <th>Responsable</th>
+    <th>Estado</th>
+  </tr>
+
+  <tr>
+    <td>US-04</td>
+    <td>Generar código QR</td>
+    <td>Como usuario, quiere generar un código QR único para canjear promociones disponibles.</td>
+    <td>Alta</td>
+    <td>Samuel</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-10</td>
+    <td>Crear promoción</td>
+    <td>Como empresa, quiere crear promociones dentro de la plataforma.</td>
+    <td>Alta</td>
+    <td>Alberto</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-11</td>
+    <td>Definir condiciones</td>
+    <td>Como empresa, quiere establecer condiciones para sus promociones.</td>
+    <td>Media</td>
+    <td>Alberto</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-12</td>
+    <td>Limitar canjes</td>
+    <td>Como empresa, quiere limitar la cantidad de canjes de una promoción.</td>
+    <td>Media</td>
+    <td>Alberto</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-13</td>
+    <td>Publicar reseña</td>
+    <td>Como usuario, quiere compartir su experiencia después de usar una promoción.</td>
+    <td>Media</td>
+    <td>Julio</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-14</td>
+    <td>Calificar promoción</td>
+    <td>Como usuario, quiere calificar una promoción para expresar su nivel de satisfacción.</td>
+    <td>Media</td>
+    <td>Julio</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-17</td>
+    <td>Registro</td>
+    <td>Como usuario, quiere registrarse en la plataforma para acceder a sus funcionalidades.</td>
+    <td>Alta</td>
+    <td>Jefferson</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-18</td>
+    <td>Login</td>
+    <td>Como usuario, quiere iniciar sesión de forma segura en la aplicación.</td>
+    <td>Alta</td>
+    <td>Jefferson</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-20</td>
+    <td>Guardar promociones</td>
+    <td>Como usuario, quiere guardar promociones favoritas para acceder a ellas posteriormente.</td>
+    <td>Alta</td>
+    <td>Alberto</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-21</td>
+    <td>Buscar promociones</td>
+    <td>Como usuario, quiere buscar promociones por nombre para encontrarlas fácilmente.</td>
+    <td>Alta</td>
+    <td>Samuel</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-22</td>
+    <td>Editar promoción</td>
+    <td>Como empresa, quiere modificar promociones existentes.</td>
+    <td>Alta</td>
+    <td>Samuel</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-23</td>
+    <td>Desactivar promoción</td>
+    <td>Como empresa, quiere desactivar promociones que ya no desea mostrar.</td>
+    <td>Media</td>
+    <td>Samuel</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-24</td>
+    <td>Compartir promoción</td>
+    <td>Como usuario, quiere compartir promociones con otros usuarios.</td>
+    <td>Media</td>
+    <td>Julio</td>
+    <td>Completado</td>
+  </tr>
+</table>
+
+##### 4.2.3.3. Development Evidence for Sprint Review
+
+* **Mobile Application**
+
+En el desarrollo del **Frontend** para **Consumer** con **Kotlin**, la implementación fue realizada de manera colaborativa por todos los integrantes del equipo, trabajando tanto en entorno local como mediante el uso de **GitHub** como repositorio principal de control de versiones.
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;"> <tr> <th>Fecha</th> <th>Commit ID</th> <th>Commit Message</th> <th>Autor</th> </tr> <tr> <td>17 de junio de 2026</td> <td>f2b7aec</td> <td>feat(notification): implement local notification bou ded context</td> <td>Alberto Ponce</td> </tr> <tr> <td>29 de junio de 2026</td> <td>2519c37</td> <td>feat: reestructuracion DDD</td> <td>aponceperales</td> </tr> <tr> <td>17 de junio de 2026</td> <td>5ed8851</td> <td>fix(navigation): wire Comunidad tab to CommunityScreen</td> <td>samuelbonifacio015</td> </tr> <tr> <td>15 de junio de 2026</td> <td>7bb7b41</td> <td>feat: community bc v1</td> <td>AlejandroG12970</td> </tr> <tr> <td>15 de junio de 2026</td> <td>b47fdca</td> <td>feat(redemption): implement QR codes and promo history flow</td> <td>samuelbonifacio015</td> </tr> <tr> <td>15 de junio de 2026</td> <td>9e83b4f</td> <td>feat: add RedemptionQRCode + Promo location filter enhanced</td> <td>samuelbonifacio015</td> </tr> <tr> <td>10 de junio de 2026</td> <td>2f1c395</td> <td>feat(ui): add Profile Repository &amp; UI State for fetching User endpoint</td> <td>samuelbonifacio015</td> </tr> <tr> <td>10 de junio de 2026</td> <td>024a7cb</td> <td>feat(api): add AuthApiService to fetch api/Authentication endpoints</td> <td>samuelbonifacio015</td> </tr> </table>
+
 ##### 4.2.3.7. Software Deployment Evidence for Sprint Review
 
 Para realizar el despliegue de la app movil (Kotlin), usamos Firebase Console, la opción de App Distribution. A continuación se detalla el proceso que se siguió para realizar el despliegue.

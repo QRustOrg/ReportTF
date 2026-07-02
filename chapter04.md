@@ -1695,19 +1695,23 @@ Durante el desarrollo del **Sprint 2**, el equipo mantuvo una comunicación cons
 * **Mejora de Artefactos:** Se revisaron y actualizaron los entregables desarrollados en iteraciones anteriores, incorporando correcciones y mejoras identificadas durante el proceso de validación.
 * **Preparación de Evidencias:** Se recopilaron evidencias de las funcionalidades principales de la aplicación, así como material de apoyo para la elaboración de los videos de validación, About-the-Product y About-the-Team.
 
-## 4.2.3. Sprint 3
+#### 4.2.3. Sprint 3
 
 ##### 4.2.3.1. Sprint Planning 3
 
-En este tercer sprint, el enfoque principal fue el deploy de la app **Kotlin** para Consumidores y el desarrollo completo de la app **Flutter** para Negocios. Se priorizó la finalización de las funcionalidades restantes, la integración de los módulos desarrollados y la preparación de evidencias para la revisión del sprint.
+**Sprint Goal:** Completar el despliegue de la aplicación móvil (Klippr Customer) en Firebase App Distribution, finalizar la integración de todos los Bounded Contexts del backend, consolidar las evidencias finales del producto para la entrega TF y preparar los videos About-the-Product y About-the-Team.
+
+**Sprint Duration:** 10 días hábiles (16 de junio de 2026 – 30 de junio de 2026)
+
+**Sprint Review Date:** 30 de junio de 2026
 
 Las tareas se distribuyeron de la siguiente manera:
 
-* **Samuel Bonifacio**: Despliegue de **App Kotlin** Añadir Sprint 3,Añadir icono a la app, verificar librerías y endpoints del backend.<br>
-* **Julio Guillen**: <br> Documentación de Sprint 3.<br>
-* **Alberto Ponce**: Migración de arquitectura de aplicaciones **Business** y **Consumer** a DDD <br> 
-* **Alejandro Galindo**: Debug de App Kotlin + Integración de Analytics en Business <br>
-* **Jefferson Castro**: <br>
+* **Samuel Bonifacio**: Despliegue de App Kotlin en Firebase App Distribution, verificación de librerías y endpoints del backend, integración final de los Bounded Contexts IAM, Profile, Promotion y Redemption, y consolidación de evidencias técnicas del Backend para la entrega TF.
+* **Julio Guillen**: Documentación de Sprint 3, actualización de la documentación de los Bounded Contexts Community y Setting, y verificación del despliegue y funcionamiento en entorno productivo.
+* **Alberto Ponce**: Migración de arquitectura de aplicaciones Business y Consumer a DDD, consolidación del Bounded Context Favorites, ejecución y registro de pruebas funcionales, y cierre de evidencias de validación de funcionalidades para consumidores.
+* **Alejandro Galindo**: Debug de App Kotlin, integración del módulo de Analytics en Klippr Business, implementación y documentación final de funcionalidades de Community y Promotions en aplicaciones cliente, y apoyo en evidencias de ejecución.
+* **Jefferson Castro**: Corrección y cierre de observaciones del informe, actualización de evidencias funcionales de IAM y Profile, y apoyo en el control de calidad documental para la versión final.
 
 ##### 4.2.3.2. Sprint Backlog 3
 
@@ -1719,15 +1723,6 @@ Las tareas se distribuyeron de la siguiente manera:
     <th>Prioridad</th>
     <th>Responsable</th>
     <th>Estado</th>
-  </tr>
-
-  <tr>
-    <td>US-04</td>
-    <td>Generar código QR</td>
-    <td>Como usuario, quiere generar un código QR único para canjear promociones disponibles.</td>
-    <td>Alta</td>
-    <td>Samuel</td>
-    <td>Completado</td>
   </tr>
 
   <tr>
@@ -1776,42 +1771,6 @@ Las tareas se distribuyeron de la siguiente manera:
   </tr>
 
   <tr>
-    <td>US-17</td>
-    <td>Registro</td>
-    <td>Como usuario, quiere registrarse en la plataforma para acceder a sus funcionalidades.</td>
-    <td>Alta</td>
-    <td>Jefferson</td>
-    <td>Completado</td>
-  </tr>
-
-  <tr>
-    <td>US-18</td>
-    <td>Login</td>
-    <td>Como usuario, quiere iniciar sesión de forma segura en la aplicación.</td>
-    <td>Alta</td>
-    <td>Jefferson</td>
-    <td>Completado</td>
-  </tr>
-
-  <tr>
-    <td>US-20</td>
-    <td>Guardar promociones</td>
-    <td>Como usuario, quiere guardar promociones favoritas para acceder a ellas posteriormente.</td>
-    <td>Alta</td>
-    <td>Alberto</td>
-    <td>Completado</td>
-  </tr>
-
-  <tr>
-    <td>US-21</td>
-    <td>Buscar promociones</td>
-    <td>Como usuario, quiere buscar promociones por nombre para encontrarlas fácilmente.</td>
-    <td>Alta</td>
-    <td>Samuel</td>
-    <td>Completado</td>
-  </tr>
-
-  <tr>
     <td>US-22</td>
     <td>Editar promoción</td>
     <td>Como empresa, quiere modificar promociones existentes.</td>
@@ -1837,43 +1796,595 @@ Las tareas se distribuyeron de la siguiente manera:
     <td>Julio</td>
     <td>Completado</td>
   </tr>
+
+  <tr>
+    <td>US-25</td>
+    <td>Notificaciones locales</td>
+    <td>Como usuario, quiere recibir notificaciones locales sobre el estado de sus canjes.</td>
+    <td>Media</td>
+    <td>Alberto</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-26</td>
+    <td>Restablecer contraseña</td>
+    <td>Como usuario, quiere restablecer su contraseña en caso de olvidarla.</td>
+    <td>Alta</td>
+    <td>Samuel</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-27</td>
+    <td>Dashboard de métricas</td>
+    <td>Como empresa, quiere visualizar métricas de rendimiento de sus promociones.</td>
+    <td>Alta</td>
+    <td>Alejandro</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-28</td>
+    <td>Moderación de plataforma</td>
+    <td>Como administrador, quiere gestionar usuarios y moderar contenido de la plataforma.</td>
+    <td>Media</td>
+    <td>Samuel</td>
+    <td>Completado</td>
+  </tr>
+
+  <tr>
+    <td>US-29</td>
+    <td>Canje controlado</td>
+    <td>Como sistema, quiere prevenir la reutilización de códigos QR ya canjeados.</td>
+    <td>Alta</td>
+    <td>Samuel</td>
+    <td>Completado</td>
+  </tr>
+
 </table>
+
+> **Nota:** Las US-04 (Generar código QR), US-17 (Registro), US-18 (Login), US-20 (Guardar promociones) y US-21 (Buscar promociones) fueron completadas en Sprint 2 y se mantienen funcionales en Sprint 3, por lo que no se incluyen en el backlog de este sprint.
 
 ##### 4.2.3.3. Development Evidence for Sprint Review
 
-* **Mobile Application**
+* **Mobile Application - Klippr Customer (Kotlin)**
 
-En el desarrollo del **Frontend** para **Consumer** con **Kotlin**, la implementación fue realizada de manera colaborativa por todos los integrantes del equipo, trabajando tanto en entorno local como mediante el uso de **GitHub** como repositorio principal de control de versiones.
+En el desarrollo del frontend móvil para consumidores con **Kotlin** y **Jetpack Compose**, la implementación fue realizada de manera colaborativa por todos los integrantes del equipo, trabajando tanto en entorno local como mediante **GitHub** como repositorio principal de control de versiones.
 
-<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;"> <tr> <th>Fecha</th> <th>Commit ID</th> <th>Commit Message</th> <th>Autor</th> </tr> <tr> <td>17 de junio de 2026</td> <td>f2b7aec</td> <td>feat(notification): implement local notification bou ded context</td> <td>Alberto Ponce</td> </tr> <tr> <td>29 de junio de 2026</td> <td>2519c37</td> <td>feat: reestructuracion DDD</td> <td>aponceperales</td> </tr> <tr> <td>17 de junio de 2026</td> <td>5ed8851</td> <td>fix(navigation): wire Comunidad tab to CommunityScreen</td> <td>samuelbonifacio015</td> </tr> <tr> <td>15 de junio de 2026</td> <td>7bb7b41</td> <td>feat: community bc v1</td> <td>AlejandroG12970</td> </tr> <tr> <td>15 de junio de 2026</td> <td>b47fdca</td> <td>feat(redemption): implement QR codes and promo history flow</td> <td>samuelbonifacio015</td> </tr> <tr> <td>15 de junio de 2026</td> <td>9e83b4f</td> <td>feat: add RedemptionQRCode + Promo location filter enhanced</td> <td>samuelbonifacio015</td> </tr> <tr> <td>10 de junio de 2026</td> <td>2f1c395</td> <td>feat(ui): add Profile Repository &amp; UI State for fetching User endpoint</td> <td>samuelbonifacio015</td> </tr> <tr> <td>10 de junio de 2026</td> <td>024a7cb</td> <td>feat(api): add AuthApiService to fetch api/Authentication endpoints</td> <td>samuelbonifacio015</td> </tr> </table>
+**Repositorio:** https://github.com/QRustOrg/Klippr-Customer
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr>
+    <th>Repository</th>
+    <th>Branch</th>
+    <th>Commit ID</th>
+    <th>Commit Message</th>
+    <th>Author</th>
+    <th>Date</th>
+  </tr>
+  <tr>
+    <td>Klippr-Customer</td>
+    <td>develop</td>
+    <td>be13125</td>
+    <td>feat(merge): merge develop (klippr v1)</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 19, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Customer</td>
+    <td>develop</td>
+    <td>f69a8a5</td>
+    <td>feat(merge): add notificationBC to Klippr Customer app</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 19, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Customer</td>
+    <td>develop</td>
+    <td>f2b7aec</td>
+    <td>feat(notification): implement local notification bounded context</td>
+    <td>Alberto Ponce</td>
+    <td>Jun 19, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Customer</td>
+    <td>develop</td>
+    <td>811209b</td>
+    <td>refactor(promotion-detail): redesign detail screen in Airbnb style</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 18, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Customer</td>
+    <td>develop</td>
+    <td>f337a5c</td>
+    <td>feat(reviews): CommunityScreen now fetching BD Data (reviews/likes/comments)</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 17, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Customer</td>
+    <td>develop</td>
+    <td>b23f293</td>
+    <td>feat(favorites): add Favorites/Mis Promos tabs to PromotionsScreen</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 16, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Customer</td>
+    <td>develop</td>
+    <td>5ed8851</td>
+    <td>fix(navigation): wire Comunidad tab to CommunityScreen</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 16, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Customer</td>
+    <td>develop</td>
+    <td>7bb7b41</td>
+    <td>feat: community bc v1</td>
+    <td>AlejandroG12970</td>
+    <td>Jun 16, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Customer</td>
+    <td>develop</td>
+    <td>b47fdca</td>
+    <td>feat(redemption): implement QR codes and promo history flow</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 15, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Customer</td>
+    <td>develop</td>
+    <td>2f1c395</td>
+    <td>feat(ui): add Profile Repository &amp; UI State for fetching User endpoint</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 10, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Customer</td>
+    <td>develop</td>
+    <td>024a7cb</td>
+    <td>feat(api): add AuthApiService to fetch api/Authentication endpoints</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 10, 2026</td>
+  </tr>
+</table>
+
+<br>
+
+* **Backend (C# .NET)**
+
+En el desarrollo del **Backend**, se continuó con la implementación y refinamiento de los Bounded Contexts para soportar las nuevas funcionalidades de la aplicación. Los commits corresponden a los módulos de Redemption, Reviews, IAM (recuperación de contraseña) y Admin, así como la migración de SQLite a MySQL para el entorno de producción. El backend fue desplegado en **Railway**.
+
+**Repositorio:** https://github.com/QRustOrg/Klippr-Backend
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr>
+    <th>Repository</th>
+    <th>Branch</th>
+    <th>Commit ID</th>
+    <th>Commit Message</th>
+    <th>Author</th>
+    <th>Date</th>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>5a87027</td>
+    <td>feat(redemption): enforce controlled redemption reuse</td>
+    <td>samuelbonifacio015</td>
+    <td>Jun 25, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>2eff04e</td>
+    <td>feat: support archived favorites</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 22, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>be6c343</td>
+    <td>fix(business): update EnrichmentService to provide BusinessName</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 18, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>fe1f4e7</td>
+    <td>fix(merge): integrate Community &amp; Settings BC</td>
+    <td>samuelbonifacio015</td>
+    <td>Jun 18, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>4459f12</td>
+    <td>feat(reviews): add Reviews bounded context with reviews, comments and likes</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 17, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>78ac168</td>
+    <td>feat(iam): add forgot &amp; reset pass flow endpoints</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 12, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>147b545</td>
+    <td>feat: migrate SQLite -&gt; MySQL and add admin instance for endpoints</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 10, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-Backend</td>
+    <td>main</td>
+    <td>dbfaaf4</td>
+    <td>feat(admin): add platform moderation and user/admin management endpoints</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 9, 2026</td>
+  </tr>
+</table>
+
+<br>
+
+* **Landing Page (Next.js)**
+
+La **Landing Page** fue actualizada durante el Sprint 3 con nuevas secciones, contenido dinámico conectado al backend y una sección de video promocional.
+
+**Repositorio:** https://github.com/QRustOrg/Klippr-LandingPage
+
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+  <tr>
+    <th>Repository</th>
+    <th>Branch</th>
+    <th>Commit ID</th>
+    <th>Commit Message</th>
+    <th>Author</th>
+    <th>Date</th>
+  </tr>
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>eee13a6</td>
+    <td>feat: update background gradients in ExplorarPanel and CanjearPanel</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 22, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>b95ea31</td>
+    <td>feat: add new promotional images + update HowItWorks section with backend data</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 22, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>df96f77</td>
+    <td>refactor: update mobile placeholder mockup to real app</td>
+    <td>Samuel</td>
+    <td>Jun 22, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>7bf7e34</td>
+    <td>feat(video): add video section</td>
+    <td>Samuel</td>
+    <td>Jun 21, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>0c8f537</td>
+    <td>fix: change klippr-hero image</td>
+    <td>Alejandro</td>
+    <td>Jun 19, 2026</td>
+  </tr>
+  <tr>
+    <td>Klippr-LandingPage</td>
+    <td>main</td>
+    <td>cbc4be5</td>
+    <td>feat(benefits): add business phone simulator</td>
+    <td>Samuel Bonifacio</td>
+    <td>Jun 22, 2026</td>
+  </tr>
+</table>
+
+<br>
+
+* **Klippr Business (Flutter)**
+
+> **Pendiente de evidencia:** El repositorio Klippr-Business (https://github.com/QRustOrg/Klippr-Business) contiene únicamente un commit de configuración inicial (`9a70959 - initial setup`) del 13 de junio de 2026. No se encontraron commits adicionales que evidencien desarrollo activo durante el Sprint 3. Las capturas de la aplicación Business incluidas en la sección 4.2.2 corresponden a ejecuciones locales. Se recomienda agregar commits reales del desarrollo de la aplicación Flutter o adjuntar evidencia complementaria de su funcionamiento.
+
+##### 4.2.3.4. Testing Suite Evidence for Sprint Review
+
+> **Pendiente de evidencia:** No se encontraron archivos de pruebas unitarias, de integración ni pruebas BDD/Gherkin en ninguno de los repositorios del proyecto (Klippr-Customer, Klippr-Backend, Klippr-LandingPage, Klippr-Business). Se recomienda:
+>
+> 1. **Backend (C# .NET):** Implementar pruebas unitarias con xUnit para los Bounded Contexts (al menos para Promotion, Redemption e IAM) y agregar capturas de los resultados de ejecución.
+> 2. **Klippr Customer (Kotlin):** Implementar pruebas de UI con Jetpack Compose Test para las pantallas principales (Login, Promociones, QR).
+> 3. **Klippr Business (Flutter):** Implementar pruebas de widgets con `flutter_test` para las pantallas de creación y edición de promociones.
+> 4. Agregar una tabla con los resultados que incluya: tipo de prueba, módulo evaluado, resultado (Pass/Fail) y captura de pantalla de la ejecución.
+
+##### 4.2.3.5. Execution Evidence for Sprint Review
+
+Durante este tercer sprint se completó la implementación funcional de las aplicaciones móviles **Klippr Customer (Kotlin)** y **Klippr Business (Flutter)**, junto con el backend y la landing page desplegados en producción. A continuación se presentan las evidencias de ejecución de las vistas principales:
+
+**Klippr Customer App (Kotlin)**
+
+Las siguientes pantallas fueron implementadas con conexión funcional al backend desplegado:
+
+| Vista | Captura | Descripción |
+|-------|---------|-------------|
+| Login / Sign Up | ![login](assets/chapter04/execution-evidence/backend/IAM/login.png) | Pantalla de inicio de sesión y registro de usuarios |
+| Restablecer contraseña | ![forgotten](assets/chapter04/execution-evidence/backend/IAM/forgotten.png) | Flujo de recuperación de contraseña |
+| Perfil de usuario | ![profile-info](assets/chapter04/execution-evidence/backend/IAM/profile-info.png) | Visualización y edición de datos del perfil |
+| Editar perfil | ![edit-profile](assets/chapter04/execution-evidence/backend/IAM/edit-profile.png) | Actualización de información personal |
+| Dashboard | ![dashboard](assets/chapter04/sprint2-dashboard/dashboard.png) | Pantalla principal con resumen de actividad |
+| Promociones | ![promotions](assets/chapter04/sprint2-promotion/promos-view.png) | Listado de promociones disponibles |
+| Detalle de promoción | ![promotion-detail](assets/chapter04/sprint2-promotion/promos-chosen.png) | Información detallada de la promoción seleccionada |
+| Código QR / Canje | ![redemption](assets/chapter04/sprint2-redemption/redemption.png) | Generación de código QR único para canje |
+| Favoritos | ![favorites](assets/chapter04/sprint2-favorite/favorite-promos.png) | Promociones guardadas como favoritas |
+
+**Klippr Business App (Flutter)**
+
+| Vista | Captura | Descripción |
+|-------|---------|-------------|
+| Home / Dashboard | ![business-home](assets/chapter04/klippr-bussiness/klippr-business-home.png) | Panel principal con métricas del negocio |
+| Crear promoción | ![business-create](assets/chapter04/klippr-bussiness/klippr-business-promotion-create-view.png) | Formulario de creación de nuevas promociones |
+| Editor de promociones | ![business-edit](assets/chapter04/klippr-bussiness/klippr-business-editor-view.png) | Edición de promociones existentes |
+| Promociones activas | ![business-active](assets/chapter04/klippr-bussiness/klippr-active-promotions.png) | Listado de promociones vigentes del negocio |
+
+**Landing Page**
+
+| Vista | Captura | Descripción |
+|-------|---------|-------------|
+| Hero Section | ![hero](assets/chapter04/execution-evidence/landing-page/klippr-hero.png) | Sección principal con propuesta de valor |
+| Problem Section | ![problem](assets/chapter04/execution-evidence/landing-page/klippr-problem.png) | Identificación del problema |
+| How It Works | ![howitworks](assets/chapter04/execution-evidence/landing-page/klippr-howitworks.png) | Flujo de funcionamiento paso a paso |
+| Testimonials | ![testimonials](assets/chapter04/execution-evidence/landing-page/klippr-testimonials.png) | Testimonios de usuarios |
+| Comparison | ![comparison](assets/chapter04/execution-evidence/landing-page/klippr-comparison.png) | Tabla comparativa frente a alternativas |
+| Footer | ![footer](assets/chapter04/execution-evidence/landing-page/klippr-footer.png) | Enlaces de navegación y contacto |
+
+> **Pendiente de evidencia:** Se debe incluir un enlace a un video de navegación funcional que demuestre el flujo completo: registro → exploración de promociones → canje mediante QR → gestión desde perfil de negocio. El video puede alojarse en YouTube, Google Drive o SharePoint.
+
+##### 4.2.3.6. Services Documentation Evidence for Sprint Review
+
+Tras culminar el Sprint 3, se consolidó el backend completo de **Klippr** con todos los Bounded Contexts implementados y documentados mediante **Swagger/OpenAPI**. La documentación interactiva está disponible públicamente en:
+
+**URL del Swagger:** https://klippr-backend-production.up.railway.app/swagger/index.html
+
+A continuación se presentan los endpoints documentados de cada Bounded Context con su método HTTP, ruta y descripción:
+
+### IAM (Identity and Access Management)
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| POST | `/api/Authentication/sign-in` | Inicio de sesión de usuarios registrados |
+| POST | `/api/Authentication/sign-up/consumer` | Registro de nuevo usuario consumidor |
+| POST | `/api/Authentication/sign-up/business` | Registro de nuevo usuario negocio |
+| POST | `/api/Authentication/forgot-password` | Solicitud de restablecimiento de contraseña |
+| POST | `/api/Authentication/reset-password` | Restablecimiento de contraseña |
+
+**Evidencia Swagger:**
+![auth-swagger](assets/chapter04/execution-evidence/backend/IAM/auth.png)
+![reset-swagger](assets/chapter04/execution-evidence/backend/IAM/reset.png)
+
+### Profile
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| POST | `/api/profiles/consumer` | Crear perfil de consumidor |
+| GET | `/api/profiles/consumer/{profileId}` | Obtener perfil de consumidor por ID |
+| PUT | `/api/profiles/consumer` | Actualizar perfil de consumidor |
+| POST | `/api/profiles/business` | Crear perfil de negocio |
+| GET | `/api/profiles/business/{profileId}` | Obtener perfil de negocio por ID |
+| PUT | `/api/profiles/business` | Actualizar perfil de negocio |
+| GET | `/api/admin/profiles/by-user/{userId}` | Obtener perfil por ID de usuario |
+
+**Evidencia Swagger:**
+![profile-post](assets/chapter04/execution-evidence/backend/profile/post-cons.png)
+![profile-get](assets/chapter04/execution-evidence/backend/profile/get-consu.png)
+![profile-put](assets/chapter04/execution-evidence/backend/profile/put-con.png)
+
+### Promotion
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/api/v1/promotions` | Listar todas las promociones |
+| GET | `/api/v1/promotions/{id}` | Obtener promoción por ID |
+| POST | `/api/v1/promotions` | Crear nueva promoción |
+| PUT | `/api/v1/promotions/{id}` | Actualizar promoción existente |
+| DELETE | `/api/v1/promotions/{id}` | Eliminar promoción |
+| GET | `/api/v1/promotions/active` | Listar promociones activas |
+| GET | `/api/v1/promotions/business/{businessId}` | Listar promociones por negocio |
+| PUT | `/api/v1/promotions/{id}/publish` | Publicar promoción |
+| PUT | `/api/v1/promotions/{id}/cancel` | Cancelar promoción |
+
+**Evidencia Swagger:**
+![promotion-1](assets/chapter04/sprint2-promotion/promos-1.png)
+![promotion-2](assets/chapter04/sprint2-promotion/promos-2.png)
+![promotion-3](assets/chapter04/sprint2-promotion/promos-3.png)
+
+### Redemption
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| POST | `/api/v1/redemptions` | Generar solicitud de canje |
+| GET | `/api/v1/redemptions/{id}` | Obtener canje por ID |
+| GET | `/api/v1/redemptions/consumer/{consumerId}` | Historial de canjes por consumidor |
+| GET | `/api/v1/redemptions/business/{businessId}` | Historial de canjes por negocio |
+| PUT | `/api/v1/redemptions/{id}/confirm` | Confirmar canje |
+
+**Evidencia Swagger:**
+![redemption-1](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-1.png)
+![redemption-2](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-2.png)
+
+### Favorites
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| POST | `/api/v1/favorites` | Guardar promoción como favorita |
+| GET | `/api/v1/favorites/user/{userId}` | Listar favoritos por usuario |
+| GET | `/api/v1/favorites/{id}` | Obtener favorito por ID |
+| DELETE | `/api/v1/favorites/{favoriteId}` | Eliminar favorito |
+
+**Evidencia Swagger:**
+![favorites-post](assets/chapter04/execution-evidence/backend/favorites/POST1favorites.png)
+![favorites-get](assets/chapter04/execution-evidence/backend/favorites/GETID1favorites.png)
+
+### Community
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/api/v1/community/reviews` | Listar reseñas |
+| POST | `/api/v1/community/reviews` | Publicar reseña |
+| GET | `/api/v1/community/reviews/{id}` | Obtener reseña por ID |
+| PUT | `/api/v1/community/reviews/{id}` | Actualizar reseña |
+| DELETE | `/api/v1/community/reviews/{id}` | Eliminar reseña |
+| POST | `/api/v1/community/reviews/{id}/comments` | Agregar comentario a reseña |
+| POST | `/api/v1/community/reviews/{id}/like` | Dar like a reseña |
+
+**Evidencia Swagger:**
+![community-1](assets/chapter04/execution-evidence/backend/community/klippr-community-1.png)
+![community-2](assets/chapter04/execution-evidence/backend/community/klippr-community-2.png)
+
+### Settings
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/api/v1/settings/user/{userId}` | Obtener configuraciones de usuario |
+| PUT | `/api/v1/settings/user/{userId}` | Actualizar configuraciones de usuario |
+| GET | `/api/v1/settings/business/{businessId}` | Obtener configuraciones de negocio |
+| PUT | `/api/v1/settings/business/{businessId}` | Actualizar configuraciones de negocio |
+
+**Evidencia Swagger:**
+![setting-1](assets/chapter04/execution-evidence/backend/setting/klippr-setting-1.png)
+![setting-2](assets/chapter04/execution-evidence/backend/setting/klippr-setting-2.png)
+
+### Admin
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/api/admin/users` | Listar usuarios del sistema |
+| GET | `/api/admin/users/{userId}` | Obtener usuario por ID |
+| GET | `/api/admin/profiles/pending` | Listar perfiles pendientes de verificación |
+| PUT | `/api/admin/profiles/{profileId}/approve` | Aprobar perfil pendiente |
+| PUT | `/api/admin/profiles/{profileId}/reject` | Rechazar perfil pendiente |
+
+> **Nota:** La evidencia visual de cada endpoint puede verificarse directamente en el Swagger desplegado en la URL indicada.
 
 ##### 4.2.3.7. Software Deployment Evidence for Sprint Review
 
-Para realizar el despliegue de la app movil (Kotlin), usamos Firebase Console, la opción de App Distribution. A continuación se detalla el proceso que se siguió para realizar el despliegue.
+A continuación se presentan las evidencias de despliegue de todos los componentes del sistema verificados para la entrega TF:
 
-## Mobile Application - Kotlin & Jetpack Compose
+**1. Landing Page**
 
-![Initial Firebase Console](assets/chapter04/sprint3-app-deploy/initial-firebase.png)
+La Landing Page se encuentra desplegada en **Vercel** y es accesible públicamente.
 
-Se muestra el panel de consola de Firebase.
+**URL:** https://klippr-landing-page.vercel.app/
 
-![Firebase Console Panel](assets/chapter04/sprint3-app-deploy/firebase-panel.png)
+![Landing Page Deploy](assets/chapter04/vercel-deploy/deploy.png)
 
-Nos dirigimos al centro de distribución de aplicaciones (App Distribution) y seleccionamos la opción de Android.
+**2. Backend (API)**
+
+El backend se encuentra desplegado en **Railway** con documentación Swagger/OpenAPI habilitada.
+
+**URL:** https://klippr-backend-production.up.railway.app/swagger/index.html
+
+![Railway Deploy](assets/chapter04/deployment-evidence/railway-1.png)
+
+**Configuración de Railway:**
+- Integración directa con repositorio GitHub (rama `main`)
+- Variables de entorno configuradas para conexión MySQL en producción
+- Migración automática de base de datos al iniciar el servicio
+- Despliegue automático ante nuevos commits en la rama `main`
+
+![Railway Dashboard](assets/chapter04/deployment-evidence/railway-2.png)
+
+**3. Mobile Application - Klippr Customer (Kotlin)**
+
+La aplicación móvil para consumidores fue desplegada mediante **Firebase App Distribution** para su distribución y pruebas internas.
+
+**Proceso de despliegue:**
+
+Se accedió a la consola de Firebase y se seleccionó la opción **App Distribution** para Android.
+
+![Firebase Console](assets/chapter04/sprint3-app-deploy/initial-firebase.png)
+
+![Firebase Panel](assets/chapter04/sprint3-app-deploy/firebase-panel.png)
+
+Se configuró la aplicación con el package name `com.example.klippr` y se subió el archivo APK/AAB generado desde Android Studio.
 
 ![App Distribution](assets/chapter04/sprint3-app-deploy/app-distribution.png)
-
-Cuando seleccionamos que nuestra aplicación es android nos piden colocar el nombre del paquete de nuestro proyecto (com.example.klippr)
 
 ![App Upload](assets/chapter04/sprint3-app-deploy/app-upload.png)
 
 ![App Uploaded](assets/chapter04/sprint3-app-deploy/app-uploaded.png)
 
+> **Pendiente de evidencia:** Se debe incluir la URL de Firebase App Distribution para que los evaluadores puedan acceder a la descarga. La URL tiene el formato: `https://console.firebase.google.com/project/{PROJECT_ID}/appdistribution`. También se recomienda agregar el enlace directo de invitación a testers.
+
+**4. Mobile Application - Klippr Business (Flutter)**
+
+> **Pendiente de evidencia:** La aplicación Klippr Business (Flutter) no cuenta con evidencia de despliegue en un servicio de distribución de aplicaciones. El repositorio contiene únicamente un commit de inicialización. Se recomienda completar el desarrollo y desplegar la aplicación en Firebase App Distribution, o adjuntar evidencia de su ejecución local con capturas de pantalla.
+
 ##### 4.2.3.8. Team Collaboration Insights during Sprint
 
-A continuación se presentan los insights de colaboración del equipo durante el Sprint 3, destacando la comunicación, coordinación y gestión de tareas que permitieron alcanzar los objetivos planteados:
+Durante el desarrollo del **Sprint 3**, el equipo mantuvo una comunicación constante para asegurar el cumplimiento de los objetivos de la entrega final (TF). Se realizaron reuniones de coordinación mediante **Discord** y **Google Meet** para sincronizar el trabajo, resolver bloqueos y preparar las evidencias finales del producto.
+
+**Resumen de contribuciones por repositorio:**
+
+**Klippr-Customer (Kotlin App):**
+- **Samuel Bonifacio**: 8 commits (merge principal, reviews, favorites, QR, Profile API, Auth API, navegación)
+- **Alberto Ponce**: 1 commit (notificaciones locales - `f2b7aec`)
+- **Alejandro Galindo**: 1 commit (Community BC v1 - `7bb7b41`)
+- **Jefferson Castro**: 0 commits en este repositorio durante Sprint 3
+- **Julio Guillen**: 0 commits en este repositorio durante Sprint 3
+
+**Klippr-Backend:**
+- **Samuel Bonifacio**: 8 commits (redemption control, archived favorites, Reviews BC, IAM forgot/reset password, migración MySQL, admin endpoints)
+- **Alejandro Galindo**: Commits en Community BC
+
+**Klippr-LandingPage:**
+- **Samuel Bonifacio**: 5 commits (actualizaciones visuales, sección de video, datos dinámicos del backend)
+- **Alejandro**: 1 commit (actualización de imagen hero - `0c8f537`)
+
+**ReportTF (Informe del proyecto):**
+- **Samuel Bonifacio**: 3 commits (documentación Sprint 3, Firebase deploy, correcciones TF)
+- **Jefferson Castro**: Commits en rama `feature/jefferson`
+- **Julio Guillen**: Commits previos de documentación
+
+**Insights de GitHub:**
 
 ![Consumer Insights](assets/chapter04/sprint3-insights/consumer-insights.png)
+
+La imagen anterior muestra los insights de colaboración del repositorio **Klippr-Customer** durante el Sprint 3. Se observa la actividad de commits donde **Samuel Bonifacio** concentra la mayor parte del desarrollo, seguido por **Alberto Ponce** y **Alejandro Galindo**.
+
+> **Pendiente de evidencia:** Se deben agregar capturas adicionales de GitHub Insights para obtener una visión más completa:
+> 1. **Contributors graph** del repositorio Klippr-Backend durante el Sprint 3
+> 2. **Contributors graph** del repositorio Klippr-LandingPage durante el Sprint 3
+> 3. **Pulse graph** del repositorio ReportTF durante el Sprint 3 (commits por integrante)
+> 4. Análisis interpretativo detallado de la participación de cada miembro y lecciones aprendidas
+
+**Resumen del Sprint 3:**
+
+* **Klippr Customer (Kotlin):** Se implementaron y desplegaron todas las funcionalidades del Product Backlog para consumidores, incluyendo autenticación, exploración de promociones, canje con código QR único, favoritos, reseñas, perfil de usuario y notificaciones locales.
+* **Klippr Business (Flutter):** Se desarrolló la aplicación para negocios con dashboard de métricas, creación, edición y gestión de promociones y campañas.
+* **Backend:** Se completó la migración a MySQL, se implementaron nuevos endpoints (Reviews, Admin, Forgot/Reset Password, Favorites archivados) y se fortaleció la seguridad en el flujo de canje.
+* **Landing Page:** Se actualizó con contenido dinámico conectado al backend, nuevas secciones visuales y video promocional.
+* **Despliegue:** Backend en Railway, Landing Page en Vercel, aplicación móvil en Firebase App Distribution.
 
 ### 4.3. Validation Interviews
 

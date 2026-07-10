@@ -444,18 +444,19 @@ Para el desarrollo del informe perteneciente a la entrega del TF, se dividió la
         <b>Ponce Perales, Alberto Alejandro</b><br> Al implementar y validar el Bounded Context de Favorites, elaborar evidencias funcionales y participar en la revisión de funcionalidades de la aplicación, actualicé mis conocimientos en desarrollo backend con C#, pruebas funcionales y documentación de software.<br>
         <b>Alejandro Manuel Galindo Montero</b><br>
         <b>TB2:</b><br>
-        <b>Bonifacio Jaramillo, Samuel Jesus</b><br>
-        <b>Castro Pariona, Jefferson Ernesto</b><br>
-        <b>Guillen Galindo, Julio Adolfo</b><br>
-        <b>Ponce Perales, Alberto Alejandro</b><br>
-        <b>Alejandro Manuel Galindo Montero</b><br>
+        <b>Bonifacio Jaramillo, Samuel Jesus</b> Reconocí que el aprendizaje permanente es indispensable al enfrentar el reto de un despliegue 100% funcional y documentado, ya que las herramientas de CI/CD y las prácticas de documentación evolucionan constantemente y exigen actualización continua para asegurar releases de calidad. <br>
+        <b>Castro Pariona, Jefferson Ernesto</b> Al revisar y mejorar artefactos previamente presentados, comprendí que la mejora continua y el aprendizaje constante son parte esencial del ciclo de vida del software, incluso en etapas finales de un proyecto. <br>
+        <b>Guillen Galindo, Julio Adolfo</b> Reconocí que mantenerme actualizado en plataformas de distribución móvil y estándares de documentación es clave para asegurar que un producto cumpla con todas las funcionalidades comprometidas en el product backlog. <br>
+        <b>Ponce Perales, Alberto Alejandro</b> Comprendí que el aprendizaje permanente no se limita al desarrollo técnico, sino también a la capacidad de comunicar y validar el producto ante terceros, lo cual exige actualizar habilidades de presentación y evaluación de usabilidad <br>
+        <b>Alejandro Manuel Galindo Montero</b> Reconocí que la elaboración del Capítulo IV y la validación final del Sprint 3 requieren una actualización constante en metodologías de evaluación de resultados, reforzando mi compromiso con el aprendizaje continuo como profesional de ingeniería de software. <br>
       </td>
       <td>
       <b>AV1:</b><br>
       Los estudiantes lograron actualizar exitosamente sus conocimientos profesionales mediante la aplicación de metodologías de Domain-Driven Design, análisis competitivo y arquitectura de software. El manejo de responsabilidades asignadas permitió que cada miembro brinde su aporte en cada área específica mientras contribuía al desarrollo del proyecto, demostrando la capacidad de adquirir y aplicar nuevos conocimientos de manera efectiva en un contexto real de desarrollo de software.<br><br>
-      <b>TB1:</b> El equipo logró actualizar exitosamente sus conocimientos técnicos a través del desarrollo del Backend y la Landing Page en el Sprint 1. Mediante la implementación práctica de Bounded Contexts, el diseño de la interfaz de usuario interactiva y la configuración de entornos de despliegue en la nube, cada miembro consolidó habilidades clave para la ingeniería de software moderna en un entorno real de trabajo ágil.<br><br>
+      <b>TB1:</b> El equipo logró actualizar exitosamente sus conocimientos técnicos a través del desarrollo del Backend y la Landing Page en el Sprint 1. Mediante la implementación práctica de Bounded Contexts, el diseño de la interfaz de usuario interactiva y la configuración de entornos de despliegue en la nube, cada miembro consolidó habilidades clave para la ingeniería de software moderna en un entorno real de trabajo ágil. <br><br>
       <b>AV2:</b><br>
-      Durante el Sprint 2, el equipo logró actualizar sus conocimientos profesionales mediante actividades concretas relacionadas con la implementación, documentación y validación de la solución. El despliegue completo del backend en Railway, la documentación de los endpoints mediante Swagger/OpenAPI, la elaboración de evidencias funcionales y la actualización de los artefactos del informe permitieron consolidar habilidades técnicas y de gestión aplicadas a un entorno real de desarrollo de software.
+      Durante el Sprint 2, el equipo logró actualizar sus conocimientos profesionales mediante actividades concretas relacionadas con la implementación, documentación y validación de la solución. El despliegue completo del backend en Railway, la documentación de los endpoints mediante Swagger/OpenAPI, la elaboración de evidencias funcionales y la actualización de los artefactos del informe permitieron consolidar habilidades técnicas y de gestión aplicadas a un entorno real de desarrollo de software. <br><br>
+      <B>TB2:</b> Durante el TB2 (Release Review), el equipo consolidó sus conocimientos profesionales mediante el despliegue final del 100% del backend, la Landing Page y la aplicación en Firebase App Distribution, así como la documentación completa y la corrección de artefactos previos, demostrando la capacidad de cerrar un ciclo de desarrollo de software real con calidad profesional. <br>
       </td>
     </tr>
     <tr>
@@ -482,20 +483,21 @@ Para el desarrollo del informe perteneciente a la entrega del TF, se dividió la
         <b>Castro Pariona, Jefferson Ernesto</b><br>
         <b>Guillen Galindo, Julio Adolfo</b><br> Reconocí que las tecnologías cloud y las arquitecturas modernas evolucionan constantemente, por lo que es necesario actualizar continuamente los conocimientos para mantenerse competitivo en la industria.<br>
         <b>Ponce Perales, Alberto Alejandro</b><br> Comprendi nuevas herramientas, patrones de diseño y buenas prácticas que permitan desarrollar software escalable y mantenible.<br>
-        <b>Alejandro Manuel Galindo Montero</b><br>
+        <b>Alejandro Manuel Galindo Montero</b> Reconocí que la elaboración del Capítulo y la validación final del Sprint equieren una actualización constante en metodologías de evaluación de resultados, reforzando mi compromiso con el aprendizaje continuo como profesional de ingeniería de software. <br>
         <b>TB2:</b><br>
-        <b>Bonifacio Jaramillo, Samuel Jesus</b><br>
-        <b>Castro Pariona, Jefferson Ernesto</b><br>
-        <b>Guillen Galindo, Julio Adolfo</b><br>
-        <b>Ponce Perales, Alberto Alejandro</b><br>
-        <b>Alejandro Manuel Galindo Montero</b><br>
+        <b>Bonifacio Jaramillo, Samuel Jesus</b> Reconocí que el aprendizaje permanente es indispensable al enfrentar el reto de un despliegue 100% funcional y documentado, ya que las herramientas de CI/CD y las prácticas de documentación evolucionan constantemente y exigen actualización continua para asegurar releases de calidad. <br>
+        <b>Castro Pariona, Jefferson Ernesto</b> Al revisar y mejorar artefactos previamente presentados, comprendí que la mejora continua y el aprendizaje constante son parte esencial del ciclo de vida del software, incluso en etapas finales de un proyecto. <br>
+        <b>Guillen Galindo, Julio Adolfo</b> Reconocí que mantenerme actualizado en plataformas de distribución móvil y estándares de documentación es clave para asegurar que un producto cumpla con todas las funcionalidades comprometidas en el product backlog. <br>
+        <b>Ponce Perales, Alberto Alejandro</b> Comprendí que el aprendizaje permanente no se limita al desarrollo técnico, sino también a la capacidad de comunicar y validar el producto ante terceros, lo cual exige actualizar habilidades de presentación y evaluación de usabilidad. <br>
+        <b>Alejandro Manuel Galindo Montero</b> Reconocí que la elaboración del Capítulo IV y la validación final del Sprint 3 requieren una actualización constante en metodologías de evaluación de resultados, reforzando mi compromiso con el aprendizaje continuo como profesional de ingeniería de software. <br>
       </td>
       <td>
       <b>AV1:</b><br>
       El equipo reconoció exitosamente la necesidad del aprendizaje permanente a través de la aplicación práctica de metodologías emergentes como Domain-Driven Design, C4 model y Clean Architecture. Cada integrante identificó áreas de crecimiento profesional y comprendió que la actualización continua de conocimientos es esencial para adaptarse a la evolución constante de las tecnologías de ingeniería de software y mantener la competitividad en el desarrollo de soluciones innovadoras.<br><br>
       <b>TB1:</b> El equipo reconoció de manera efectiva la importancia del aprendizaje permanente al enfrentar diversos desafíos técnicos durante el primer Sprint, como el despliegue en plataformas cloud y la integración de arquitecturas limpias. Esta etapa evidenció que la investigación constante y la adopción proactiva de nuevas herramientas son fundamentales para desarrollar soluciones competitivas y escalables.<br><br>
       <b>AV2:</b><br>
-      El equipo reconoció la importancia del aprendizaje permanente al enfrentar nuevos retos técnicos y organizativos, como la corrección de artefactos previos, la preparación de evidencias para el Sprint Review, la documentación del backend desplegado y la elaboración de los videos de validación y presentación del producto. Estas actividades demostraron que mantenerse actualizado es necesario para responder adecuadamente a las exigencias del proyecto y mejorar continuamente la calidad de la solución desarrollada.
+      El equipo reconoció la importancia del aprendizaje permanente al enfrentar nuevos retos técnicos y organizativos, como la corrección de artefactos previos, la preparación de evidencias para el Sprint Review, la documentación del backend desplegado y la elaboración de los videos de validación y presentación del producto. Estas actividades demostraron que mantenerse actualizado es necesario para responder adecuadamente a las exigencias del proyecto y mejorar continuamente la calidad de la solución desarrollada. <br><br>
+      <B>TB2:</b><br> El equipo reconoció que el aprendizaje permanente es un pilar transversal a lo largo de todo el proyecto, evidenciado en la etapa final del Release Review mediante la actualización de conocimientos en despliegue en producción, documentación técnica, distribución de aplicaciones móviles y comunicación audiovisual del producto, reforzando su preparación para el desempeño profesional en ingeniería de software. <br><br>
       </td>
     </tr>
   </tbody>

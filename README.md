@@ -29,7 +29,7 @@
 
 <br>
 
-**INFORME DE TRABAJO TB2**
+**INFORME DE TRABAJO FINAL**
 
 <br>
 

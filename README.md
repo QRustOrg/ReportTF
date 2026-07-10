@@ -29,7 +29,7 @@
 
 <br>
 
-**INFORME DE TRABAJO TF**
+**INFORME DE TRABAJO TB2**
 
 <br>
 

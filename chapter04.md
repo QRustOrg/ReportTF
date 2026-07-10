@@ -1007,6 +1007,57 @@ El controlador de **Favorites** expone las funcionalidades críticas para el cic
 ### Notas de Integración
 El Bounded Context de Favorites es completamente independiente: no depende de los Bounded Contexts de **Profile** ni de **Promotions** directamente. La comunicación con otros contextos se realiza únicamente a través de la **FavoritesContextFacade**, que expone operaciones de solo lectura mediante primitivos, garantizando el aislamiento del dominio.
 
+# Notifications Bounded Context
+
+Como parte del desarrollo del backend en **C#**, se ha consolidado el Bounded Context de **Notifications**. Este módulo permite gestionar notificaciones para los usuarios de la plataforma, informándoles sobre eventos relevantes como canjes generados, favoritos añadidos y promociones por vencer, mejorando la comunicación y experiencia dentro de la app.
+
+### Implementación Técnica de Notifications
+Se ha utilizado **ASP.NET Core** junto con **Entity Framework Core** y **MySQL** para garantizar la persistencia y recuperación eficiente de las notificaciones. Los logros principales incluyen:
+
+* **Creación de Notificaciones:** Implementación de un flujo de creación que registra eventos del sistema como `RedemptionGenerated`, `RedemptionExpiring` y `FavoriteAdded`, asociándolos a un usuario específico.
+* **Consulta por Usuario:** Un servicio de consulta que recupera todas las notificaciones de un usuario, con soporte para filtrar únicamente las no leídas mediante el parámetro `unreadOnly`.
+* **Marcado como Leída:** Operación que permite marcar una notificación individual como leída, actualizando su estado en base de datos.
+* **Marcado Masivo:** Operación que marca todas las notificaciones de un usuario como leídas en una sola llamada.
+* **Eliminación Segura:** Aplicación de reglas de dominio que garantizan que solo el propietario de la notificación pueda eliminarla.
+
+
+## Evidencias de Ejecución: Módulo Notifications
+
+A continuación se presentan los endpoints desarrollados y testeados a través de la interfaz de Swagger:
+
+![notifications-swagger](assets/chapter04/execution-evidence/backend/notifications/POST1Notifications.png)
+
+### 1. Gestión de Notificaciones
+
+El controlador de **Notifications** expone las funcionalidades críticas para el ciclo de vida de una notificación:
+
+* **POST `/api/v1/Notifications`**: Permite crear una notificación para un usuario. Retorna **201 Created** con los datos de la notificación creada, incluyendo su `notificationId`, tipo, título, mensaje y estado de lectura.
+* **GET `/api/v1/Notifications/user/{userId}`**: Recupera la lista completa de notificaciones de un usuario específico, incluyendo el conteo total y el conteo de no leídas. Soporta el parámetro opcional `?unreadOnly=true`.
+* **PATCH `/api/v1/Notifications/{notificationId}/read`**: Marca una notificación específica como leída. Retorna **204 No Content** al completarse exitosamente.
+* **PATCH `/api/v1/Notifications/user/{userId}/read-all`**: Marca todas las notificaciones de un usuario como leídas en una sola operación. Retorna **204 No Content**.
+* **DELETE `/api/v1/Notifications/{notificationId}`**: Elimina una notificación. Solo el propietario puede realizar esta acción. Retorna **204 No Content**.
+
+- **Validación POST - Creación de Notificación**
+
+![notifications-post](assets/chapter04/execution-evidence/backend/notifications/POST1notifications.png)
+
+- **Registro y Consulta**
+
+![notifications-get-user](assets/chapter04/execution-evidence/backend/notifications/GET1notifications.png)
+![notifications-get-user](assets/chapter04/execution-evidence/backend/notifications/GET2notifications.png)
+
+- **Marcado de Notificación como Leída**
+
+![notifications-patch-read](assets/chapter04/execution-evidence/backend/notifications/PATCH1notifications.png)
+![notifications-patch-read](assets/chapter04/execution-evidence/backend/notifications/PATCH2notifications.png)
+
+- **Eliminación de Notificación**
+
+![notifications-delete](assets/chapter04/execution-evidence/backend/notifications/DELETE1notifications.png)
+
+### Notas de Integración
+El Bounded Context de Notifications es completamente independiente: no depende directamente de otros Bounded Contexts. Las notificaciones son generadas por eventos de la aplicación cliente (canjes, favoritos, vigencia de promociones) y se persisten localmente en la tabla `NotificationItem`. La comunicación con otros contextos, de requerirse en el futuro, se realizaría únicamente a través de una fachada dedicada, garantizando el aislamiento del dominio.
+
 ##### 4.2.1.7. Software Deployment Evidence for Sprint Review
 
 **Evidencias del despliegue de Landing Page**
@@ -1661,6 +1712,61 @@ Permite remover una promoción previamente guardada en la lista de favoritos de 
 
 ![favorite-evidence-4](assets/chapter04/sprint2-favorite/favorites-4.png)
 
+# Notifications Bounded Context
+
+Como parte del desarrollo del backend en **C#**, se ha implementado y consolidado el Bounded Context de **Notifications**. Este componente permite gestionar las notificaciones de los usuarios dentro de la plataforma, informándoles sobre eventos relevantes como canjes generados, favoritos añadidos y promociones por vencer, mejorando la comunicación y la experiencia general de uso.
+
+### Implementación Técnica de Notifications
+
+La solución fue desarrollada utilizando **ASP.NET Core**, **Entity Framework Core** y **MySQL**, garantizando una gestión eficiente de la información y una adecuada persistencia de los datos. Los principales avances alcanzados incluyen:
+
+* **Creación de Notificaciones:** Implementación de funcionalidades que permiten registrar notificaciones asociadas a eventos del sistema, como canjes generados, favoritos añadidos y promociones próximas a vencer.
+* **Consulta Personalizada:** Desarrollo de servicios que permiten recuperar todas las notificaciones de un usuario específico, con soporte para filtrar únicamente las no leídas.
+* **Marcado como Leída:** Implementación de mecanismos para actualizar el estado de una notificación individual, permitiendo al usuario indicar que ha tomado conocimiento de ella.
+* **Marcado Masivo como Leídas:** Funcionalidad que permite marcar todas las notificaciones pendientes de un usuario como leídas en una sola operación.
+* **Eliminación de Notificaciones:** Implementación de mecanismos para remover notificaciones cuando el usuario ya no desea mantenerlas, aplicando validaciones que garantizan que solo el propietario pueda realizarla.
+
+## Evidencias de Ejecución: Módulo Notifications
+
+A continuación se presentan los endpoints desarrollados y testeados a través de la interfaz de Swagger:
+
+![notifications-evidence-0](assets/chapter04/execution-evidence/backend/notifications/POST1Notifications.png)
+
+## Gestión de Notificaciones
+
+El controlador de **Notifications** expone las funcionalidades críticas para el ciclo de vida de una notificación:
+
+* **Creación de Notificación**
+
+Permite registrar una nueva notificación para un usuario específico, asociándola a un tipo de evento del sistema. Aplica validaciones sobre los campos requeridos y retorna los datos completos del registro creado.
+
+![notifications-evidence-1](assets/chapter04/execution-evidence/backend/notifications/POST1Notifications.png)
+![notifications-evidence-1](assets/chapter04/execution-evidence/backend/notifications/POST2Notifications.png)
+
+* **Consulta de Notificaciones por Usuario**
+
+Permite recuperar todas las notificaciones asociadas a un usuario específico, incluyendo el conteo total y el conteo de notificaciones no leídas. Soporta el filtro opcional de solo no leídas.
+
+![notifications-evidence-2](assets/chapter04/execution-evidence/backend/notifications/GET1Notifications.png)
+![notifications-evidence-2](assets/chapter04/execution-evidence/backend/notifications/GET2Notifications.png)
+
+* **Marcado de Notificación como Leída**
+
+Permite actualizar el estado de una notificación específica a leída, indicando que el usuario ha tomado conocimiento del evento asociado.
+
+![notifications-evidence-3](assets/chapter04/execution-evidence/backend/notifications/PATCH1Notifications.png)
+
+* **Marcado Masivo como Leídas**
+
+Permite marcar todas las notificaciones pendientes de un usuario como leídas en una sola operación, optimizando la gestión del centro de notificaciones.
+
+![notifications-evidence-4](assets/chapter04/execution-evidence/backend/notifications/PATCH2Notifications.png)
+
+* **Eliminación de Notificación**
+
+Permite remover una notificación previamente registrada, aplicando validaciones que garantizan que solo el propietario pueda realizar esta acción dentro de la plataforma.
+
+![notifications-evidence-5](assets/chapter04/execution-evidence/backend/notifications/DELETE1Notifications.png)
 
 # Community Bounded Context (Reviews)
 

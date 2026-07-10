@@ -14,6 +14,10 @@
 
 # Video App Validation
 
+![App Validation](assets/anexes/app-validation.png)
+
+Link: https://youtu.be/GtMGwwJoRAQ
+
 # Video About The Product
 
 ![About The Product](assets/anexes/about-the-product.png)

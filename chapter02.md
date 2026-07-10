@@ -1506,7 +1506,7 @@ En esta parte, el Bounded Context Canvas delimitara cada parte del sistema a des
 #### 2.5.3.2. Software Architecture Container Level Diagrams
 
 <p align="center">
-    <img src="assets/chapter02/klipprsystem-containers.png">
+    <img src="assets/chapter02/klippr-container-diagram.png">
 </p>
 
 #### 2.5.3.3. Software Architecture Deployment Diagrams

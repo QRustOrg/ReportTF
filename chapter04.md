@@ -1661,7 +1661,59 @@ Permite remover una promoción previamente guardada en la lista de favoritos de 
 
 ![favorite-evidence-4](assets/chapter04/sprint2-favorite/favorites-4.png)
 
-# Community Bounded Context
+
+# Community Bounded Context (Reviews)
+
+Como parte del desarrollo del módulo **Community**, se ha implementado y consolidado el Bounded Context de **Reviews**. Este componente permite a los usuarios publicar reseñas sobre los servicios contratados, interactuar mediante reacciones y comentarios, y fomentar la retroalimentación entre la comunidad de usuarios de la plataforma.
+
+### Implementación Técnica de Reviews
+
+La solución fue desarrollada utilizando **Flutter** en el frontend con **Jetpack Compose**, consumiendo una API REST que gestiona la persistencia y validación de las reseñas. Los principales avances alcanzados incluyen:
+
+* **Publicación de Reseñas:** Implementación de funcionalidades que permiten a los usuarios registrar una reseña asociada a un servicio previamente contratado.
+* **Validación de Elegibilidad:** Desarrollo de un mecanismo que verifica si el usuario cumple con las condiciones necesarias para poder reseñar, evitando publicaciones no autorizadas o duplicadas.
+* **Interacción Social:** Implementación de reacciones (likes) sobre las reseñas publicadas, permitiendo a otros usuarios expresar su valoración sobre el contenido compartido.
+* **Comentarios sobre Reseñas:** Desarrollo de servicios que permiten listar y publicar comentarios dentro de una reseña específica, enriqueciendo la conversación alrededor de cada opinión.
+
+## Evidencias de Ejecución: Módulo Community
+
+El controlador de **Reviews** expone las funcionalidades críticas para el ciclo de vida de una reseña:
+
+* **Listado de Reseñas**
+
+Permite consultar todas las reseñas registradas en la plataforma, facilitando la visualización de la retroalimentación compartida por los usuarios.
+
+![community-evidence-1](assets/chapter04/sprint2-community/reviews1.png)
+
+* **Publicación de Reseña**
+
+Permite a un usuario registrar una nueva reseña, aplicando las validaciones necesarias para garantizar la integridad de la información publicada.
+
+![community-evidence-2](assets/chapter04/sprint2-community/reviews2.png)
+
+* **Verificación de Elegibilidad**
+
+Permite comprobar si un usuario cuenta con los permisos y condiciones necesarias para poder reseñar un servicio determinado.
+
+![community-evidence-3](assets/chapter04/sprint2-community/reviews3.png)
+
+* **Reacción a una Reseña**
+
+Permite a los usuarios reaccionar (like) sobre una reseña existente, promoviendo la interacción dentro de la comunidad.
+
+![community-evidence-4](assets/chapter04/sprint2-community/reviews4.png)
+
+* **Listado de Comentarios**
+
+Permite consultar todos los comentarios asociados a una reseña específica.
+
+![community-evidence-5](assets/chapter04/sprint2-community/reviews5.png)
+
+* **Publicación de Comentario**
+
+Permite a un usuario añadir un comentario dentro de una reseña, fomentando la discusión y el intercambio de opiniones.
+
+![community-evidence-6](assets/chapter04/sprint2-community/reviews6.png)
 
 ##### 4.2.2.7. Software Deployment Evidence for Sprint Review
 

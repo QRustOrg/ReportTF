@@ -399,11 +399,15 @@ Para el desarrollo del informe perteneciente a la entrega del TF, se dividió la
 5. [Conclusiones](#conclusiones)<br>
    5.1. [Conclusiones y recomendaciones](#51-conclusiones-y-recomendaciones)<br>
 
-6. [Video About-the-team](#video-about-the-team)<br>
+6. [Video App Validation](#video-app-validation)<br>
 
-7. [Bibliografía](#bibliografía)<br>
+7. [Video About the product](#video-about-the-product)<br>
 
-8. [Anexos](#anexos)<br>
+8. [Video About-the-team](#video-about-the-team)<br>
+
+9. [Bibliografía](#bibliografía)<br>
+
+10. [Anexos](#anexos)<br>
 
 <br>
 

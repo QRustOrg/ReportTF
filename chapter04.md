@@ -2005,27 +2005,486 @@ En el desarrollo del **Frontend** para **Consumer** con **Kotlin**, la implement
 
 <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;"> <tr> <th>Fecha</th> <th>Commit ID</th> <th>Commit Message</th> <th>Autor</th> </tr> <tr> <td>17 de junio de 2026</td> <td>f2b7aec</td> <td>feat(notification): implement local notification bou ded context</td> <td>Alberto Ponce</td> </tr> <tr> <td>29 de junio de 2026</td> <td>2519c37</td> <td>feat: reestructuracion DDD</td> <td>aponceperales</td> </tr> <tr> <td>17 de junio de 2026</td> <td>5ed8851</td> <td>fix(navigation): wire Comunidad tab to CommunityScreen</td> <td>samuelbonifacio015</td> </tr> <tr> <td>15 de junio de 2026</td> <td>7bb7b41</td> <td>feat: community bc v1</td> <td>AlejandroG12970</td> </tr> <tr> <td>15 de junio de 2026</td> <td>b47fdca</td> <td>feat(redemption): implement QR codes and promo history flow</td> <td>samuelbonifacio015</td> </tr> <tr> <td>15 de junio de 2026</td> <td>9e83b4f</td> <td>feat: add RedemptionQRCode + Promo location filter enhanced</td> <td>samuelbonifacio015</td> </tr> <tr> <td>10 de junio de 2026</td> <td>2f1c395</td> <td>feat(ui): add Profile Repository &amp; UI State for fetching User endpoint</td> <td>samuelbonifacio015</td> </tr> <tr> <td>10 de junio de 2026</td> <td>024a7cb</td> <td>feat(api): add AuthApiService to fetch api/Authentication endpoints</td> <td>samuelbonifacio015</td> </tr> </table>
 
+##### 4.2.3.4. Testing Suite Evidence for Sprint Review
+
+Durante el **Sprint 3**, el equipo realizó pruebas funcionales y de integración orientadas a validar los flujos críticos de la aplicación móvil **Consumer (Kotlin / Jetpack Compose)** y de la aplicación **Business (Flutter)**, así como la correcta comunicación con el backend desplegado en **Railway**.
+
+Las pruebas se ejecutaron de forma **manual** sobre emuladores y dispositivos físicos, complementadas con la verificación de endpoints mediante **Swagger/OpenAPI**. El objetivo principal fue asegurar que las historias de usuario del backlog del Sprint 3 se comportaran de manera estable antes del despliegue de la app Kotlin en **Firebase App Distribution**.
+
+### Alcance de las pruebas
+
+| Tipo de prueba | Producto | Objetivo | Resultado |
+| --- | --- | --- | --- |
+| Pruebas funcionales de UI | Consumer (Kotlin) | Validar navegación, autenticación, promociones, favoritos, canje QR, comunidad y notificaciones | Aprobado |
+| Pruebas funcionales de UI | Business (Flutter) | Validar home del negocio, creación/edición/desactivación de promociones y visualización de campañas activas | Aprobado |
+| Pruebas de integración API | Backend (C# / Railway) | Verificar respuestas de IAM, Promotion, Redemption, Favorites, Community, Notifications y Analytics | Aprobado |
+| Pruebas de flujo extremo a extremo | Consumer + Backend | Registro/login → explorar promociones → guardar favorito → generar QR → publicar reseña | Aprobado |
+| Pruebas de despliegue | Firebase App Distribution | Confirmar empaquetado APK/AAB, carga del build y disponibilidad para testers | Aprobado |
+
+### Flujos validados en Consumer (Kotlin)
+
+1. **Registro e inicio de sesión (US-17, US-18):** creación de cuenta, autenticación con credenciales y persistencia de sesión mediante token JWT.
+2. **Exploración y búsqueda de promociones (US-21):** listado de ofertas, detalle de promoción y búsqueda por nombre.
+3. **Favoritos (US-20):** agregar, listar y eliminar promociones favoritas.
+4. **Canje con código QR (US-04):** generación de QR único, aceptación de términos y visualización del historial de canjes.
+5. **Comunidad y calificaciones (US-13, US-14):** publicación de reseñas, calificación de promociones y visualización de interacciones.
+6. **Compartir promoción (US-24):** acción de compartir oferta con otros usuarios desde la vista de detalle.
+7. **Notificaciones locales:** recepción y gestión de avisos asociados a eventos de la aplicación.
+
+### Flujos validados en Business (Flutter)
+
+1. **Creación de promociones (US-10):** registro de nuevas ofertas con título, descripción y descuento.
+2. **Definición de condiciones y límites (US-11, US-12):** configuración de vigencia, restricciones y cantidad máxima de canjes.
+3. **Edición y desactivación de promociones (US-22, US-23):** actualización de datos y retiro de campañas del catálogo activo.
+4. **Home y promociones activas:** monitoreo del portafolio de campañas del negocio.
+
+### Criterios de aceptación verificados
+
+* Los endpoints protegidos del backend solo responden con un token JWT válido.
+* La app Consumer consume correctamente la API de producción en Railway.
+* El flujo de canje genera un QR asociado al usuario autenticado y a la promoción seleccionada.
+* Las operaciones de CRUD de promociones en Business se reflejan en el backend.
+* La navegación entre módulos (Dashboard, Promotions, Favorites, Community, Profile) no presenta bloqueos ni pantallas huérfanas.
+* El build de la app Kotlin se genera, se sube y queda disponible en Firebase App Distribution con el package name `com.example.klippr`.
+
+### Observaciones del ciclo de pruebas
+
+* Se corrigieron problemas de cableado de navegación (por ejemplo, pestaña **Comunidad** hacia `CommunityScreen`).
+* Se validó la reestructuración **DDD** en las apps Consumer y Business, confirmando que los repositorios y estados de UI consumen los endpoints correctos.
+* Se verificó la integración de librerías y la disponibilidad de los servicios del backend antes del despliegue final.
+
+##### 4.2.3.5. Execution Evidence for Sprint Review
+
+Durante el **Sprint 3** se consolidó la ejecución integral de la **Mobile App Consumer (Kotlin)**, la **Mobile App Business (Flutter)** y el **Backend** desplegado. A diferencia de sprints anteriores, la app Consumer dejó de ejecutarse únicamente de forma local y se preparó para distribución a testers mediante **Firebase App Distribution**.
+
+A continuación se presentan las evidencias de ejecución de los productos:
+
+## Mobile App Consumer — Kotlin & Jetpack Compose
+
+### IAM / Profile
+
+#### Pantalla de Login y Sign-up
+
+Desde la pantalla de **Login**, el usuario puede registrarse o iniciar sesión. Esta vista constituye el punto de entrada al flujo de autenticación integrado con el backend, validando la identidad del consumidor y habilitando el acceso a las funcionalidades protegidas.
+
+![sign-up](assets/chapter04/execution-evidence/backend/IAM/sign-up.png)
+
+![login](assets/chapter04/execution-evidence/backend/IAM/login.png)
+
+#### Pantalla de recuperación de contraseña
+
+![forgotten](assets/chapter04/execution-evidence/backend/IAM/forgotten.png)
+
+#### Pantalla de perfil y edición
+
+Desde **Profile** y **Edit profile**, el usuario consulta y actualiza sus datos personales. La información se mantiene sincronizada con el backend a través del módulo de Profile.
+
+![profile-info](assets/chapter04/execution-evidence/backend/IAM/profile-info.png)
+
+![edit-profile](assets/chapter04/execution-evidence/backend/IAM/edit-profile.png)
+
+#### Configuración de cuenta
+
+Desde **Options**, el usuario gestiona parámetros y preferencias asociadas a su cuenta.
+
+![dashb](assets/chapter04/execution-evidence/backend/IAM/dashb.png)
+
+![options](assets/chapter04/execution-evidence/backend/IAM/options.png)
+
+### Dashboard
+
+Desde la sección **Dashboard**, el usuario visualiza de forma centralizada la información más relevante de su cuenta, incluyendo promociones destacadas y accesos rápidos a los módulos principales.
+
+<p align="center">
+    <img src="assets/chapter04/sprint2-dashboard/dashboard.png">
+</p>
+
+### Promotion
+
+#### Catálogo de promociones
+
+Desde **Promotion**, el consumidor explora el catálogo de ofertas disponibles, con información visual y descriptiva de cada promoción.
+
+<p align="center">
+    <img src="assets/chapter04/sprint2-promotion/promos-view.png">
+</p>
+
+#### Detalle de promoción seleccionada
+
+Al elegir una oferta, el usuario accede al detalle completo: descripción, descuento, condiciones, vigencia y opción de aceptar términos antes de canjear.
+
+<p align="center">
+    <img src="assets/chapter04/sprint2-promotion/promos-chosen.png">
+</p>
+
+### Redemption — Generación de código QR
+
+Una vez aceptados los términos, la app genera un **código QR único** vinculado al usuario y a la promoción seleccionada, permitiendo un canje seguro y trazable.
+
+<p align="center">
+    <img src="assets/chapter04/sprint2-redemption/redemption.png">
+</p>
+
+### Favorites
+
+#### Lista vacía
+
+Cuando el usuario aún no ha guardado promociones, la pantalla de favoritos muestra un estado vacío informativo.
+
+<p align="center">
+    <img src="assets/chapter04/sprint2-favorite/favorite-empty.png">
+</p>
+
+#### Lista con promociones guardadas
+
+Al marcar ofertas como favoritas, el usuario puede consultarlas rápidamente desde esta sección.
+
+<p align="center">
+    <img src="assets/chapter04/sprint2-favorite/favorite-promos.png">
+</p>
+
+### Community — Reseñas y calificaciones
+
+El módulo de **Community** permite publicar reseñas, calificar promociones e interactuar con la comunidad de consumidores, reforzando la confianza en las ofertas de la plataforma.
+
+![community-mobile-1](assets/chapter04/execution-evidence/backend/community/klippr-community-1.png)
+
+![community-mobile-2](assets/chapter04/execution-evidence/backend/community/klippr-community-2.png)
+
+![community-mobile-3](assets/chapter04/execution-evidence/backend/community/klippr-community-3.png)
+
+### Notificaciones
+
+El bounded context de **Notifications** se integró en la app Consumer, permitiendo registrar, consultar y gestionar avisos locales asociados a eventos de la aplicación (canjes, favoritos y vigencia de promociones).
+
+![notifications-get](assets/chapter04/execution-evidence/backend/notifications/GET1Notifications.png)
+
+![notifications-post](assets/chapter04/execution-evidence/backend/notifications/POST1Notifications.png)
+
+## Klippr Business App — Flutter
+
+A continuación se presentan las evidencias de la aplicación **Klippr Business** para el segmento de negocios, completada y validada durante el Sprint 3.
+
+### Home del negocio
+
+Desde la pantalla principal, el negocio visualiza un resumen de sus promociones activas, métricas clave y acceso a las funcionalidades de gestión.
+
+![Klippr Business - Home](assets/chapter04/klippr-bussiness/klippr-business-home.png)
+
+### Creación de promociones
+
+La vista **Crear Promoción** permite registrar nuevas ofertas con un formulario estructurado.
+
+![Klippr Business - Crear Promoción](assets/chapter04/klippr-bussiness/klippr-business-promotion-create-view.png)
+
+**Paso 1 — Información básica:** nombre, descripción y categoría de la promoción.
+
+![Klippr Business - Crear Promoción - Paso 1](assets/chapter04/klippr-bussiness/klippr-business-promotion-create-view-1.png)
+
+**Paso 2 — Condiciones y restricciones:** vigencia, límites de canje y reglas de uso.
+
+![Klippr Business - Crear Promoción - Paso 2](assets/chapter04/klippr-bussiness/klippr-business-promotion-create-view-2.png)
+
+### Editor de promociones
+
+Desde el **Editor**, el negocio modifica datos de una promoción existente (descripción, fechas, descuento y estado).
+
+![Klippr Business - Editor](assets/chapter04/klippr-bussiness/klippr-business-editor-view.png)
+
+### Promociones activas
+
+La pantalla **Promociones Activas** lista las campañas vigentes del negocio, facilitando el monitoreo y la gestión del portafolio de ofertas.
+
+![Klippr Business - Promociones Activas](assets/chapter04/klippr-bussiness/klippr-active-promotions.png)
+
+## Backend actualizado
+
+El backend en **C# / ASP.NET Core** se mantuvo desplegado en **Railway** y disponible para consumo por ambas aplicaciones móviles. A continuación se muestran evidencias de la API y su documentación interactiva:
+
+![Backend-1](assets/chapter04/sprint2-backend/backend-1.png)
+
+![Backend-2](assets/chapter04/sprint2-backend/backend-2.png)
+
+![Backend-3](assets/chapter04/sprint2-backend/backend-3.png)
+
+![Backend-4](assets/chapter04/sprint2-backend/backend-4.png)
+
+![Backend-5](assets/chapter04/sprint2-backend/backend-5.png)
+
+![Backend-v2](assets/chapter04/execution-evidence/backend/backend-v2.png)
+
+##### 4.2.3.6. Services Documentation Evidence for Sprint Review
+
+Tras culminar el **Sprint 3**, se consolidó la documentación y el consumo de los servicios del backend de **Klippr** desde las aplicaciones móviles **Consumer** y **Business**. En esta iteración se priorizó la integración end-to-end de los bounded contexts de **Authentication / IAM**, **Profile**, **Promotion**, **Redemption**, **Favorites**, **Community (Reviews)**, **Notifications**, **Settings** y **Analytics**, todos desplegados en **Railway** y documentados mediante **Swagger/OpenAPI**.
+
+**URL de documentación de la API:** https://klippr-backend-production.up.railway.app/swagger/index.html
+
+A continuación se presentan las evidencias de documentación de los servicios utilizados durante el Sprint 3:
+
+## IAM / Authentication Bounded Context
+
+Módulo responsable del registro, autenticación, emisión de tokens JWT y control de acceso a recursos protegidos. Fue validado de forma integral con las pantallas de Login, Sign-up y recuperación de contraseña de la app Consumer.
+
+![auth](assets/chapter04/execution-evidence/backend/IAM/auth.png)
+
+![admin-profile](assets/chapter04/execution-evidence/backend/IAM/adminprof.png)
+
+![bcusers](assets/chapter04/execution-evidence/backend/IAM/bcus.png)
+
+![reset](assets/chapter04/execution-evidence/backend/IAM/reset.png)
+
+**Operaciones principales documentadas:**
+
+* Registro de usuarios e inicio de sesión.
+* Generación y validación de tokens JWT.
+* Consulta y listado de usuarios por identificador, correo o rol.
+* Flujo de restablecimiento de contraseña.
+
+## Profile Bounded Context
+
+Módulo encargado de la gestión del perfil del consumidor y la consulta de perfiles administrativos.
+
+![bcprofile](assets/chapter04/execution-evidence/backend/IAM/bcprof.png)
+
+* **POST /api/profiles/consumer** — Crea el perfil del consumidor autenticado.
+
+![post-cons](assets/chapter04/execution-evidence/backend/profile/post-cons.png)
+
+* **GET /api/profiles/consumer/{profileId}** — Obtiene el perfil de consumidor.
+
+![get-cons](assets/chapter04/execution-evidence/backend/profile/get-consu.png)
+
+* **PUT /api/profiles/consumer** — Actualiza los datos del perfil.
+
+![put-cons](assets/chapter04/execution-evidence/backend/profile/put-con.png)
+
+* **GET /api/admin/profiles/by-user/{userId}** — Obtiene el perfil asociado a un usuario (consumidor o negocio).
+
+![get-role](assets/chapter04/execution-evidence/backend/profile/get-role.png)
+
+## Promotion Bounded Context
+
+Servicio central para la creación, publicación, edición y desactivación de promociones. Es consumido tanto por la app Business (gestión de campañas) como por la app Consumer (catálogo y búsqueda).
+
+![promotion-evidence-0](assets/chapter04/sprint2-promotion/promos-0.png)
+
+* **Creación de promociones**
+
+![promotion-evidence-1](assets/chapter04/sprint2-promotion/promos-1.png)
+
+* **Listado general y consulta por identificador**
+
+![promotion-evidence-2](assets/chapter04/sprint2-promotion/promos-2.png)
+
+![promotion-evidence-3](assets/chapter04/sprint2-promotion/promos-3.png)
+
+* **Actualización y eliminación**
+
+![promotion-evidence-4](assets/chapter04/sprint2-promotion/promos-4.png)
+
+![promotion-evidence-5](assets/chapter04/sprint2-promotion/promos-5.png)
+
+* **Promociones activas y por negocio**
+
+![promotion-evidence-6](assets/chapter04/sprint2-promotion/promos-6.png)
+
+![promotion-evidence-7](assets/chapter04/sprint2-promotion/promos-7.png)
+
+* **Publicación y cancelación/desactivación**
+
+![promotion-evidence-8](assets/chapter04/sprint2-promotion/promos-8.png)
+
+![promotion-evidence-9](assets/chapter04/sprint2-promotion/promos-9.png)
+
+## Redemption Bounded Context
+
+Módulo que soporta el flujo de canje seguro con generación de código QR, validación de condiciones y consulta de historial.
+
+![redemption-evidence-1](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-1.png)
+
+* **Generación de canjes**
+
+![redemption-evidence-2](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-2.png)
+
+* **Confirmación de canjes**
+
+![redemption-evidence-3](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-3.png)
+
+* **Consulta por identificador e historial por consumidor/negocio**
+
+![redemption-evidence-4](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-4.png)
+
+![redemption-evidence-5](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-5.png)
+
+![redemption-evidence-6](assets/chapter04/execution-evidence/backend/promotion-redemption/klippr-redemption-6.png)
+
+## Favorites Bounded Context
+
+Servicio que permite a los consumidores guardar, consultar y eliminar promociones de interés.
+
+![favorite-evidence-0](assets/chapter04/sprint2-favorite/favorites-0.png)
+
+* **Listado por usuario y consulta por identificador**
+
+![favorite-evidence-1](assets/chapter04/sprint2-favorite/favorites-1.png)
+
+![favorite-evidence-2](assets/chapter04/sprint2-favorite/favorites-2.png)
+
+* **Registro y eliminación de favoritos**
+
+![favorite-evidence-3](assets/chapter04/sprint2-favorite/favorites-3.png)
+
+![favorite-evidence-4](assets/chapter04/sprint2-favorite/favorites-4.png)
+
+## Community (Reviews) Bounded Context
+
+Módulo de reseñas y calificaciones que habilita la publicación de experiencias, verificación de elegibilidad, reacciones y comentarios.
+
+* **Listado de reseñas**
+
+![community-evidence-1](assets/chapter04/sprint2-community/reviews1.png)
+
+* **Publicación de reseña**
+
+![community-evidence-2](assets/chapter04/sprint2-community/reviews2.png)
+
+* **Verificación de elegibilidad**
+
+![community-evidence-3](assets/chapter04/sprint2-community/reviews3.png)
+
+* **Reacción a una reseña**
+
+![community-evidence-4](assets/chapter04/sprint2-community/reviews4.png)
+
+* **Listado y publicación de comentarios**
+
+![community-evidence-5](assets/chapter04/sprint2-community/reviews5.png)
+
+![community-evidence-6](assets/chapter04/sprint2-community/reviews6.png)
+
+## Notifications Bounded Context
+
+Servicio de notificaciones para informar eventos relevantes al usuario (canjes, favoritos y promociones por vencer).
+
+* **Creación de notificación**
+
+![notifications-evidence-1](assets/chapter04/execution-evidence/backend/notifications/POST1Notifications.png)
+
+![notifications-evidence-2](assets/chapter04/execution-evidence/backend/notifications/POST2Notifications.png)
+
+* **Consulta por usuario**
+
+![notifications-evidence-3](assets/chapter04/execution-evidence/backend/notifications/GET1Notifications.png)
+
+![notifications-evidence-4](assets/chapter04/execution-evidence/backend/notifications/GET2Notifications.png)
+
+* **Marcado como leída (individual y masivo)**
+
+![notifications-evidence-5](assets/chapter04/execution-evidence/backend/notifications/PATCH1Notifications.png)
+
+![notifications-evidence-6](assets/chapter04/execution-evidence/backend/notifications/PATCH2Notifications.png)
+
+* **Eliminación de notificación**
+
+![notifications-evidence-7](assets/chapter04/execution-evidence/backend/notifications/DELETE1Notifications.png)
+
+## Settings Bounded Context
+
+Módulo de configuración de parámetros de la aplicación y preferencias del usuario, integrado con las pantallas de opciones de la app Consumer.
+
+![settings-1](assets/chapter04/execution-evidence/backend/setting/klippr-setting-1.png)
+
+![settings-2](assets/chapter04/execution-evidence/backend/setting/klippr-setting-2.png)
+
+![settings-3](assets/chapter04/execution-evidence/backend/setting/klippr-setting-3.png)
+
+![settings-4](assets/chapter04/execution-evidence/backend/setting/klippr-setting-4.png)
+
+## Analytics Bounded Context
+
+Servicio de métricas e indicadores de negocio, integrado durante el Sprint 3 en la app Business para apoyar la visualización de desempeño de campañas.
+
+![analytics-endpoints](assets/chapter04/sprint1-analytics/endpoints-swagger.png)
+
+![analytics-dashboard](assets/chapter04/sprint1-analytics/get-dashboard.png)
+
+![analytics-campaign](assets/chapter04/sprint1-analytics/get-campaign.png)
+
+![analytics-metrics](assets/chapter04/sprint1-analytics/post-metrics.png)
+
+### Notas de integración del Sprint 3
+
+* La app **Consumer (Kotlin)** consume los endpoints de IAM, Profile, Promotion, Redemption, Favorites, Community y Notifications a través de servicios Retrofit/`AuthApiService` y repositorios alineados a DDD.
+* La app **Business (Flutter)** consume los endpoints de Promotion y Analytics para crear, editar, desactivar y monitorear campañas.
+* El backend permanece como fuente única de verdad desplegada en Railway; ambas apps se conectan al entorno de producción para las pruebas de Sprint Review.
+* La documentación Swagger se utilizó como contrato de integración entre frontend y backend durante todo el sprint.
+
 ##### 4.2.3.7. Software Deployment Evidence for Sprint Review
 
-Para realizar el despliegue de la app movil (Kotlin), usamos Firebase Console, la opción de App Distribution. A continuación se detalla el proceso que se siguió para realizar el despliegue.
+Durante el **Sprint 3**, el hito principal de despliegue fue la distribución de la aplicación móvil **Consumer (Kotlin & Jetpack Compose)** mediante **Firebase App Distribution**, permitiendo que testers y stakeholders instalen y validen el build fuera del entorno local de desarrollo. Asimismo, se mantuvo operativo el backend en **Railway** y la landing page en **Vercel**.
 
-## Mobile Application - Kotlin & Jetpack Compose
+### Evidencias del despliegue de la Mobile App Consumer — Firebase App Distribution
+
+Para realizar el despliegue de la app móvil (Kotlin), se utilizó **Firebase Console**, opción **App Distribution**. A continuación se detalla el proceso seguido:
+
+#### 1. Acceso a Firebase Console
+
+Se ingresó al panel de la consola de Firebase del proyecto Klippr.
 
 ![Initial Firebase Console](assets/chapter04/sprint3-app-deploy/initial-firebase.png)
 
-Se muestra el panel de consola de Firebase.
-
 ![Firebase Console Panel](assets/chapter04/sprint3-app-deploy/firebase-panel.png)
 
-Nos dirigimos al centro de distribución de aplicaciones (App Distribution) y seleccionamos la opción de Android.
+#### 2. Configuración de App Distribution (Android)
+
+Desde el centro de distribución de aplicaciones (**App Distribution**) se seleccionó la plataforma **Android**.
 
 ![App Distribution](assets/chapter04/sprint3-app-deploy/app-distribution.png)
 
-Cuando seleccionamos que nuestra aplicación es android nos piden colocar el nombre del paquete de nuestro proyecto (com.example.klippr)
+#### 3. Registro del package name y carga del build
+
+Al registrar la aplicación Android se configuró el nombre del paquete del proyecto: **`com.example.klippr`**. Posteriormente se cargó el artefacto de distribución (APK/AAB) generado desde el proyecto Kotlin.
 
 ![App Upload](assets/chapter04/sprint3-app-deploy/app-upload.png)
 
 ![App Uploaded](assets/chapter04/sprint3-app-deploy/app-uploaded.png)
+
+Como resultado, el build de la aplicación Consumer quedó disponible en Firebase App Distribution para su instalación y validación por parte del equipo y testers invitados.
+
+### Evidencias del despliegue de Backend — Railway
+
+El backend en **C# / ASP.NET Core**, con autenticación **JWT**, se mantuvo desplegado en **Railway** y accesible de forma pública para las apps móviles y la documentación Swagger.
+
+**URL:** https://klippr-backend-production.up.railway.app/swagger/index.html
+
+![Railway](assets/chapter04/deployment-evidence/railway-1.png)
+
+El despliegue se realiza mediante integración con el repositorio de **GitHub**, de modo que las actualizaciones del código fuente se reflejan en el entorno de producción. Railway permitió gestionar variables de entorno, monitorear el servicio y confirmar el estado de despliegue.
+
+![Railway](assets/chapter04/deployment-evidence/railway-2.png)
+
+La imagen del entorno de producción confirma el estado exitoso del despliegue (*Deployment successful*).
+
+![Backend-1](assets/chapter04/execution-evidence/backend/backend-v2.png)
+
+### Evidencias del despliegue de Landing Page — Vercel
+
+La landing page de **Klippr**, desarrollada con **Next.js, React y TypeScript**, permanece publicada en **Vercel** como canal de adquisición y presentación del producto.
+
+**URL:** https://klippr-landing-page.vercel.app/
+
+![Vercel Deploy](assets/chapter04/vercel-deploy/deploy-dashboard.png)
+
+![Landing-Page](assets/chapter04/vercel-deploy/deploy.png)
+
+### Resumen de entornos desplegados en el Sprint 3
+
+| Producto | Tecnología | Plataforma de despliegue | Estado |
+| --- | --- | --- | --- |
+| Mobile App Consumer | Kotlin + Jetpack Compose | Firebase App Distribution | Desplegado |
+| Backend / API | C# + ASP.NET Core | Railway | Desplegado |
+| Landing Page | Next.js + React + TypeScript | Vercel | Desplegado |
+| Mobile App Business | Flutter | Ejecución y validación local / emulador | Validado |
 
 ##### 4.2.3.8. Team Collaboration Insights during Sprint
 

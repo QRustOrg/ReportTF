@@ -1,65 +1,51 @@
 <div align="center">
+<br>
+<img src="assets/Integrantes/upc.png" alt="Logo UPC" width="200"/>
+<br><br>
+
+### **Universidad Peruana de Ciencias Aplicadas**
+
+**Ingeniería de Software**
+
+Periodo: 202610
+
+1ACC0238 | Aplicaciones para Dispositivos Móviles
+
+NRC: 3667
+
+Docente: Eduardo Martin Reyes Rodriguez
 
 <br>
-
-<img src="assets\Integrantes\upc.png" alt="Logo UPC" width="200"/>
-
-<br>
-
-**Universidad Peruana de Ciencias Aplicadas**
-
-<br>
-
-**Carrera:** Ingeniería de Software  
-
-<br>
-
-**Curso:** Aplicaciones para Dispositivos Móviles 
-
-
-**Ciclo:** 202610   
-
-<br>
-
-**Sección:** 3667  
-
-<br>
-
-**Profesor:** Eduardo Martin Reyes Rodriguez 
-
-<br>
-
-**INFORME DE TRABAJO FINAL**
-
-<br>
-
-**Startup:** QRust  
-
-<br>
-
-**Producto:** Klippr  
-
-</div>
 
 ---
 
-<div align="center">
-
-**Relación de Integrantes**
-
 <br>
 
-| Apellidos y Nombres               | Código      |
-| --------------------------------- | ----------- |
-| Bonifacio Jaramillo, Samuel Jesus | U202317269  |
-| Castro Pariona, Jefferson Ernesto | U201822823  |
-| Guillen Galindo, Julio Adolfo     | U20241A352  |
-| Galindo Montero, Alejandro Manuel | U202321264  |
-| Ponce Perales Alberto Alejandro   | U2023206804 |
+### **Informe de Trabajo Final**
+
+**Startup:** QRust
+
+**Producto:** Klippr
 
 <br><br>
 
-**Julio - 2026**
+U202317269 - Bonifacio Jaramillo, Samuel Jesus
+
+U201822823 - Castro Pariona, Jefferson Ernesto
+
+U20241A352 - Guillen Galindo, Julio Adolfo
+
+U202321264 - Galindo Montero, Alejandro Manuel
+
+U2023206804 - Ponce Perales, Alberto Alejandro
+
+<br><br>
+
+*Julio 2026*
+
+</div>
+
+</div>
 
 </div>
 
